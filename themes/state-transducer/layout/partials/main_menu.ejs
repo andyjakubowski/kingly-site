@@ -1,0 +1,14 @@
+<%- partial('partials/learn_dropdown') %>
+<li>
+  <a href="<%- url_for("/v1/api/index.html") %>" class="nav-link team<%- page.path.match
+  (/api\.html/) ? ' current' : '' %>">API</a>
+</li>
+<%- partial('partials/integrations_dropdown') %>
+<li>
+  <a href="<%- url_for("/v1/testing/index.html") %>" class="nav-link team<%- page.path.match
+  (/testing\.html/) ? ' current' : '' %>">Testing</a>
+</li>
+<li>
+  <a href="<%- url_for("/v1/contributed/index.html") %>" class="nav-link team<%- page.path.match
+  (/contributed\.html/) ? ' current' : '' %>">Contributed</a>
+</li>

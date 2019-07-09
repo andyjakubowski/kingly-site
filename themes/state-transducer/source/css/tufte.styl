@@ -1,0 +1,159 @@
+/* Import ET Book styles
+   adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
+
+/* Tufte CSS styles */
+$width = 900px
+
+blockquote p { width: 55%;
+  margin-right: 40px; }
+
+blockquote footer { width: 55%;
+  font-size: 0.8rem;
+  text-align: right; }
+
+li:not(:first-child) { margin-top: 0.25rem; }
+
+/* Sidenotes, margin notes, figures, captions */
+img { max-width: 100%; }
+
+.sidenote, .marginnote {
+  float: right;
+  clear: right;
+  margin-right: -50%;
+  width: 40%;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding : 0px 10px;
+  font-size: 0.9rem;
+  font-style: italic;
+  background-color : lighten(desaturate(#6363ef, 89%), 95%);
+  color: #2c3e50;
+  border-left: 5px solid #519fa5;
+  border-radius: 25px;
+  line-height: 1.4;
+  vertical-align: baseline;
+  position: relative; }
+
+.sidenote-number { counter-increment: sidenote-counter; }
+
+.sidenote-number:after, .sidenote:before {
+  position: relative;
+  vertical-align: baseline; }
+
+.sidenote-number:after { content: counter(sidenote-counter);
+  font-size: 1rem;
+  top: -0.5rem;
+  left: 0.1rem; }
+
+.sidenote:before { content: counter(sidenote-counter) " ";
+  font-size: 1rem;
+  top: -0.5rem; }
+
+blockquote .sidenote, blockquote .marginnote { margin-right: -82%;
+  min-width: 55%;
+  text-align: left; }
+
+span.newthought { font-variant: small-caps;
+  font-size: 1.0em; }
+
+input.margin-toggle { display: none; }
+
+label.sidenote-number { display: inline; }
+
+label.margin-toggle:not(.sidenote-number) { display: none; }
+
+section > p, section > footer, section > table { width: 55%; }
+
+/* 50 + 5 == 55, to be the same width as paragraph */
+section > ol, section > ul { width: 50%;
+  -webkit-padding-start: 5%; }
+
+li:not(:first-child) { margin-top: 0.25rem; }
+
+/* Sidenotes, margin notes, figures, captions */
+.sidenote-number { counter-increment: sidenote-counter; }
+
+.sidenote-number:after, .sidenote:before { font-family: et-book-roman-old-style;
+  position: relative;
+  vertical-align: baseline; }
+
+.sidenote-number:after { content: counter(sidenote-counter);
+  font-size: 1rem;
+  top: -0.5rem;
+  left: 0.1rem; }
+
+.sidenote:before { content: counter(sidenote-counter) " ";
+  font-size: 1rem;
+  top: -0.5rem; }
+
+blockquote .sidenote, blockquote .marginnote { margin-right: -82%;
+  min-width: 59%;
+  text-align: left; }
+
+div.fullwidth, table.fullwidth { width: 100%; }
+
+div.table-wrapper { overflow-x: auto;
+  font-family: "Trebuchet MS", "Gill Sans", "Gill Sans MT", sans-serif; }
+
+code
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace
+  font-size: 1em
+
+.sans > code { font-size: 1.2rem; }
+
+h1 > code, h2 > code, h3 > code { font-size: 0.80em; }
+
+.marginnote code, .sidenote > code {
+  font-size: 0.9rem;
+  background-color: inherit
+}
+
+pre.code {
+  font-size: 0.9rem;
+  width: 52.5%;
+  margin-left: 2.5%;
+  overflow-x: auto; }
+
+pre.code.fullwidth
+  width: $width
+
+.fullwidth
+  width: $width
+  clear:both
+
+span.newthought { font-variant: small-caps;
+  font-size: 1.0em; }
+
+input.margin-toggle { display: none; }
+
+label.sidenote-number { display: inline; }
+
+label.margin-toggle:not(.sidenote-number) { display: none; }
+
+@media (max-width: 1300px) { body { width: 84%;
+  padding-left: 8%;
+  padding-right: 8%; }
+  hr, section > p, section > footer, section > table { width: 100%; }
+  pre.code { width: 97%; }
+  section > ol { width: 90%; }
+  section > ul { width: 90%; }
+  figure { max-width: 90%; }
+  figcaption, figure.fullwidth figcaption { margin-right: 0%;
+    max-width: none; }
+  blockquote { margin-left: 1.5em;
+    margin-right: 0em; }
+  blockquote p, blockquote footer { width: 100%; }
+  label.margin-toggle:not(.sidenote-number) { display: inline; }
+  .sidenote, .marginnote { display: none; }
+  .margin-toggle:checked + .sidenote,
+  .margin-toggle:checked + .marginnote { display: block;
+    float: left;
+    left: 1rem;
+    clear: both;
+    width: 95%;
+    margin: 1rem 2.5%;
+    vertical-align: baseline;
+    position: relative; }
+  label { cursor: pointer; }
+  div.table-wrapper, table { width: 85%; }
+  img { width: 100%; } }

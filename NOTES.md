@@ -1,0 +1,11 @@
+# Math support
+- had to modify the distribution and make changes in node_modules !!
+  - Cf. https://nathaniel.blog/tutorials/make-hexo-support-math-again/
+  - + modification of em in kramed/lib/rules/inline.js
+    - em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/
+    - to not use `_` anymore for emphasis/italic
+- using kramed instead of marked as markdown renderer
+- added tabbed code block in source and scripts and css (_code)
+- added hexo-tag-scripture but modified it to have margin note tufte style
+  - style in tufte.styl
+- modify commonjs > initVersionSelect for the version dropdown!!

@@ -1,0 +1,47 @@
+<% if (page.type) { %>
+  <%- partial('partials/sidebar', { type: page.type === 'menu' ? 'guide' : page.type, index: page.index }) %>
+<% } else { %>
+  <div class="sidebar">
+    <ul class="main-menu">
+      <%- partial('partials/main_menu', { context: 'sidebar' }) %>
+    </ul>
+  </div>
+<% } %>
+<div class="content <%- page.type ? page.type + ' with-sidebar' : '' %> <%- page.type === 'guide' ? page.path.replace(/.+\//, '').replace('.html', '') + '-guide' : '' %>">
+  <% if (page.type) { %>
+    <% if (page.type === 'menu') { %>
+      <form id="search-form">
+        <input type="text" id="search-query-menu" class="search-query st-default-search-input">
+      </form>
+      <%- partial('partials/toc', { type: 'guide' }) %>
+    <% } else { %>
+    <% } %>
+  <% } %>
+  <% if (page.title.trim()) { %>
+    <h1><%- page.title %></h1>
+  <% } %>
+  <% if (page.search) { %>
+  <% } else { %>
+    <%- page.content %>
+  <% } %>
+  <% if (['tutorials', 'testing'].indexOf(page.type) !== -1) { %>
+    <div class="next-links">
+      <% const lastPage = site.pages.find({ type: page.type, order: { $lt: page.order }}).sort({ order: -1 }).first(); %>
+      <% if (lastPage) { %>
+        <span>← <a href="<%- url_for(lastPage.path) %>"><%- lastPage.title %></a></span>
+      <% } %>
+      <% const nextPage = site.pages.find({ type: page.type, order: { $gt: page.order }}).sort({ order: 1 }).first(); %>
+      <% if (nextPage) { %>
+        <span style="float: right;"><a href="<%- url_for(nextPage.path) %>"><%- nextPage.title %></a> →</span>
+      <% } %>
+    </div>
+  <% } %>
+  <div class="footer">
+    <a id="follow-button" class="btn" title="Kingly Github" href="https://github.com/brucou/kingly">
+      <img class="github" src="<%- url_for("/images/GitHub-Mark-32px.png") %>" alt="github">
+    </a>
+    <a id="follow-button" class="btn" title="Follow Kingly on Twitter" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fbrucou.github.io/documentation%2F&amp;ref_src=twsrc%5Etfw&amp;region=follow_link&amp;screen_name=bricoi1&amp;tw_p=followbutton">
+      <img class="twitter" src="<%- url_for("/images/icons8-twitter-48.png") %>" alt="twitter">
+    </a>
+  </div>
+</div>

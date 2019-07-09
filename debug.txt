@@ -1,0 +1,1586 @@
+
+> vuejs.org@ debug C:\Users\toshiba\WebstormProjects\state-transducer-docs
+> hexo generate --debug
+
+16:50:00.090 DEBUG Writing database to C:\Users\toshiba\WebstormProjects\state-transducer-docs/db.json
+16:50:00.115 DEBUG Hexo version: 3.8.0
+16:50:00.116 DEBUG Working directory: ~\WebstormProjects\state-transducer-docs\
+16:50:00.249 DEBUG Config loaded: ~\WebstormProjects\state-transducer-docs\_config.yml
+16:50:00.295 DEBUG Plugin loaded: hexo-deployer-git
+16:50:00.296 DEBUG Plugin loaded: hexo-generator-alias
+16:50:00.300 DEBUG Plugin loaded: hexo-generator-archive
+16:50:00.302 DEBUG Plugin loaded: hexo-generator-category
+16:50:00.303 DEBUG Plugin loaded: hexo-generator-index
+16:50:00.306 DEBUG Plugin loaded: hexo-generator-feed
+16:50:00.307 DEBUG Plugin loaded: hexo-generator-tag
+16:50:00.336 DEBUG Plugin loaded: hexo-offline
+16:50:00.657 DEBUG Plugin loaded: hexo-inject
+16:50:00.663 DEBUG Plugin loaded: hexo-renderer-ejs
+16:50:00.668 DEBUG Plugin loaded: hexo-renderer-mathjax
+16:50:00.688 DEBUG Plugin loaded: hexo-renderer-kramed
+16:50:00.690 DEBUG Plugin loaded: hexo-renderer-stylus
+16:50:00.788 DEBUG Plugin loaded: hexo-server
+16:50:00.789 DEBUG Plugin loaded: hexo-tag-margin-note
+16:50:01.702 DEBUG Script loaded: themes\state-transducer\scripts\tabbed_codeblock.js
+16:50:01.706 DEBUG [hexo-inject] firing inject_ready
+16:50:01.723 DEBUG Loading database.
+16:50:01.930 INFO  Start processing
+16:50:01.965 DEBUG Processed: index.md
+16:50:01.998 DEBUG Processed: _posts/011-component.md
+16:50:01.998 DEBUG Processed: _posts/012-release.md
+16:50:01.998 DEBUG Processed: _posts/1.0.0-release.md
+16:50:01.998 DEBUG Processed: _posts/announcing-2.0.md
+16:50:01.998 DEBUG Processed: _posts/common-gotchas.md
+16:50:01.998 DEBUG Processed: _posts/march-update.md
+16:50:01.998 DEBUG Processed: _posts/why-no-template-url.md
+16:50:01.999 DEBUG Processed: coc/index.md
+16:50:01.999 DEBUG Processed: menu/index.md
+16:50:01.999 DEBUG Processed: graphs/chess game with hierarchy no undo.graphml
+16:50:02.000 DEBUG Processed: graphs/chess game with hierarchy no undo.jpg
+16:50:02.000 DEBUG Processed: graphs/chess game with hierarchy with undo and timer.graphml
+16:50:02.000 DEBUG Processed: graphs/chess game with hierarchy with undo.graphml
+16:50:02.000 DEBUG Processed: graphs/chess game with hierarchy.graphml
+16:50:02.001 DEBUG Processed: graphs/password submit fsm.graphml
+16:50:02.001 DEBUG Processed: graphs/password submit fsm.png
+16:50:02.001 DEBUG Processed: graphs/trivial counter machine.graphml
+16:50:02.002 DEBUG Processed: graphs/trivial counter machine.png
+16:50:02.002 DEBUG Processed: images/components.png
+16:50:02.002 DEBUG Processed: images/dom-tree.png
+16:50:02.003 DEBUG Processed: images/logo.jpg
+16:50:02.003 DEBUG Processed: images/mvvm.png
+16:50:02.021 DEBUG Processed: source/browserconfig.xml
+16:50:02.021 DEBUG Processed: source/manifest.json
+16:50:02.050 DEBUG Theme config loaded.
+16:50:02.052 DEBUG Processed: v1/cookbook/adding-instance-properties.md
+16:50:02.052 DEBUG Processed: v1/cookbook/client-side-storage.md
+16:50:02.052 DEBUG Processed: v1/cookbook/avoiding-memory-leaks.md
+16:50:02.052 DEBUG Processed: v1/cookbook/creating-custom-scroll-directives.md
+16:50:02.052 DEBUG Processed: v1/cookbook/debugging-in-vscode.md
+16:50:02.052 DEBUG Processed: v1/cookbook/dockerize-vuejs-app.md
+16:50:02.052 DEBUG Processed: v1/cookbook/editable-svg-icons.md
+16:50:02.052 DEBUG Processed: v1/cookbook/form-validation.md
+16:50:02.053 DEBUG Processed: v1/cookbook/index.md
+16:50:02.053 DEBUG Processed: v1/cookbook/packaging-sfc-for-npm.md
+16:50:02.053 DEBUG Processed: v1/cookbook/practical-use-of-scoped-slots.md
+16:50:02.053 DEBUG Processed: v1/cookbook/serverless-blog.md
+16:50:02.053 DEBUG Processed: v1/cookbook/unit-testing-vue-components.md
+16:50:02.053 DEBUG Processed: v1/cookbook/using-axios-to-consume-apis.md
+16:50:02.053 DEBUG Processed: v1/examples/commits.md
+16:50:02.053 DEBUG Processed: v1/examples/deepstream.md
+16:50:02.054 DEBUG Processed: v1/examples/elastic-header.md
+16:50:02.054 DEBUG Processed: v1/examples/firebase.md
+16:50:02.054 DEBUG Processed: v1/examples/themes.md
+16:50:02.054 DEBUG Processed: v1/examples/todomvc.md
+16:50:02.054 DEBUG Processed: v1/examples/tree-view.md
+16:50:02.054 DEBUG Processed: v1/guide/class-and-style.md
+16:50:02.054 DEBUG Processed: v1/guide/comparison.md
+16:50:02.055 DEBUG Processed: v1/guide/components-custom-events.md
+16:50:02.055 DEBUG Processed: v1/guide/components-dynamic-async.md
+16:50:02.055 DEBUG Processed: v1/guide/components-edge-cases.md
+16:50:02.055 DEBUG Processed: v1/guide/components-props.md
+16:50:02.055 DEBUG Processed: v1/guide/components-registration.md
+16:50:02.055 DEBUG Processed: v1/guide/components-slots.md
+16:50:02.055 DEBUG Processed: v1/guide/components.md
+16:50:02.055 DEBUG Processed: v1/guide/render-function.md
+16:50:02.055 DEBUG Processed: v1/guide/routing.md
+16:50:02.055 DEBUG Processed: v1/guide/single-file-components.md
+16:50:02.056 DEBUG Processed: v1/guide/ssr.md
+16:50:02.056 DEBUG Processed: v1/guide/state-management.md
+16:50:02.056 DEBUG Processed: v1/guide/syntax.md
+16:50:02.056 DEBUG Processed: v1/guide/team.md
+16:50:02.056 DEBUG Processed: v1/guide/transitioning-state.md
+16:50:02.056 DEBUG Processed: v1/guide/transitions.md
+16:50:02.056 DEBUG Processed: v1/guide/typescript.md
+16:50:02.056 DEBUG Processed: v1/guide/unit-testing.md
+16:50:02.056 DEBUG Processed: v1/search/index.md
+16:50:02.057 DEBUG Processed: v1/style-guide/index.md
+16:50:02.057 DEBUG Processed: v1/tutorials/chess-game-evolved.md
+16:50:02.057 DEBUG Processed: v1/tutorials/chess-game-ultimate.md
+16:50:02.057 DEBUG Processed: v1/tutorials/index.md
+16:50:02.057 DEBUG Processed: v1/tutorials/installation.md
+16:50:02.057 DEBUG Processed: v1/tutorials/model-with-machines.md
+16:50:02.057 DEBUG Processed: v1/tutorials/password-meter.md
+16:50:02.060 DEBUG Processed: _config.yml
+16:50:02.060 DEBUG Processed: images/chess game/game random position.png
+16:50:02.060 DEBUG Processed: images/chess game/game starting position.png
+16:50:02.077 DEBUG Processed: images/chess game/white piece selected.png
+16:50:02.078 DEBUG Processed: source/css/benchmark.styl
+16:50:02.078 DEBUG Processed: source/css/index.styl
+16:50:02.079 DEBUG Processed: source/css/page.styl
+16:50:02.079 DEBUG Processed: source/css/search.styl
+16:50:02.079 DEBUG Processed: source/css/tufte.styl
+16:50:02.080 DEBUG Processed: source/images/aaha.png
+16:50:02.080 DEBUG Processed: source/images/alligator_io.svg
+16:50:02.081 DEBUG Processed: source/images/bestvpn_co.png
+16:50:02.081 DEBUG Processed: source/images/bit.png
+16:50:02.081 DEBUG Processed: source/images/blokt_cryptocurrency_news.png
+16:50:02.082 DEBUG Processed: source/images/chaitin.png
+16:50:02.082 DEBUG Processed: source/images/check.png
+16:50:02.082 DEBUG Processed: source/images/down.png
+16:50:02.082 DEBUG Processed: source/images/feed.png
+16:50:02.083 DEBUG Processed: source/images/firestick_tricks.png
+16:50:02.083 DEBUG Processed: source/images/laravel.png
+16:50:02.083 DEBUG Processed: source/images/logo.png
+16:50:02.083 DEBUG Processed: source/images/menu.png
+16:50:02.084 DEBUG Processed: source/js/common.js
+16:50:02.084 DEBUG Processed: source/js/css.escape.js
+16:50:02.084 DEBUG Processed: source/js/smooth-scroll.min.js
+16:50:02.084 DEBUG Processed: source/js/tabbed-codeblocks.js
+16:50:02.089 DEBUG Processed: v1/api/index.md
+16:50:02.089 DEBUG Processed: source/images/accelebrate.png
+16:50:02.089 DEBUG Processed: source/images/bacancy_technology.png
+16:50:02.089 DEBUG Processed: source/images/kingly_logo.png
+16:50:02.089 DEBUG Processed: source/js/vue.min.js
+16:50:02.094 DEBUG Processed: layout/index.ejs
+16:50:02.094 DEBUG Processed: layout/layout.ejs
+16:50:02.094 DEBUG Processed: layout/page.ejs
+16:50:02.094 DEBUG Processed: layout/sponsors-page.ejs
+16:50:02.094 DEBUG Processed: layout/search-page.ejs
+16:50:02.094 DEBUG Processed: layout/post.ejs
+16:50:02.097 DEBUG Processed: source/images/icons/android-icon-144x144.png
+16:50:02.098 DEBUG Processed: source/images/icons/android-icon-36x36.png
+16:50:02.098 DEBUG Processed: source/images/icons/android-icon-192x192.png
+16:50:02.098 DEBUG Processed: source/images/icons/android-icon-48x48.png
+16:50:02.098 DEBUG Processed: source/images/icons/android-icon-72x72.png
+16:50:02.098 DEBUG Processed: source/images/icons/android-icon-96x96.png
+16:50:02.099 DEBUG Processed: source/images/icons/apple-icon-114x114.png
+16:50:02.099 DEBUG Processed: source/images/icons/apple-icon-120x120.png
+16:50:02.099 DEBUG Processed: source/images/icons/apple-icon-144x144.png
+16:50:02.099 DEBUG Processed: source/images/icons/apple-icon-152x152.png
+16:50:02.099 DEBUG Processed: source/images/icons/apple-icon-180x180.png
+16:50:02.099 DEBUG Processed: source/images/icons/apple-icon-57x57.png
+16:50:02.100 DEBUG Processed: source/images/icons/apple-icon-60x60.png
+16:50:02.100 DEBUG Processed: source/images/icons/apple-icon-72x72.png
+16:50:02.100 DEBUG Processed: source/images/icons/apple-icon-76x76.png
+16:50:02.100 DEBUG Processed: source/images/icons/apple-icon-precomposed.png
+16:50:02.100 DEBUG Processed: source/images/icons/apple-icon.png
+16:50:02.101 DEBUG Processed: source/images/icons/favicon-16x16.png
+16:50:02.101 DEBUG Processed: source/images/icons/favicon-32x32.png
+16:50:02.101 DEBUG Processed: source/images/icons/favicon-96x96.png
+16:50:02.101 DEBUG Processed: source/images/icons/favicon.ico
+16:50:02.101 DEBUG Processed: source/images/icons/ms-icon-144x144.png
+16:50:02.102 DEBUG Processed: source/images/icons/ms-icon-150x150.png
+16:50:02.102 DEBUG Processed: source/images/icons/ms-icon-310x310.png
+16:50:02.102 DEBUG Processed: source/images/icons/ms-icon-70x70.png
+16:50:02.108 DEBUG Processed: layout/icons/btc.ejs
+16:50:02.108 DEBUG Processed: layout/icons/bch.ejs
+16:50:02.108 DEBUG Processed: layout/icons/eth.ejs
+16:50:02.108 DEBUG Processed: layout/icons/github-dark.ejs
+16:50:02.108 DEBUG Processed: layout/icons/github.ejs
+16:50:02.108 DEBUG Processed: layout/icons/ltc.ejs
+16:50:02.109 DEBUG Processed: layout/icons/medium.ejs
+16:50:02.109 DEBUG Processed: layout/icons/play.ejs
+16:50:02.109 DEBUG Processed: layout/icons/twitter.ejs
+16:50:02.109 DEBUG Processed: layout/partials/ad-text.ejs
+16:50:02.109 DEBUG Processed: layout/partials/ad.ejs
+16:50:02.109 DEBUG Processed: layout/partials/ecosystem_dropdown.ejs
+16:50:02.109 DEBUG Processed: layout/partials/conf.ejs
+16:50:02.109 DEBUG Processed: layout/partials/header.ejs
+16:50:02.109 DEBUG Processed: layout/partials/language_dropdown.ejs
+16:50:02.109 DEBUG Processed: layout/partials/learn_dropdown.ejs
+16:50:02.109 DEBUG Processed: layout/partials/main_menu.ejs
+16:50:02.109 DEBUG Processed: layout/partials/platinum_sponsors.ejs
+16:50:02.109 DEBUG Processed: layout/partials/sidebar.ejs
+16:50:02.109 DEBUG Processed: layout/partials/sponsors.ejs
+16:50:02.109 DEBUG Processed: layout/partials/support_vue_dropdown.ejs
+16:50:02.109 DEBUG Processed: layout/partials/toc.ejs
+16:50:02.111 DEBUG Processed: v1/tutorials/chess-game.md
+16:50:02.118 DEBUG Processed: v1/examples/grid-component.md
+16:50:02.118 DEBUG Processed: v1/examples/hackernews.md
+16:50:02.118 DEBUG Processed: v1/examples/index.md
+16:50:02.118 DEBUG Processed: v1/examples/modal.md
+16:50:02.119 DEBUG Processed: v1/examples/select2.md
+16:50:02.119 DEBUG Processed: v1/examples/svg.md
+16:50:02.119 DEBUG Processed: v1/guide/computed.md
+16:50:02.119 DEBUG Processed: v1/guide/conditional.md
+16:50:02.119 DEBUG Processed: v1/guide/custom-directive.md
+16:50:02.119 DEBUG Processed: v1/guide/deployment.md
+16:50:02.119 DEBUG Processed: v1/guide/events.md
+16:50:02.119 DEBUG Processed: v1/guide/filters.md
+16:50:02.120 DEBUG Processed: v1/guide/forms.md
+16:50:02.120 DEBUG Processed: v1/guide/index.md
+16:50:02.120 DEBUG Processed: v1/guide/instance.md
+16:50:02.120 DEBUG Processed: v1/guide/join.md
+16:50:02.121 DEBUG Processed: v1/guide/list.md
+16:50:02.122 DEBUG Processed: v1/guide/migration-vue-router.md
+16:50:02.122 DEBUG Processed: v1/guide/migration-vuex.md
+16:50:02.122 DEBUG Processed: v1/guide/migration.md
+16:50:02.123 DEBUG Processed: v1/guide/mixins.md
+16:50:02.123 DEBUG Processed: v1/guide/plugins.md
+16:50:02.123 DEBUG Processed: v1/guide/reactivity.md
+16:50:02.124 DEBUG Processed: source/images/icons/bacancy_technology.png
+16:50:02.125 DEBUG Processed: source/js/vue.js
+16:50:02.126 DEBUG Processed: source/images/Free Cartoon Crown Vector.png
+16:50:02.130 DEBUG Processed: source/images/cloudstudio.png
+16:50:02.130 DEBUG Processed: source/images/coding.png
+16:50:02.131 DEBUG Processed: source/images/coin-bch.png
+16:50:02.131 DEBUG Processed: source/images/coin-btc.png
+16:50:02.132 DEBUG Processed: source/images/coin-eth.png
+16:50:02.132 DEBUG Processed: source/images/coin-ltc.png
+16:50:02.132 DEBUG Processed: source/images/dcloud.gif
+16:50:02.133 DEBUG Processed: source/images/derek_pollard.png
+16:50:02.133 DEBUG Processed: source/images/devsquad.png
+16:50:02.133 DEBUG Processed: source/images/dopamine.png
+16:50:02.133 DEBUG Processed: source/images/earthlink.png
+16:50:02.133 DEBUG Processed: source/images/energy_comparison.png
+16:50:02.133 DEBUG Processed: source/images/frontend_love.png
+16:50:02.133 DEBUG Processed: source/images/gitee.png
+16:50:02.133 DEBUG Processed: source/images/gridsome.png
+16:50:02.134 DEBUG Processed: source/images/html_burger.png
+16:50:02.134 DEBUG Processed: source/images/icons.png
+16:50:02.134 DEBUG Processed: source/images/icons_8.png
+16:50:02.134 DEBUG Processed: source/images/inkoop.png
+16:50:02.134 DEBUG Processed: source/images/intygrate.png
+16:50:02.134 DEBUG Processed: source/images/isle_of_code.png
+16:50:02.134 DEBUG Processed: source/images/marcus_hiles.png
+16:50:02.134 DEBUG Processed: source/images/modus.png
+16:50:02.135 DEBUG Processed: source/images/nativescript.png
+16:50:02.135 DEBUG Processed: source/images/neds.png
+16:50:02.135 DEBUG Processed: source/images/onsen_ui.png
+16:50:02.135 DEBUG Processed: source/images/opteo.png
+16:50:02.135 DEBUG Processed: source/images/passionate_people.png
+16:50:02.135 DEBUG Processed: source/images/patreon.png
+16:50:02.136 DEBUG Processed: source/images/paypal.png
+16:50:02.136 DEBUG Processed: source/images/search.png
+16:50:02.137 DEBUG Processed: source/images/shopware_ag.png
+16:50:02.137 DEBUG Processed: source/images/shopware_ag.svg
+16:50:02.137 DEBUG Processed: source/images/stdlib.png
+16:50:02.137 DEBUG Processed: source/images/syncfusion.png
+16:50:02.137 DEBUG Processed: source/images/tidelift.png
+16:50:02.137 DEBUG Processed: source/images/tighten_co.png
+16:50:02.138 DEBUG Processed: source/images/tooltwist.png
+16:50:02.138 DEBUG Processed: source/images/valuecoders.png
+16:50:02.138 DEBUG Processed: source/images/vehikl.png
+16:50:02.138 DEBUG Processed: source/images/vpnranks.png
+16:50:02.138 DEBUG Processed: source/images/vuejobs.png
+16:50:02.138 DEBUG Processed: source/images/vuemastery.png
+16:50:02.138 DEBUG Processed: source/images/vueschool.png
+16:50:02.138 DEBUG Processed: source/images/vuetify.png
+16:50:02.139 DEBUG Processed: source/images/webdock.png
+16:50:02.140 DEBUG Processed: source/images/wilderminds.png
+16:50:02.141 DEBUG Processed: source/images/x_team.png
+16:50:02.141 DEBUG Processed: source/images/yakaz.png
+16:50:02.141 DEBUG Processed: source/images/special-sponsor-spot.png
+16:50:03.015 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.016 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.017 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.017 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.017 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.018 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.018 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.018 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.019 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.019 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.019 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.019 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.020 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.020 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.021 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.021 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.021 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.021 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.022 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.022 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.023 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.023 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.024 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.024 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.025 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.025 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.026 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.026 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.026 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.027 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.027 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.027 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.028 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.028 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.028 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.029 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.029 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.029 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.030 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.030 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.030 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.031 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.031 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.031 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.032 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.032 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.032 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.033 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.033 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.034 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.034 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.034 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.035 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.035 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.035 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.036 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.036 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.036 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.037 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.037 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.037 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.037 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.038 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.039 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.039 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.039 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.040 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.040 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.040 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.041 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.041 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.041 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.042 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.042 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.042 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.043 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.043 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.043 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.044 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.044 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.045 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.046 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.047 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.047 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.048 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.048 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.049 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.050 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.051 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.052 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.053 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.053 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.054 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.055 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.056 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.057 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.057 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.058 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.059 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.059 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.061 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.061 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.063 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.063 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.065 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.066 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.067 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.068 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.069 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.069 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.070 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.071 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.072 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.072 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.075 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.075 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.077 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.078 DEBUG Incomplete document
+Error: Incomplete document
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:29:34)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.083 DEBUG [hexo-inject] SKIP: undefined
+16:50:03.084 DEBUG No matching 'body_end'
+SyntaxError: No matching 'body_end'
+    at Parser._reduceBlock (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\parser\index.js:147:35)
+    at Parser.parse (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\parser\index.js:156:22)
+    at Inject._transform (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo-inject\lib\mixin\transform.js:28:40)
+    at Hexo.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Hexo.<anonymous> (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\method.js:15:34)
+    at Promise.each.filter (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\hexo\lib\extend\filter.js:63:65)
+    at tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Object.gotValue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:155:18)
+    at Object.gotAccum (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\reduce.js:144:25)
+    at Object.tryCatcher (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise._settlePromise (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise._settlePromise0 (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise._settlePromises (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (C:\Users\toshiba\WebstormProjects\state-transducer-docs\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+16:50:03.470 DEBUG Database saved

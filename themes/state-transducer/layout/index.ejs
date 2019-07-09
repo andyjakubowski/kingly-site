@@ -1,0 +1,69 @@
+<div class="sidebar">
+  <div class="sidebar-inner-index">
+    <ul class="main-menu">
+      <%- partial('partials/main_menu', { context: 'sidebar' }) %>
+    </ul>
+  </div>
+</div>
+
+<div id="hero">
+  <div class="inner">
+    <div class="left">
+      <img class="hero-logo" src="<%- url_for("/images/kingly_logo.png") %>" alt="library logo">
+    </div><div class="right">
+      <h2 class="header-logo">Kingly</h2>
+      <h1>
+        The Modelling Library<br>for Portable UIs
+      </h1>
+      <p>
+        <a class="button white" href="<%- url_for("/v1/tutorials/") %>">GET STARTED</a>
+        <a class="button gray has-icon" href="https://github.com/brucou/kingly"
+           target="_blank">
+          <%- partial('icons/github-dark') %>
+          GITHUB</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="highlights">
+  <div class="inner">
+    <div class="point">
+      <h2>Portable</h2>
+      <p>Modelize the behaviour of your user interface's components once. Pick up or switch
+        your UI framework as you please.</p>
+    </div>
+
+    <div class="point">
+      <h2>Works for you</h2>
+      <p>
+        Automated visualization<br>
+        Automated implementation<br>
+        Automated test generation<br>
+        Share and reuse from npm<br>
+      </p>
+    </div>
+
+    <div class="point">
+      <h2>Single Source of Truth</h2>
+      <p>A model is a precise, always-updated
+        documentation of your interface behaviour that your team can trust
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var topScrolled = false
+  window.addEventListener('scroll', function () {
+    if (window.pageYOffset > 165 && !topScrolled) {
+      topScrolled = true
+      document.getElementById('mobile-bar').classList.remove('top')
+    } else if (window.pageYOffset <= 165 && topScrolled) {
+      topScrolled = false
+      document.getElementById('mobile-bar').classList.add('top')
+    }
+  })
+})()
+</script>
