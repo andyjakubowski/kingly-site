@@ -1,4 +1,15 @@
+**TODO**
+- BUG: contract: cannot hvae transition INIT-> History, that would infinite loop (history when none goes to INIT) 
+- altogether now section with implementation
+- tutorial on routing (in best practices), wiht implementation
+- article on: how state machines support micro-front end architectures
+- debugger
+- compiler
+- real world app (routing, graphql or sth like that)
+- csp-inspired framework a-la-cycle makeProcess(fsm, thread, connector...)
+
 # Demos
+- mention the fact that the machine is ocmpiled for the svelte suspense example
 - ecommerce app works iwh mobile too!
   - https://github.com/inspmoore/papu
   - https://papuyumyum.herokuapp.com/
@@ -7,6 +18,7 @@
 - check https://brucou.github.io/documentation/v1/contributed/index.html dead??
 - rewrite all react demo to remove react-state-driven COMMAND_RENDER from react-state-driven
   - issues with code playgrounds!! leave it for now 
+  
 # Testing
 add a WIP tag like new. and add the structure of testing not the content
 decide whether to keep or remove for release!
@@ -40,9 +52,7 @@ look at framer for inspiration: https://www.framer.com/prototyping/
   - other interesting articles?
 
 # Testing
-publish article first!! in hacker-noon -> before end on june! don't forget David in Prague
-for testing try to use forgot the name.js for property tasting - lots of generators
-but give examples already with me writing my own generators?? yes 
+publish article first!! in hacker-noon -> before end on june! don't forget David in Prague for testing try to use forgot the name.js for property tasting - lots of generators but give examples already with me writing my own generators?? yes 
 
 # example section
 finish here. The form multi step in example section. LATER. write something about property based testing and tet generation. At least one example then wrap up. Hopefully ready for the 30th?

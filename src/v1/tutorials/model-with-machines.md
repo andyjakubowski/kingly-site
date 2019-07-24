@@ -13,18 +13,40 @@ Kingly is thus designed to encourage an UI implementation consisting of three se
 
 The interfaced systems -- that includes the input device (e.g. your laptop or mobile phone), send events to the Kingly machine. The machine computes commands which are executed by command handlers. Those commands may result in API calls on the interfaced systems, whose responses may be processed by the command handler module, which in turn decides whether to send an event back to the machine for processing. Note that the output device -- typically a screen, is but one of the interfaced systems, and the operation of rendering is but a command to the interfaced output device.
 
-{% tufte %}
-Gonna have to find a better name than that though :-) PIN! sounds totally contrived.
-{% endtufte %}
-
-This architecture is similar to the good old MVC pattern, with the difference that the controller (here the machine) encapsulates the model (the machine's state), defines what to do (the commands), and delegates away command execution. The architecture however avoids issues related to both [the fat model and fat controller pattern](http://www.theturninggear.com/2018/11/20/fat-controllers-vs-fat-models/), by refusing to include business logic into the controller or model. If I had to give it a name, it would be *PIN!*: *Parse, Interpret, Next!*. The idea is to emphasize that events arriving to a user interface are similar to lines of code, which are parsed and interpreted line after line. The machine parses the events into commands, the command handler interprets the commands. The machine then waits for the next input. The view plays no specific rule in this architecture, it is an interfaced system like any other. The architecture itself, in the frame of this documentation, I will simply call the Kingly architecture.
-
 ## Modelling behaviour
-In short: 
+A user interface can be specified by a relation between events received by the user interfaces and actions to be performed as a result on the interfaced system. With Kingly, you are expressing this relation with a procedure `fsm` which takes an event received by the interface into commands to perform on the interfaced systems: `commands = fsm(event)`. 
 
--   a user interface can be specified by a relation between events received by the user interfaces and actions to be performed as a result on the interfaced system.
--   Because to the same triggering event, there may be different actions to perform on the interfaced system (depending for instance on when the event did occur, or which other events occurred before), we use $state$ to encode that variability, and specify the user interface with a function  $f$  such that  $actions = f(state, event)$. We call here  $f$  the reactive function for the user interface.
--   The previous expression suffices to specify the user interface's behaviour, but is not enough to deduce an implementation. We then use a function  $g$  such that  $(actions\_n, state\_{n+1}) = g (state\_n, event\_n)$. That is, we explicitly include the modification of the state triggered by events. Depending on the choice that is made for  $state_n$, there is an infinite number of ways to specify the same user interface.
--   a state machine specification is one of those ways with some nice properties (concise specification, formal reasoning, easy visualization). It divides the state into control states and extended state. For each control state, it specifies a reactive sub-function which returns an updated state (i.e. a new control state, and a new extended state) and the actions to perform on the interfaced system.
+In most of the cases, the same event may result in different commands to be executed. This means that the `fsm` procedure is a stateful one. A Kingly state machine is such a function, which **encapsulates** the necessary state so that it is only accessible and visible to thee `fsm` function itself. If we make the encapsulated state visible, we can define a pure function $g$ such that  $(actions\_n, state\_{n+1}) = g (state\_n, event\_n)$, where $n$ is tne $n^{th}$ invocation of the `fsm`  function for the $n^{th}$ input it processes.
 
-We are now going to illustrate those equations with a simple example.
+Additionally, a Kingly state machine divides its encapsulated state in two kinds of state: control states, and extended state. The machine starts in an initial control state. For each control state, the state machine must define a sub-procedure `fsm'` which will:
+- perform the computation of commands when the machine is in that control state (i.e. `fsm(event) = fsm'(event)`)
+- update its control state (we say that the machine *transitions* to its new control state) if some conditions are fulfilled (we call such conditions *guards*)
+- update its extended state
+
+Control states thus define a 'formula' computing the commands, while the extended state gathers the data necessary to perform the computation. As the machine changes control state, the computation to perform changes accordingly. Control states may for instance serve to modelize interfaces going through different screens, associating a different relation between events and commands (i.e. behaviour) to each screen.
+
+State machine can be visually represented by a graph which links two control states whenever there is a possible transition between the two control states. The visualized graph summarizes accurately the `fsm` computation, i.e. the behaviour of the interface to implement. 
+
+Modelizing an interface behaviour with state machines has the following advantanges:
+- the machine visualization is an accurate specification of the interface behaviour
+- the machine visualization can be used to communicate the behaviour to programmers and non-programmers alike, including designers, project managers and other project stakeholders
+- the state machine can be *compiled* to a standard JavaScript function which implements the interface behaviour
+
+Using Kingly as a state machine library has the following advantage:
+- the behaviour of the machine, i.e. the computation of commands to perform, is completely separated from the execution of those commands. This means that any rendering library can be used to display the user interface, **without any modification of the machine implementation**
+- a Kingly machine is a standard JavaScript function which performs no effects. This means it is easy to test, without resorting to mocking, with any testing library of your choice.
+- test input sequences for the machine can additionally be automatically computed
+- the interface behaviour being separated from other concerns, it can be reused and shared among projects (for example on `npm`). 
+
+## Implementation
+The typical process I follow consists in:
+- get an understanding of the interface behaviour from its informal specifications
+- identify the events and commands that the machine receives and produces
+- draw the machine with a graph editor (I recommend [yed](https://www.yworks.com/downloads#yEd))
+- write some tests for the basic scenarios
+- write the definition of the machine (i.e. initial state, events, transitions, guards, action factories)
+- write the other parts of the UI (like UI rendering, UI effects)
+- fully test the machine with automatically generated tests (see the section on testing)
+- write a few integration tests for the basic scenarios
+
+We will address testing in a dedicated section. We are now going to see in the following tutorials some examples of UI modelization with Kingly state machines.

@@ -151,7 +151,7 @@ In short the history state allows to short-circuit the default fixed entry behav
 
 ### Contracts
 
-#### Format
+#### **Format**
 - state names (from `fsmDef.states`) must be unique and be JavaScript strings
 - event names (from `fsmDef.events`) must be unique and be JavaScript strings
 - reserved states (like `INIT_STATE`) cannot be used when defining transitions
@@ -165,7 +165,7 @@ In short the history state allows to short-circuit the default fixed entry behav
 - all transitions for a given origin control state and triggering event must be defined in one row of `fsmDef.transitions`
 - `fsmDef.settings` must include a `updateState` function covering the state machine's extended state update concern.
 
-#### Initial event and initial state
+#### **Initial event and initial state**
 By initial transition, we mean the transition with origin the machine's default initial state.
 
 - An initial transition must be configured:
@@ -179,19 +179,16 @@ transition must be configured and be executed between the initial control state 
   - ~~at least one transition out of the initial control state must be configured~~
   - ~~of all guards for such transitions, if any, at least one must be fulfilled to enable a 
   transition away from the initial control state~~
-- there is exactly one initial transition, whose only effect is to determine the starting 
-control state for the machine
+- there is exactly one initial transition, whose only effect is to determine the starting control state for the machine
   - the action on any such transitions is the *identity* action
-  - the control state resulting from the initial transition may be guarded by configuring 
-  `guards` for the initial transition
+  - the control state resulting from the initial transition may be guarded by configuring   `guards` for the initial transition
 - there are no incoming transitions to the reserved initial state
 
 Additionally the following applies:
-- the initial event can only be sent internally (external initial events will be ignored, and the 
-machine will return `NO_OUTPUT`)
+- the initial event can only be sent internally (external initial events will be ignored, and the machine will return `NO_OUTPUT`)
 - the state machine starts in the reserved initial state
 
-#### Coherence
+#### **Coherence**
 - the initial control state (`fsmDef.initialControlState`) must be a state declared in `fsmDef.states`
 - transitions featuring the initial event (`INIT_EVENT`) are only allowed for transitions involving compound states
   - e.g. `A -INIT_EVENT-> B` iff A is a compound state or A is the initial state
@@ -200,7 +197,7 @@ machine will return `NO_OUTPUT`)
 - history pseudo states must be target states and refer to a given declared compound state
 - there cannot be two transitions with the same `(from, event, predicate)` - sameness defined for predicate by referential equality
 
-#### Semantical contracts
+#### **Semantical contracts**
 - The machine behaviour is as explicit as possible
   - if a transition is taken, and has guards configured, one of those guards must be fulfilled, i.e. guards must cover the entire state space when they exist
 - A transition evaluation must end

@@ -4,7 +4,7 @@ type: tutorials
 order: 4
 ---
 
-In this section, we will use a simple user interface to illustrate further basic state machine concepts like control state, extended state, transitions, guards, actions and commands. 
+In this section, we will use a simple user interface to illustrate further basic state machine concepts like control state, extended state, transitions, guards, action factories, and commands. 
 
 ## Model
 The user interface to specify is a [password meter](https://cdn.dribbble.com/users/522131/screenshots/4467712/password_strength.png). Visually, the user interface consists of a *password* input field and a *submit* password button. Its behaviour is the following:
@@ -19,26 +19,15 @@ Follows some screens samples of the application in different states:
 |:---:|:---:|:---:|
 |![initial screen](https://i.imgur.com/ECzIRk2.png)|![weak password](https://i.imgur.com/q9TJFl4.png?1)|![strong password](https://i.imgur.com/QzWNHng.png)|
 
-In the previous section, we saw how we could associate that behaviour to some functions $f$ and $g$ transforming inputs received by the interface into commands to perform on the interfaced systems.
+In the previous section, we saw how we could associate that behaviour to a pure function $g$ transforming inputs received by the interface into commands to perform on the interfaced systems.
 
-If we choose as state the evolving content of the input field, one partial formulation for the reactive function $f$ is:
-
-|State|Event|Actions|
-|:---|:---:|---:|
-|`{input: ""}`|*start*|display initial screen|
-|`{input: ""}`|*typed `a`*|display weak password screen|
-|`{input: "a"}`|*typed `2`*|display strong password screen|
-|`{input: "a2"}`|*clicked submit*|display password submitted screen|
-|`{input: "a"}`|*typed `b`*|display weak password screen|
-|`{input: "ab"}`|*clicked submit*| .|
+If we choose as state the evolving content of the input field, one partial formulation for the function $g$ is:
 
 {% tufte %}
-Note that we do not reproduce the full mapping for $f$, as the input domain is infinite (while this tutorial is not). Our tables do not for instance give a mapping for the following sequence of events: [*typed `a`*, *typed `2`*, *typed `backspace`*]. A partial formulation is sufficient for our educational purpose.
+Note that we do not reproduce the full mapping for $g$, as the input domain is infinite (while this tutorial is not). Our tables do not for instance give a mapping for the following sequence of events: [*typed `a`*, *typed `2`*, *typed `backspace`*]. A partial formulation is sufficient for our educational purpose.
 {% endtufte %}
 
-One of the many possible partial formulations for $g$ is:
-
-|$state_n$|event|$actions_n$|$state_{n+1}$|
+|$state_n$|event|$commands_n$|$state_{n+1}$|
 |:---|:---|:---:|---:|
 |`{input: ""}`|*start*|display weak password screen|`{input: ""}`|
 |`{input: ""}`|*typed `a`*|display weak password screen|`{input: "a"}`|
@@ -50,7 +39,7 @@ One of the many possible partial formulations for $g$ is:
 As we saw in the previous section, a state machine formulation involves dividing the state variable into control state and extended state. One of the possible state machines partial formulation is:
 
 {% fullwidth %}
-|Control state|Extended state|Event|Actions|New control state|New extended state|
+|Control state|Extended state|Event|Commands|New control state|New extended state|
 |:---|:---|:---|:---|:---|---:|
 |**Weak**|`input: ""`|typed `a`|display weak password screen|**Weak**|`input: "a"`|
 |**Weak**|`input: "a"`|typed `2`|display strong password screen|**Strong**|`input: "a2"`|
@@ -59,7 +48,7 @@ As we saw in the previous section, a state machine formulation involves dividing
 |**Weak**|`input: "ab"`|clicked submit|  |**Weak**| `input: "ab"` |
 {% endfullwidth %}
 
-While the input domain for $f$ is infinite and cannot be exhaustively enumerated, the behaviour that $f$ encodes can be accurately and entirely represented with a finite graph, linking together the control states:
+While the input domain for $g$ is infinite and cannot be exhaustively enumerated, the behaviour that $g$ encodes can be accurately and entirely represented with a finite graph, linking together the control states:
 
 ![password submit fsm](../../graphs/password%20submit%20fsm.png)
 
@@ -70,7 +59,7 @@ The corresponding visualization is pretty straight-forward:
 
 That is all what is necessary for now to understand about the visualization.
 
-## Free theorems
+## Free guarantees
 Our state machine concisely represents the fact, or property, that whatever input we receive in the *Weak* control state, it will only go to the *Strong* control state if some pre-configured condition is fulfilled (e.g. the password contains both numbers and letters). Similarly, it will only submit the password if the *clicked submit* event is received while it is in the *Strong* state.
 
-The starting state and these two properties can be combined into a theorem: the machine will only submit a password if the password is strong. In short, we are able to **reason formally** about the machine and extract properties from its definition. This is just one of the many attractive properties of state machines which makes it a tool of choice for robust user interface's implementation.
+The starting state and these two properties can be combined into another fundamental property: the machine will only submit a password if the password is strong. In short, we are able to **reason formally** about the machine and extract properties from its definition. This is just one of the many attractive characteristics of state machines which make them a tool of choice for robust user interface's implementation.
