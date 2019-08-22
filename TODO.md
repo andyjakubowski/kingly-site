@@ -1,20 +1,44 @@
 **TODO**
+- DOC SITE: API no longer accurate!!
 - BUG: contract: cannot hvae transition INIT-> History, that would infinite loop (history when none goes to INIT) 
 - altogether now section with implementation
-- tutorial on routing (in best practices), wiht implementation
-- article on: how state machines support micro-front end architectures
-- debugger
-- compiler
+- tutorial on routing (in best practices), with implementation
+- ~~article on: how state machines support micro-front end architectures~~
+- article on real world with testing
+  - need to clone fsm to speed up test generation
+  - update the test generator
+  - add some more filters to generate paths with a given prefix
+  - generate multiple sequences with different data (testing also data not only control)
+- debugger: best to grow the community <- attract low-level programmers <- maybe later?
+- compiler <- favor actual usage in actual projects
 - real world app (routing, graphql or sth like that)
-- csp-inspired framework a-la-cycle makeProcess(fsm, thread, connector...)
+- csp-inspired framework a-la-cycle makeProcess(fsm, thread, connector...) <- like, last, seems like it is a whole project, with separate testing, design and so on to think about, don't start this like that!!
+  - cf. https://github.com/elastic/search-ui/blob/master/ADVANCED.md#performance
+- DOCS: make drawing in introductory section:
+  - cf. https://keechma.com/guides/introduction/
+! run the machine in a worker with comlink and functional interface and encapsulated state it should be easy
+  - could be a nice difference vs. xstate (no need to copy state every time)
+  - do it for the chess game, latest version
+- blog : avantage machine over hyperapp: errror flow
+  - hyperapp: loading.... error in console (no fetch promise etc)
+  - original demo app: loading... and nothing else
+- do logging like hyperapp!
+````
+export default function(prevState, action, nextState) {
+  console.group("%c action", "color: gray; font-weight: lighter;", action.name)
+  console.log("%c prev state", "color: #9E9E9E; font-weight: bold;", prevState)
+  console.log("%c data", "color: #03A9F4; font-weight: bold;", action.data)
+  console.log("%c next state", "color: #4CAF50; font-weight: bold;", nextState)
+  console.groupEnd()
+}
+``
 
 # Demos
 - mention the fact that the machine is ocmpiled for the svelte suspense example
 - ecommerce app works iwh mobile too!
   - https://github.com/inspmoore/papu
   - https://papuyumyum.herokuapp.com/
-- wizard form: move it from state transducer to kingly - see if I can do a codesandbox
-- comment on rich harris micro-frontend stuff with machine
+- wizard form: move itfrontend stuff with machine
 - check https://brucou.github.io/documentation/v1/contributed/index.html dead??
 - rewrite all react demo to remove react-state-driven COMMAND_RENDER from react-state-driven
   - issues with code playgrounds!! leave it for now 
@@ -77,3 +101,4 @@ finish here. The form multi step in example section. LATER. write something abou
   - full vision
   - local vision of only meighbours
 - DSL ./ macro/ compiler
+

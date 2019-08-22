@@ -4,7 +4,7 @@ type: tutorials
 order: 0
 ---
 
-Kingly is a state machine library to specify user interface **behaviour**. It is designed to be used in conjunction with **any user interface library or framework** (such as React, Vue, Svelte, or Vanilla JavaScript); and for parts (components) or the whole of your user interface. You **declaratively** specify the behaviour of your user interface as a set of actions to perform in response to events processed by the user interface. The actions to perform in response to events are computed by a state machine. The state machine acts as a **model** of the interface's behaviour, which can be instrumented in several ways of interest to speed up the development of your application:
+Kingly is a state machine library to specify user interface **behaviour**. It is designed to be used in conjunction with **any user interface library or framework** (such as React, Vue, Svelte, or Vanilla JavaScript); and for parts (components or custom elements) or the whole of your user interface. You **declaratively** specify the behaviour of your user interface as a set of actions to perform in response to events processed by the user interface. The actions to perform in response to events are computed by a state machine. The state machine acts as a **model** of the interface's behaviour, which can be instrumented in several ways of interest to speed up the development of your application:
 
 - the model is a **single source of truth**, and **living documentation** for the behaviour of your interface
 - the model can be visualized to communicate and discuss features both within and outside your development team (designers, testers, developers)

@@ -27,6 +27,23 @@ h1, h2, h3, h4
   font-weight: 500
   color: $dark
 
+h3
+  &.new
+    &:after
+      content: "NEW"
+      display: inline-block
+      font-size: 10px
+      font-weight: 600
+      color: #fff
+      background-color: $main-color
+      line-height: 14px
+      padding: 0 4px
+      border-radius: 3px
+      margin-left: 5px
+      vertical-align: middle
+      position: relative
+      top: -1px
+
 strong
   font-weight: 600
   color: $bold
