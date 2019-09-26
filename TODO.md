@@ -1,4 +1,10 @@
 **TODO**
+- in the docs, montrer step by step the evolution of the graph (no code)
+  - so maybe have bullet list of requirements and hten go one by one
+  - that would be the closest to tutorial you can find!
+- zoom image:
+  - https://francoischalifour.com/medium-image-zoom/
+  - https://github.com/francoischalifour/medium-zoom#usage
 - DOC SITE: API no longer accurate!!
 - BUG: contract: cannot hvae transition INIT-> History, that would infinite loop (history when none goes to INIT) 
 - altogether now section with implementation

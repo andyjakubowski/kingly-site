@@ -72,9 +72,8 @@ global feed<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="left" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="62.8046875" horizontalTextPosition="center" iconTextGap="4" modelName="side_slider" preferredPlacement="right" ratio="0.14816149963950973" textColor="#000000" verticalTextPosition="bottom" visible="true" width="87.390625" x="-88.890625" xml:space="preserve" y="28.59765625">['/' route]
-/ fetch tags
-  fetch articles
+          <y:EdgeLabel alignment="left" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="48.103515625" horizontalTextPosition="center" iconTextGap="4" modelName="side_slider" preferredPlacement="right" ratio="0.14816149963950973" textColor="#000000" verticalTextPosition="bottom" visible="true" width="98.734375" x="-100.234375" xml:space="preserve" y="35.9482421875">[home route]
+/ fetch global feed
   render loading<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="right" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>

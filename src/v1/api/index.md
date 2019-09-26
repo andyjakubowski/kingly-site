@@ -215,10 +215,10 @@ Additionally the following applies:
       {% tufte %}
       *** There exists however semantics which allow such transitions, thus possibilitating event bubbling.
       {% endtufte %}
-  - `A -ev> B` and `A < OUTER_A` with `OUTER_A -ev> C` !!: there are two valid transitions triggered by `ev`. Such transitions would unduely complicate the input testing generation, and decrease the readability of the machine so we forbid such transitions[^*]
+  - `A -ev> B` and `A < OUTER_A` with `OUTER_A -ev> C` !!: there are two valid transitions triggered by `ev`. Such transitions would unduely complicate the input testing generation, and decrease the readability of the machine so we forbid such transitions[^*]. Note that this does not apply for reserved event like `INIT_EVENT` or the empty event (corresponding to eventless transitions)
 - no transitions from the history state (history state is only a target state)
 - A transition evaluation must always end (!), and end in an atomic state
-  - Every compound state must have eactly one inconditional (unguarded) `INIT` transition, i.e. a transition whose triggering event is `INIT_EVENT`. That transition must have a target state which is a substate of the compound state (no hierarchy crossing), and which is not a history pseudo state
+  - Every compound state must have exactly one inconditional (unguarded) `INIT` transition, i.e. a transition whose triggering event is `INIT_EVENT`. That transition must have a target state which is a substate of the compound state (no hierarchy crossing), and which is not a history pseudo state
   - Compound states must not have eventless transitions defined on them (would introduce ambiguity with the `INIT` transition)
   - (the previous conditions ensure that there is always a way down the hierarchy for compound states, and that way is always taken when entering the compound state, and the descent process always terminate)
 - the machine does not perform any effects

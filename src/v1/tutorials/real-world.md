@@ -127,9 +127,9 @@ This leads us to the following architecture:
 {% endfig %}
 
 ## Cross-cutting concerns
-Routing and authentication will be omnipresent part of the application. It is thus convenient to think ahead how to integrate those. 
+Routing and authentication will be omnipresent parts of the application. It is thus convenient to think ahead how to integrate those. 
 
-Routing in Conduit is driven by the hash-tag. As such there is no reload when updating the route. Instead the browser emits a `hashchange` event. If the user loads or reloads a page, the route is available in the `location` property of the global `window` object. Lastly, we also have to deal with the *Back* and *Forward* buttons. To that effect, we can use the `popstate` event. In summary:
+Routing in Conduit is driven by the hash tag. As such there is no reload when updating the route. Instead the browser emits a `hashchange` event. If the user loads or reloads a page, the route is available in the `location` property of the global `window` object. Lastly, we also have to deal with the *Back* and *Forward* buttons. To that effect, we can use the `popstate` event. In summary:
 
 | User action | Event| 
 |:---|:---|
@@ -146,11 +146,15 @@ Authentication consists of login and registration (sign up). The Conduit API spe
 This being a reasonably complex application, we are going to follow an iterative implementation process. At each implementation step, we will seek to implement a larger portion of the specification.
 
 In each step, we will follow the same process:
-- identify the events and actions to perform as a result of those events
-- modelize the behaviour of the application
-- implement the corresponding Kingly machine
-- perform some basic testing of user flows
+- select the user flows we want to implement 
+- identify the corresponding events, and actions to perform as a result of those events
 - implement the UI
-- implement the actions
+- test the UI with storybook
+- implement the actions (we will skip testing the actions, as they are pretty straight forward)
+- write tests for the user flows
+- modelize the behaviour of the application corresponding to those user flows
+- implement the corresponding Kingly machine and pass the predefined tests
+- use property-based testing and generative testing to further test the implementation
+- update the implementation to pass the possibly failing tests
 
-In each step, we will seek to implement a route.
+In each step, we will seek to implement a route. We start with the home route.
