@@ -1024,12 +1024,13 @@ Last scenario, the user can click on links (sign in, sign up, etc.) which leads 
 {% endfig %}
 
 ## Implementation
-The full implementation can be accessed in the [corresponding branch](https://github.com/brucou/realworld-kingly-svelte/tree/home-route-complete) of the [GitHub repository](https://github.com/brucou/realworld-kingly-svelte).
-
-## Summary
-We set up the architecture for our application, we decided to implement the application route by route, starting with the home route. The home route itself being complex enough, we broke it down in multiple user scenarios which we implemented one by one. In the process we iteratively built our state machine, with the final modelization looking like this:
+We refactor the previous machine to include all user flows corresponding to the home route in a compound control state:
 
 {% fig %}
 ![realworld-home-tag-filter](../../graphs/real-world/realworld-routing-home-complete%20v5.png)
 {% endfig %}
 
+The full implementation can be accessed in the [corresponding branch](https://github.com/brucou/realworld-kingly-svelte/tree/home-route-complete) of the [GitHub repository](https://github.com/brucou/realworld-kingly-svelte).
+
+## Summary
+We set up the architecture for our application, we decided to implement the application route by route, starting with the home route. The home route itself being complex enough, we broke it down in multiple user scenarios which we implemented one by one. In the process we iteratively built our state machine.

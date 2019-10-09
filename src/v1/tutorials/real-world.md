@@ -147,7 +147,7 @@ This being a reasonably complex application, we are going to follow an iterative
 
 In each step, we will follow the same process:
 - select the user flows we want to implement 
-- identify the corresponding events, and actions to perform as a result of those events
+- identify both the corresponding events, and the triggered actions
 - implement the UI
 - test the UI with storybook
 - implement the actions (we will skip testing the actions, as they are pretty straight forward)

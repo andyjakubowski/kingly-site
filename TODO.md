@@ -1,4 +1,11 @@
 **TODO**
+- do a statechart version of Raect Mosaic, turned into a web component -> Demo web component interface!
+  - https://github.com/nomcopter/react-mosaic/blob/master/demo/ExampleApp.tsx
+  - or sth similar, it is actually difficult to drag and drop with it...
+  - or do react-tree-sortable https://github.com/frontend-collective/react-sortable-tree
+    - these are advanced component with state management included, and lots of children complications so interesting
+  - or isometric grid, it is catchy and could drive adoption
+    - https://github.com/codrops/IsometricGrids
 - in the docs, montrer step by step the evolution of the graph (no code)
   - so maybe have bullet list of requirements and hten go one by one
   - that would be the closest to tutorial you can find!
@@ -108,3 +115,10 @@ finish here. The form multi step in example section. LATER. write something abou
   - local vision of only meighbours
 - DSL ./ macro/ compiler
 
+# Properties
+- cannot sign up if alrady logged in
+- cannot see user feed if not logged in
+
+# Bug found (== difference vs. demo app)
+- hyperapp
+  - logged in users can sign up through iign up page
