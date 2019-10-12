@@ -1,4 +1,6 @@
 **TODO**
+- REVIEW INTERNAL LINKS, for instance [Specifications section](/real-world.html#Specifications)
+  - may not work when published
 - do a statechart version of Raect Mosaic, turned into a web component -> Demo web component interface!
   - https://github.com/nomcopter/react-mosaic/blob/master/demo/ExampleApp.tsx
   - or sth similar, it is actually difficult to drag and drop with it...
@@ -122,3 +124,8 @@ finish here. The form multi step in example section. LATER. write something abou
 # Bug found (== difference vs. demo app)
 - hyperapp
   - logged in users can sign up through iign up page
+
+
+
+# user flow
+/editor -> https://demo.realworld.io/#/article/implementing-conduit-with-kingly-state-machine-library-n4mhqh
