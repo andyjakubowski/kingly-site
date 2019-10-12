@@ -67,11 +67,6 @@ To implement the sign in command, we again defer to the API and update the sessi
 ```
 
 ## User scenarios test
-**TODO : I am here. Update transitions there was one missing!**
-**TODO: maybe not repeat the code, just give the directory links. YEAH, better now, this is the exact same logic non UI wise**
-**TODO: but! update the refactoring part in sign-up, because I changed RealWorld to have Header in it...** 
-
-
 We test four key user scenarios, the content of which should be clear from their identifiers in the code:
 
 ```javascript

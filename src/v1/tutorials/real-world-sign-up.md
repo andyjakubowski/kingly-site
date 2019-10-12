@@ -158,20 +158,23 @@ Then the `src/UI/RealWorld.svelte` component becomes:
 
 </script>
 
-+ {#if route === home}
-+   <Home
-+     {dispatch}
-+     {user}
-+     {tags}
-+     {articles}
-+     {page}
-+     {activeFeed}
-+     {selectedTag}
-+     {favoriteStatus} />
-+ {/if}
-+ {#if route === signUp}
-+   <SignUp {dispatch} {inProgress} {errors} />
-+ {/if}
++ <div>
++   <Header {user} />
++   {#if route === home}
++     <Home
++       {dispatch}
++       {user}
++       {tags}
++       {articles}
++       {page}
++       {activeFeed}
++       {selectedTag}
++       {favoriteStatus} />
++   {/if}
++   {#if route === signUp}
++     <SignUp {dispatch} {inProgress} {errors} />
++   {/if}
++ </div>
 
 ```
 
