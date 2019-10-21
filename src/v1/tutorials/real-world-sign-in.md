@@ -102,13 +102,14 @@ The behaviour to modelize is very similar to that of the *sign up* route with th
 ![realworld-home-tag-filter](../../graphs/real-world/realworld-routing-signin.png)
 {% endfig %}
 
-Note how we check twice that our user is authenticated before either displaying the sign up form, or executing the sign up API request. Note also, how the nested structure of our state machine allows us to focus on the part that we are interested in visualizing, while folding the part we are not interested in.
+Note that we do not need to guard against a user clicking the *sign in* button twice, as, after the first click, the machine will be in another state which does not accept the second click! It is a good practice to also ensure that at the UI level by disabling the button when it is first clicked, but the state machine design already naturally cover that case. 
 
-More importantly, this *Sign in route* sub-machine has the same structure than the *Sign up route* sub-machine! That makes it a target candidate for refactoring. When it comes to DRY refactoring, we follow the [rule of three](https://blog.codinghorror.com/rule-of-three/), i.e. we will wait for a third occurrence of a sub-machine with an indentical structure before commiting to defining a reusable abstraction.
+Note also how we check twice that our user is authenticated before either displaying the sign up form, or executing the sign up API request. Note also, how the nested structure of our state machine allows us to focus on the part that we are interested in visualizing, while folding the part we are not interested in.
+
+More importantly, this *Sign in route* sub-machine has the same structure than the *Sign up route* sub-machine! That makes it a target candidate for refactoring. When it comes to DRY refactoring, we follow the [rule of three](https://blog.codinghorror.com/rule-of-three/), i.e. we will wait for a third occurrence of a sub-machine with an identical structure before commiting to defining a reusable abstraction.
 
 ## Behaviour implementation 
 The [implementation](https://github.com/brucou/realworld-kingly-svelte/blob/with-sign-in-route/src/behaviour/signIn.js) (`src/behaviour/signIn.js`) derives directly from the modelization. 
 
 ## Summary
 We implemented the *sign in* route for our application, following the [implementation strategy](/real-world.html#Implementation-strategy) we previously detailed. The *sign in* route behaviour was very similar to the *sign up* route behaviour, and we have identified but delayed an opportunity to isolate the common behaviour in a refactoring.
-

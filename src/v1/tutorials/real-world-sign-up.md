@@ -97,9 +97,9 @@ Writing the tests for the user scenarios, we came to realize the need to refacto
 
 What are those issues which did not appear before?
 
-On the one hand, we now have a lot of *props* for our `RealWorld` component. Some of these props are only relevant for one specific route. Testing the `RealWorld` component with all these *props* will quickly become cumbersone, so we create one component for each route. We will arrange our rendering code to be able to test each route component separately. This concretely means having the `RealWorld` pick the component to display as a function of the route, and pass the appropriate selection of the `RealWorld` *props* to the corresponding route component.
+On the one hand, we now have a lot of *props* for our `RealWorld` component. Some of these props are only relevant for one specific route. Testing the `RealWorld` component with all these *props* will quickly become cumbersome, so we create one component for each route. We will arrange our rendering code to be able to test each route component separately. This concretely means having the `RealWorld` pick the component to display as a function of the route, and pass the appropriate selection of the `RealWorld` *props* to the corresponding route component.
 
-Our `scr/App.svelte` thus includes the new *props*:
+Svelte allows us to implement this logic relatively straightforwardly with [*dynamic components*](https://svelte.dev/tutorial/svelte-component). The `scr/App.svelte` thus goes like this:
 
 ```diff
 <script>
@@ -130,10 +130,12 @@ Our `scr/App.svelte` thus includes the new *props*:
 
 ```
 
-Then the `src/UI/RealWorld.svelte` component becomes:
+Then the `src/UI/RealWorld.svelte` component, which uses a dynamic component resolved at runtime, becomes:
 
-```diff
+```html
 <script>
+  import Banner from "./Banner.svelte";
+  import Header from "./Header.svelte";
   import Home from "./Home.svelte";
   import SignUp from "./SignUp.svelte";
   import { routes } from "../constants";
@@ -150,31 +152,30 @@ Then the `src/UI/RealWorld.svelte` component becomes:
   export let activeFeed;
   export let selectedTag;
   export let favoriteStatus;
-+  // Sign up props
-+  export let inProgress;
-+  export let errors;
+  // Sign up props
+  export let inProgress;
+  export let errors;
 
-+  const { home, signUp } = routes;
+  const { home, signUp } = routes;
 
+  // Component which will be displayed depending on the route
+  const componentRoutes= {
+    [home]: Home,
+    [signUp]: SignUp,
+  };
+  // Props for the component which will be displayed
+  $: componentRoutesProps={
+    [home]: {user, tags, articles, page, activeFeed, selectedTag, favoriteStatus},
+    [signUp]: {inProgress, errors},
+  };
+  $: component = componentRoutes[route]
+  $: componentProps = componentRoutesProps[route]
 </script>
 
-+ <div>
-+   <Header {user} />
-+   {#if route === home}
-+     <Home
-+       {dispatch}
-+       {user}
-+       {tags}
-+       {articles}
-+       {page}
-+       {activeFeed}
-+       {selectedTag}
-+       {favoriteStatus} />
-+   {/if}
-+   {#if route === signUp}
-+     <SignUp {dispatch} {inProgress} {errors} />
-+   {/if}
-+ </div>
+<div>
+  <Header {user} />
+  <svelte:component this="{component}" {...componentProps}  {dispatch} />
+</div>
 
 ```
 
@@ -480,4 +481,4 @@ As a matter of fact, the [`hyperapp`](https://github.com/jorgebucaran/hyperapp) 
 In any case, it is by specifying our behaviour with state machines that we realized, **before reaching to the implementation phase** the necessity to add an authentication check before signing up the user, while there was no specifications telling us to do so. This is another crucial advantage of state machine modelization. They make it easier to review a modelized behaviour vs. the expected behaviour, and find design bugs before they get buried deep into the code. 
 
 ## Summary
-We implemented the *sign up* route for our application. We followed the [implementation strategy](/real-world.html#Implementation-strategy) we previously detailed. In the process of doing so, we came to refactor our application, keeping our architecture, but structuring the application per route to minimize the amount of code we have to modify to add future routes. We have around 10 routes to implement so it was important to do so early. We were also able with our modelization to ensure at the design level that our requirements will be indeed implemented by our implementation.
+We implemented the *sign up* route for our application. We followed the [implementation strategy](/real-world.html#Implementation-strategy) we previously detailed. In the process of doing so, we came to refactor our application, keeping our architecture, but structuring the application per route to minimize the amount of code we have to modify to add future routes. We have around 10 routes to implement so it was important to do so early. We were also able with our modelization to ensure at the design level that our requirements will be indeed implemented by our implementation. For instance, our design ensures that a user clicking twice on the *sign up* button will not lead to attempting to sign in twice.

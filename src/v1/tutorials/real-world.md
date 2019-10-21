@@ -93,7 +93,7 @@ There is no written UI specs for Conduit. However, a [reference implementation](
 {% endfullwidth %}
 
 {% tufte %}
-Note that it is unclear if the reference implementation is exempt of bugs. For instance, it seems that tags set on articles do not appear when editing the article. Equally, tags set on an article while editing it do not appear later in the standard view of the published article. Also, the following did not seem to work in some occasion. Whether those may be actual bugs or not for our demo and comparison purposes however, we will discard those minor inconveniences.
+Note that it is unclear if the reference implementation is exempt of bugs. It is however the reference implementation, and we will seek to replicate its behaviour unless we have a good reason not to.
 {% endtufte %}
 
 Authentication is required to:
@@ -102,14 +102,14 @@ Authentication is required to:
 - like an article
 - post a comment
 - publish an article
-- and obviously to modify own settings and profile
+- and obviously to modify one's settings and profile
 
 The *Sign in* and *Sign up* screens will display validation information in case of errors while attempting login or signing up. Markwdown can be used in published articles, but not in posted comments. 
 
 Other general front-end specs can be found [here](https://github.com/gothinkster/realworld/tree/master/spec#frontend-specs).
 
 ## Specifications analysis
-While not an overly complex application, Conduit has enough features and a complex enough control flow to be challenging to implement. As the former section exemplifies, the same route can correspond to different states of the application and result in different screens being displayed and control flow being applied. 
+While not an overly complex application, Conduit has enough features and a complex enough control flow to be challenging to implement. As the former section exemplifies, the same route can correspond to different states of the application and may result in different screens being displayed and different control flow being applied. 
 
 Good, that is exactly what state machines are good at modelizing.
 
