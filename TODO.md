@@ -1,4 +1,9 @@
 **TODO**
+- add also in introduction or separate Q&A pages
+  - comparison with robot, xstate, stent etc. the best would be to move that to https://github.com/achou11/state-machines
+  - explain advantages of implementation techniques (functional vs. imperative, JSON vs. direct exec.)
+    - robot nice, but not declarative, exec. inside def, and cannot be unit tested. But if there will be no unit test anyways, then it is fine.
+    - or you can use  a model for testing with integration tests, the D.K.Piano way, if that is ever finished 
 - REVIEW INTERNAL LINKS, for instance [Specifications section](/real-world.html#Specifications)
   - may not work when published
 - do a statechart version of Raect Mosaic, turned into a web component -> Demo web component interface!

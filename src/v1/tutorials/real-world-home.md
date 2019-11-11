@@ -983,6 +983,12 @@ The main novelty here with respect to our modelization is that now we need to ad
 
 We can see the similarity (feed fetching) but also the differences between an authenticated and not authenticated user. Clicking on a user feed page leads to checking anew the authentication status for the user. 
 
+There is also an important point which we haven't introduced previously, in order not to overload the reader with too much information at the same time. Remember that we display loading indicators, and we fetch separately the tags and the articles. These are two UX-oriented patterns:
+- [fetch on render](https://reactjs.org/docs/concurrent-mode-suspense.html#approach-1-fetch-on-render-not-using-suspense), in which the user is notified visually that some content is being loaded
+- [incremental data loading](https://reactjs.org/blog/2019/11/06/building-great-user-experiences-with-concurrent-mode-and-suspense.html#load-data-incrementally), which aims at improving perceived performance by presenting important parts of the view as soon as we have the relevant data.
+
+Those patterns are chosen to replicate the Conduit demo app. However, we could have just easily adopted a [suspended data fetching](https://reactjs.org/docs/concurrent-mode-suspense.html) pattern by adding a timeout event, and the corresponding extra arrows in the modelization (cf. [Svelte Suspense example](https://brucou.github.io/documentation/v1/examples/svelte%20suspense.html)). This is to prove that, having a behaviour entirely decoupled from the UI, we have no limits as per the behaviours which we can express.
+
 Let's move on to the tag filtering scenarios.
 
 ## User can filter feeds per tags
@@ -1033,4 +1039,4 @@ We refactor the previous machine to include all user flows corresponding to the 
 The full implementation can be accessed in the [corresponding branch](https://github.com/brucou/realworld-kingly-svelte/tree/home-route-complete) of the [GitHub repository](https://github.com/brucou/realworld-kingly-svelte).
 
 ## Summary
-We set up the architecture for our application, we decided to implement the application route by route, starting with the home route. The home route itself being complex enough, we broke it down in multiple user scenarios which we implemented one by one. In the process we iteratively built our state machine.
+We set up the architecture for our application, we decided to implement the application route by route, starting with the home route. The home route itself being complex enough, we broke it down in multiple user scenarios which we implemented one by one. In the process we iteratively built our state machine. Having the behaviour of our application entirely separated from the rest of the application allows us to design for any UX pattern (fetch-on-render, render-as-you-fetch, etc.) without being limited by an UI library.

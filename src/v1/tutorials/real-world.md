@@ -77,15 +77,16 @@ There is no written UI specs for Conduit. However, a [reference implementation](
 |`#/`|Authenticated, filtered, page 1|![authenticated-filtered](../../images/real-world/screenshot-demo.authenticated.filtered.realworld.io-2019.08.06-23_45_34.png)|
 |`#/settings`|Authenticated, settings|![authenticated-settings](../../images/real-world/screenshot-demo.settings.realworld.io-2019.08.06-23_10_17.png)|
 |`#/settings`|Authenticated, settings|![authenticated-settings-error](../../images/real-world/screenshot-demo.settings-error.realworld.io-2019.08.06-23_12_11.png)|
-|`#/@me`|Authenticated, profile settings, my article tab|![profile-settings](../../images/real-world/screenshot-demo.profile-settings.realworld.io-2019.08.06-23_13_56.png)|
-|`#/@me`|Authenticated, profile settings, favorites tab|![profile-settings-favorites](../../images/real-world/screenshot-demo.profile-settings-favorites.realworld.io-2019.08.06-23_16_59.png)|
+|`#/@me`|Authenticated, own profile settings, My article tab|![profile-settings](../../images/real-world/screenshot-demo.profile-settings.realworld.io-2019.08.06-23_13_56.png)|
+|`#/@me`|Authenticated, own profile settings, Favorites tab|![profile-settings-favorites](../../images/real-world/screenshot-demo.profile-settings-favorites.realworld.io-2019.08.06-23_16_59.png)|
 |`#/article/hi-there-fosy10`|Not authenticated, article chosen|![article](../../images/real-world/screenshot-demo.article.realworld.io-2019.08.06-22_27_21.png)|
 |`#/article/my-article-lzrbg0`|Authenticated, article chosen|![authenticated-article](../../images/real-world/screenshot-demo.authenticated-article.realworld.io-2019.08.06-23_19_50.png)|
 |`#/article/my-article-lzrbg0`|Authenticated, comment posted|![authenticated-comment-posted](../../images/real-world/screenshot-demo.authenticated-comment-posted.realworld.io-2019.08.06-23_22_52.png)|
 |`#/editor`|Authenticated, new article|![authenticated-new-article](../../images/real-world/screenshot-demo.new-article.realworld.io-2019.08.06-23_24_20.png)|
 |`#/article/<title>-x4fafc`|Authenticated, published article|![authenticated-published-article](../../images/real-world/screenshot-demo.published-article.realworld.io-2019.08.06-23_30_59.png)|
 |`#/editor/<title>-x4fafc`|Authenticated, edit article|![authenticated-edit-article](../../images/real-world/screenshot-demo.edit-article.realworld.io-2019.08.06-23_35_56.png)|
-|`#/@deneme22`|Clicked on user|![user](../../images/real-world/screenshot-demo.user.realworld.io-2019.08.06-22_28_43.png)|
+|`#/@deneme22`|another user profile settings, My article tab|![user](../../images/real-world/screenshot-demo.user.realworld.io-2019.08.06-22_28_43.png)|
+|`#/@deneme22/favorites`|another user profile settings, Favorites tab|![profile-settings](../../images/real-world/screenshot-demo.profile-settings-different-user.realworld.io-2019.11.11-17_36_08.png)|
 |`#/register`|Authentication required|![sign-up](../../images/real-world/screenshot-demo.signup.realworld.io-2019.08.06-22_36_55.png)|
 |`#/register`|Sign up clicked|![sign-up](../../images/real-world/screenshot-demo.signup.realworld.io-2019.08.06-22_36_55.png)|
 |`#/register`|Sign up failed|![failed-sign-up](../../images/real-world/screenshot-demo.realworld.fail-signup.io-2019.08.06-23_00_11.png)|
