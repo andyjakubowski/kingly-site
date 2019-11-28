@@ -8,16 +8,16 @@ In this section, we will modelize and implement the user flows related to the *U
 
 If the (authenticated) user navigating to the route is the same as the user whose profile must be displayed, that user may edit his profile settings. Otherwise, the navigating user may follow the user whose profile page is displayed. In both cases, the navigating user may view and like/unlike any displayed articles, just like in the *Home* route.
 
-The user needs not be authenticated to access the *User profile* route and its functionalities.
+The user needs not be authenticated to access the *User profile* route and its functionalities. The user however needs to authenticate himself to like or unlike an article. When attempting to do so, the user will be redirected to the *Sign up* page.
 
 ## Events
-We have the following events for the *User profile* route:
+We have the following events for the *User profile* route (some of which also being used for the *Home* route):
 
 {% fullwidth %}
 | Event | Event data |Occurs when|
 |:---|:---|:---|
 |`ROUTE_CHANGED`| hash | user clicks on a link (direct linking or redirection for authentication) |
-| `ARTICLES_FETCHED_OK`| articles data as [returned by the API](https://github.com/gothinkster/realworld/tree/master/api#multiple-articles)| articles fetch API call executed successfully|
+|`ARTICLES_FETCHED_OK`| articles data as [returned by the API](https://github.com/gothinkster/realworld/tree/master/api#multiple-articles)| articles fetch API call executed successfully|
 |`ARTICLES_FETCHED_NOK`|error|articles fetch API call failed|
 |`CLICKED_PAGE`|page index|user clicks on a page number in the pagination section|
 |`TOGGLED_FAVORITE`|article's slug and whether the article is favorited at the moment of the toggling|user clicks to like or unlike an article|
@@ -35,7 +35,7 @@ We have the following events for the *User profile* route:
 {% endfullwidth %}
 
 ## Commands
-We have the following commands for the *User profile* route:
+We have the following commands for the *User profile* route (some of which also being used for the *Home* route):
 
 | Command | Command parameters |Description|
 |:---|:---|:---|
@@ -46,7 +46,7 @@ We have the following commands for the *User profile* route:
 | `FETCH_PROFILE`| username | sends an API request to the [*Get profile* end point](https://github.com/gothinkster/realworld/tree/master/api#get-profile)|
 | `FOLLOW_PROFILE`| username | sends an API request to the [*Follow user* end point](https://github.com/gothinkster/realworld/tree/master/api#follow-user)|
 | `UNFOLLOW_PROFILE`| username | sends an API request to the [*Unfollow user* end point](https://github.com/gothinkster/realworld/tree/master/api#unfollow-user)|
-| `FETCH_AUTHOR_FEED`| articles' author's usernme and page index | sends an API request to the [*List Articles* end point](https://github.com/gothinkster/realworld/tree/master/api#list-articles)|
+| `FETCH_AUTHOR_FEED`| articles' author's username and page index | sends an API request to the [*List Articles* end point](https://github.com/gothinkster/realworld/tree/master/api#list-articles)|
 
 ## UI
 We already have identified the screens in the *Specifications* section. Ler's remind them here:
@@ -68,39 +68,282 @@ The UI for the *editor* route will be implemented with a *UserProfile* Svelte co
 As before, we test the UI with [Storybook](https://storybook.js.org/). The [corresponding stories](https://github.com/brucou/realworld-kingly-svelte/tree/with-profile-route/stories) are available in the source repository.
 
 ## Commands implementation
-**TODO**
+The `REDIRECT`, `FETCH_AUTHENTICATION`, `FAVORITE_ARTICLE`, `UNFAVORITE_ARTICLE` have already been written when implementing the *Home* route. For `FETCH_PROFILE`, `FOLLOW_PROFILE`, `UNFOLLOW_PROFILE`, `FETCH_AUTHOR_FEED`, we defer to the [API](https://github.com/gothinkster/realworld/tree/master/api) passed on through effect handlers:
+
+```javascript
+  [FETCH_PROFILE]:(dispatch, params, effectHandlers) => {
+    const { fetchProfile } = effectHandlers;
+    const username = params;
+
+    fetchProfile({username})
+      .then(({profile}) => dispatch({[FETCHED_PROFILE]: profile}))
+      .catch((err) => dispatch({[FETCH_PROFILE_NOK]: err}))
+    },
+  [FETCH_AUTHOR_FEED]: (dispatch, params, effectHandlers) => {
+    const { fetchAuthorFeed, fetchFavoritedFeed } = effectHandlers;
+    const {username, page, feedType} = params;
+    const fetchFn = {[USER_PROFILE_PAGE]: fetchAuthorFeed, [FAVORITE_PROFILE_PAGE]: fetchFavoritedFeed}[feedType];
+
+    fetchFn({username, page})
+      .then (({articles, articlesCount}) => dispatch({[ARTICLES_FETCHED_OK]: {articles, articlesCount}}))
+      .catch(err => dispatch({[ARTICLES_FETCHED_NOK]: err}))
+  },
+  [FOLLOW_PROFILE]: (dispatch, params, effectHandlers) => {
+    const { follow } = effectHandlers;
+    const username = params;
+
+    follow({username})
+      .then (({profile}) => dispatch({[FOLLOW_OK]: profile}))
+      .catch(err => dispatch({[FOLLOW_NOK]: err}))
+  },
+  [UNFOLLOW_PROFILE]: (dispatch, params, effectHandlers) => {
+    const { unfollow } = effectHandlers;
+    const username = params;
+
+    unfollow({username})
+      .then (({profile}) => dispatch({[UNFOLLOW_OK]: profile}))
+      .catch(err => dispatch({[UNFOLLOW_NOK]: err}))
+  },
+
+```
+
+## Behaviour modelization
+The modelization we reach is the following:
+
+{% fig %}
+![profile route behaviour modelization high level](../../graphs/real-world/realworld-routing-profile.png)
+{% endfig %}
+
+Zooming in on the *Profile route* compound control state:
+
+{% fig %}
+![settings route behaviour modelization zoomed in](../../graphs/real-world/realworld-routing-profile-level-1.png)
+{% endfig %}
 
 ## User scenarios test
-Part of the test space here can be summarized as `[own profile, ≠ profile] x [My articles, Favorites articles]` `x {action sequence}`, where `{action sequence}` is a set of the possible action sequences that the user can perform through the user interface. The set of action sequences is as usual infinite, and we will only select a few sequences from it, chosen to cover both a wide set of user interface states and user actions. 
+We pick a set of scenarios which covers the transitions of our modelized graph, so that every transition in our graph is exercised at least one during our tests. We can conceptually separate those scenarios into main cases and edge cases (API request failure, unexpected inputs etc.).
 
-|Subset| Action sequence |
+In the main cases group, we will select the following tests: 
+
+|Subset| Event sequence |
 |---|---|
 |(own profile, my articles)| like article, unlike article, change page|
 |(own profile, favorite articles)| like article, unlike article, change page|
 |(≠ profile, my articles)| follow user, unfollow user|
-|(≠ profile, favorite articles)| like article, unlike article, change page|
+|(≠ profile, favorite articles)| follow user, unfollow user|
 
-Another part of the test space corresponds to what we call edge cases, i.e. unexpected or undesired behaviour of the interfaced systems (like API request failing). The formula remains as previously expressed, except that this time, the sequence of actions include failure events received from the interfaced systems.
+In the edge cases group, we will select the following tests: 
 
-| Subset| Action sequence|
+| Subset| Event sequence|
 |---|---|
 |(own profile, my articles)| profile fetch fails, article fetch fails|
-|(own profile, my articles)| like article fails, unlike article fails|
-|(own profile, favorite articles)| like article fails, unlike article fails|
-|(≠ profile, my articles)| profile fetch fails, article fetch fails|
-|(≠ profile, my articles)| follow user fails, unfollow user fails|
-|(≠ profile, favorite articles)| like article fails, unlike article fails|
+|(own profile, my articles)| follow user fails, like article fails, unlike article fails|
+|(own profile, my articles)| unfollow user fails, like article fails, unlike article fails|
+|(# profile, my articles)| like article fails and user is redirected to the signup page|
 
+The resulting 8 user scenarios are then gathered as follows:
 
-## Behaviour modelization
-**TODO**
+ ```javascript
+const userStories = [
+  [
+    USER_SEES_OWN_PROFILE_AND_ARTICLES_LIKES_UNLIKES_CHANGES_PAGE,
+    USER_SEES_OWN_PROFILE_AND_ARTICLES_LIKES_UNLIKES_CHANGES_PAGE_INPUTS,
+    USER_SEES_OWN_PROFILE_AND_ARTICLES_LIKES_UNLIKES_CHANGES_PAGE_COMMANDS
+  ],
+  [
+    USER_SEES_OWN_PROFILE_AND_FAVORITE_ARTICLES_LIKES_UNLIKES_CHANGES_PAGE,
+    USER_SEES_OWN_PROFILE_AND_FAVORITE_ARTICLES_LIKES_UNLIKES_CHANGES_PAGE_INPUTS,
+    USER_SEES_OWN_PROFILE_AND_FAVORITE_ARTICLES_LIKES_UNLIKES_CHANGES_PAGE_COMMANDS
+  ],
+  [
+    USER_SEES_PROFILE_ARTICLES_FOLLOWS_UNFOLLOWS,
+    USER_SEES_PROFILE_ARTICLES_FOLLOWS_UNFOLLOWS_INPUTS,
+    USER_SEES_PROFILE_ARTICLES_FOLLOWS_UNFOLLOWS_COMMANDS
+  ],
+  [
+    USER_SEES_PROFILE_FAVORITE_ARTICLES_FOLLOWS_UNFOLLOWS,
+    USER_SEES_PROFILE_FAVORITE_ARTICLES_FOLLOWS_UNFOLLOWS_INPUTS,
+    USER_SEES_PROFILE_FAVORITE_ARTICLES_FOLLOWS_UNFOLLOWS_COMMANDS
+  ],
+  [
+    USER_NAVIGATES_TO_OWN_PROFILE_SEES_NONE,
+    USER_NAVIGATES_TO_OWN_PROFILE_SEES_NONE_INPUTS,
+    USER_NAVIGATES_TO_OWN_PROFILE_SEES_NONE_COMMANDS
+  ],
+  [
+    USER_NAVIGATES_TO_PROFILE_FAILS_FOLLOW_LIKE_UNLIKE,
+    USER_NAVIGATES_TO_PROFILE_FAILS_FOLLOW_LIKE_UNLIKE_INPUTS,
+    USER_NAVIGATES_TO_PROFILE_FAILS_FOLLOW_LIKE_UNLIKE_COMMANDS
+  ],
+  [
+    USER_NAVIGATES_TO_PROFILE_FAILS_UNFOLLOW_LIKE_UNLIKE,
+    USER_NAVIGATES_TO_PROFILE_FAILS_UNFOLLOW_LIKE_UNLIKE_INPUTS,
+    USER_NAVIGATES_TO_PROFILE_FAILS_UNFOLLOW_LIKE_UNLIKE_COMMANDS
+  ],
+  [
+    USER_NAVIGATES_TO_PROFILE_LIKES_AND_IS_REDIRECTED,
+    USER_NAVIGATES_TO_PROFILE_LIKES_AND_IS_REDIRECTED_INPUTS,
+    USER_NAVIGATES_TO_PROFILE_LIKES_AND_IS_REDIRECTED_COMMANDS
+  ]
+];
+
+```
 
 ## Refactoring
-**TODO**
+We take advantage of our TDD refactoring stage to do a little bit of cleanup in our application shell. We also identified some possible target for refactoring (some actions are duplicated) but do not act on them just yet. When we will stop and have a look at our application performance and size, we may DRY things up.
 
 ## Behaviour implementation
-**TODO**
+The implementation (`src/behaviour/profile.js`) derives directly from the modelization. We reproduce here the main part which are the transitions:
+
+```javascript
+export const profileTransitions = [
+  {
+    from: "profile",
+    event: INIT_EVENT,
+    to: "fetching-auth-for-profile",
+    action: fetchAuthenticationAndProfileUsername
+  },
+  {
+    from: "fetching-auth-for-profile",
+    event: AUTH_CHECKED,
+    guards: [
+      {
+        predicate: isUserProfileMyArticlesRoute,
+        to: "user-profile-rendering",
+        action: fetchMyArticlesAndProfileAndRender
+      },
+      {
+        predicate: isUserProfileFavoritesRoute,
+        to: "user-profile-rendering",
+        action: fetchFavoriteArticlesAndProfileAndRender
+      }
+    ]
+  },
+  {
+    from: "user-profile-rendering",
+    event: ARTICLES_FETCHED_OK,
+    to: "user-profile-rendering",
+    action: renderFetchedArticles
+  },
+  {
+    from: "user-profile-rendering",
+    event: ARTICLES_FETCHED_NOK,
+    to: "user-profile-rendering",
+    action: renderFetchArticlesFailed
+  },
+  {
+    from: "user-profile-rendering",
+    event: FETCHED_PROFILE,
+    to: "user-profile-rendering",
+    action: renderFetchedProfile
+  },
+  {
+    from: "user-profile-rendering",
+    event: FETCH_PROFILE_NOK,
+    to: "user-profile-rendering",
+    action: renderFetchedProfileFailed
+  },
+  {
+    from: "user-profile-rendering",
+    event: TOGGLED_FOLLOW,
+    guards: [
+      {
+        predicate: and(not(isOwnProfile), not(isFollowed)),
+        to: "user-profile-rendering",
+        action: followProfileAndRender
+      },
+      {
+        predicate: and(not(isOwnProfile), isFollowed),
+        to: "user-profile-rendering",
+        action: unfollowProfileAndRender
+      },
+    ]
+  },
+  {
+    from: "user-profile-rendering",
+    event: FOLLOW_OK,
+    to: "user-profile-rendering",
+    action: renderFollowedProfile
+  },
+  {
+    from: "user-profile-rendering",
+    event: FOLLOW_NOK,
+    to: "user-profile-rendering",
+    action: renderFollowProfileFailed
+  },
+  {
+    from: "user-profile-rendering",
+    event: UNFOLLOW_OK,
+    to: "user-profile-rendering",
+    action: renderUnfollowedProfile
+  },
+  {
+    from: "user-profile-rendering",
+    event: UNFOLLOW_NOK,
+    to: "user-profile-rendering",
+    action: renderUnfollowProfileFailed
+  },
+  {
+    from: "user-profile-rendering",
+    event: FAVORITE_OK,
+    to: "user-profile-rendering",
+    action: renderLiked
+  },
+  {
+    from: "user-profile-rendering",
+    event: FAVORITE_NOK,
+    to: "user-profile-rendering",
+    action: renderLikeFailed
+  },
+  {
+    from: "user-profile-rendering",
+    event: UNFAVORITE_OK,
+    to: "user-profile-rendering",
+    action: renderUnliked
+  },
+  {
+    from: "user-profile-rendering",
+    event: UNFAVORITE_NOK,
+    to: "user-profile-rendering",
+    action: renderUnlikeFailed
+  },
+  {
+    from: "user-profile-rendering",
+    event: TOGGLED_FAVORITE,
+    to: "fetch-auth-for-profile-favorite",
+    action: fetchAuthenticationAndUpdateFavoriteStatusForProfile
+  },
+  {
+    from: "fetch-auth-for-profile-favorite",
+    event: AUTH_CHECKED,
+    guards: [
+      {
+        predicate: isNotAuthenticated,
+        to: "routing",
+        action: redirectToSignUp
+      },
+      {
+        predicate: and(isAuthenticated, isArticleLiked),
+        to: "user-profile-rendering",
+        action: unlikeAuthorArticleAndRender
+      },
+      {
+        predicate: and(isAuthenticated, not(isArticleLiked)),
+        to: "user-profile-rendering",
+        action: likeAuthorArticleAndRender
+      }
+    ]
+  },
+  {
+    from: "user-profile-rendering",
+    event: CLICKED_PAGE,
+    to: "fetching-auth-for-profile",
+    action: fetchArticlesPage
+  },
+  { from: "profile", event: ROUTE_CHANGED, to: "routing", action: updateURL },
+];
+
+```
 
 ## Summary
-**TODO**
-
+We implemented the *Profile* route of our Conduit clone application. As the user interface for the *Profile* route had commonalities both at the interface and behaviour level with the *Home* route, we were able to reuse part of the *Home* route implementation. We also identified further opportunities for code size reduction.

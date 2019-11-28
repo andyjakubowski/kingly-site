@@ -1,4 +1,13 @@
 **TODO**
+**TODO: review, I actually have to modelize first before writing the tests. Taht is still TDD because I don't write the implementation before the tests. And then add that we chose tests that guarantee transition coverage. So new order would be to write the view first, that gives the user events and the render command interface. Then test UI. Then identify the commands on the intrefaced systeems. The implement the commands. That gives the interfaced system events (generally coming as a result for interfaced system commands). Then write the modelization (we have events, and commands shape by now). Then write the tests for transition coverage. Then implement. Change the documentation?? ONLY AT THE END. Just change it for the user profile for now.**
+
+** View input/output interface: props. In props, callbacks are the output interface. But they delegate that function to events which are emitted by the callbacks.**
+** Command handler interface: command object shape (input), system events (output)**
+
+**reuse http://localhost:4000/documentation/graphs/real-world/realworld-high-level-architecture.png to explain how the order of implemntation derives from the architecture, explain that with a nice drawing??** 
+
+- HAVE A MUCH BETTER LOG (console.group!!)
+  - would also be great to log guards which are not being satisfied or those who is satisfyed!
 - add also in introduction or separate Q&A pages
   - comparison with robot, xstate, stent etc. the best would be to move that to https://github.com/achou11/state-machines
   - explain advantages of implementation techniques (functional vs. imperative, JSON vs. direct exec.)
@@ -134,3 +143,6 @@ finish here. The form multi step in example section. LATER. write something abou
 
 # user flow
 /editor -> https://demo.realworld.io/#/article/implementing-conduit-with-kingly-state-machine-library-n4mhqh
+
+# Quotes
+> He recommends that we forget about state and concentrate on behaviour. It’s much easier to understand what an application is doing when using events and commands, because they describe what the application does in a functional way. [](https://www.infoq.com/news/2019/10/event-thinking-microservices/)

@@ -35,6 +35,12 @@ This section gathers the best-practices which percolated after using state machi
 # IMplementimg
 // If merging props, the first render command on the graph should pass all props 
 // If showing component before machine started, have no initial value for props but handle instead undefined values smoothly
-
+// when implementation machines, go in order of graph (i.. scenarios order), instead of first guards, then transitions etc.
 
 lots of issues with arrays of arrays... specially when making tests that slows down a bit. Maybe use jsdoc or typescript!
+
+// Issues with controlled components: if using additive props, pass the controlled props as in React
+// Issues with stale props: pick up a source of truth (value returned from the database stored in state) rather than prop.
+// - this happened to me because ?? I am not sure really, but the props passed was stale. Probably because we did a deep update in an object,
+//   that object is scattered through components, and probably one reference was the same and did not trigger redraw.
+//   so to avoid dependency between view and machine, just use always the source of truth not linked to the view if I have one
