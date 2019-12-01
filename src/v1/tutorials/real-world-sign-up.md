@@ -13,25 +13,6 @@ In the *sign up* route, the user may register with a username, an email and a pa
 - authenticated users cannot sign up while being logged in. Any attempt to do so will trigger a redirection to the *home* route 
 - sign up form fields must be validated for the sign up to go through (validation is handled partly by the browser (email field) and partly server side, the client does no validation).
 
-## Events
-We have the following events for the *sign up* route:
-
-| Event | Event data |Occurs when|
-|:---|:---|:---|
-| `CLICKED_SIGNUP`| form data (`{username, email, password}`)| user submits the *sign up* form| 
-| `FAILED_SIGN_UP`| errors (as returned from sign up API)| user submitted the *sign up* form but the request failed|
-| `SUCCEEDED_SIGN_UP`| signed up user (as returned from sign up API)| user submitted the *sign up* form and the request succeeded|
-
-Additionally, the user may click on links (like *have an account*). However, this is not handled directly by the machine. Instead, this is handled by the browser as any other links, triggering a change of url, which then triggers a *ROUTE_CHANGED* event to the machine.
-
-## Commands
-We have the following commands for the *sign up* route:
-
-| Command | Command parameters |Description|
-|:---|:---|:---|
-| `REDIRECT`| hash to redirect to| redirects the user to a new/same hash location| 
-| `SIGN_UP`| sign up form data (`{username, email, password}`)| sends an API request to sign the user up|
-
 ## UI
 We already have identified the screens in the *Specifications* section. Ler's remind them here:
 
@@ -59,6 +40,25 @@ The [full source code](https://github.com/brucou/realworld-kingly-svelte/blob/wi
 
 ## UI testing
 As before, we test the UI with [Storybook](https://storybook.js.org/). The [corresponding stories](https://github.com/brucou/realworld-kingly-svelte/blob/with-sign-up-route/stories/RealWorld.SignUp.stories.js) are available in the source repository.
+
+## Events
+We have the following events for the *sign up* route:
+
+| Event | Event data |Occurs when|
+|:---|:---|:---|
+| `CLICKED_SIGNUP`| form data (`{username, email, password}`)| user submits the *sign up* form| 
+| `FAILED_SIGN_UP`| errors (as returned from sign up API)| user submitted the *sign up* form but the request failed|
+| `SUCCEEDED_SIGN_UP`| signed up user (as returned from sign up API)| user submitted the *sign up* form and the request succeeded|
+
+Additionally, the user may click on links (like *have an account*). However, this is not handled directly by the machine. Instead, this is handled by the browser as any other links, triggering a change of url, which then triggers a *ROUTE_CHANGED* event to the machine.
+
+## Commands
+We have the following commands for the *sign up* route:
+
+| Command | Command parameters |Description|
+|:---|:---|:---|
+| `REDIRECT`| hash to redirect to| redirects the user to a new/same hash location| 
+| `SIGN_UP`| sign up form data (`{username, email, password}`)| sends an API request to sign the user up|
 
 ## Commands implementation
 To implement the redirect command (without having a reload of the page), we have to update directly the browser location. We do so with *pushState* in order to have the browser history updated without the `onhashchange` event being triggered. The latter is important as we listen on `onhashchange` to send a `ROUTE_CHANGED` to the machine, and we do not want that event to be triggered for a redirection. Just like for the previous rouet, the function realizing the redirection is passed to the corresponding command handler as effect handler: 

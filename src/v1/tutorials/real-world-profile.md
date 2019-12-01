@@ -8,7 +8,7 @@ In this section, we will modelize and implement the user flows related to the *U
 
 If the (authenticated) user navigating to the route is the same as the user whose profile must be displayed, that user may edit his profile settings. Otherwise, the navigating user may follow the user whose profile page is displayed. In both cases, the navigating user may view and like/unlike any displayed articles, just like in the *Home* route.
 
-The user needs not be authenticated to access the *User profile* route and its functionalities. The user however needs to authenticate himself to like or unlike an article. When attempting to do so, the user will be redirected to the *Sign up* page.
+The user needs not be authenticated to access the *User profile* route and its functionalities. The user however needs to authenticate himself to like/unlike an article, or follow a user profile. When attempting to do so, the user will be redirected to the *Sign up* page.
 
 ## Events
 We have the following events for the *User profile* route (some of which also being used for the *Home* route):
@@ -26,10 +26,8 @@ We have the following events for the *User profile* route (some of which also be
 |`UNFAVORITE_OK`|article and slug data|article was successfully unliked by the user|
 |`UNFAVORITE_NOK`|error and slug data|user failed to unlike the article|
 |`TOGGLED_FOLLOW`|username to follow, and whether that username is followed at the time of the toggling|user clicks to follow or unfollow a user|
-|`FOLLOW_OK`|followed profile data|user successfully followed a profile|
-|`FOLLOW_NOK`|err and profile data|user failed to follow a profile|
-|`UNFOLLOW_OK`|unfollowed profile data|user successfully unfollowed a profile|
-|`UNFOLLOW_NOK`|err and profile data|user failed to unfollow a profile|
+|`TOGGLE_FOLLOW_OK`|profile data|user successfully followed/unfollowed a profile|
+|`TOGGLE_FOLLOW_NOK`|err and profile data|user failed to follow/unfollow a profile|
 |`FETCHED_PROFILE`|profile data|api response to a *Get profile* request|
 |`FETCH_PROFILE_NOK`|error|api error response to a *Get profile* request|
 {% endfullwidth %}
@@ -139,9 +137,10 @@ In the edge cases group, we will select the following tests:
 |(own profile, my articles)| profile fetch fails, article fetch fails|
 |(own profile, my articles)| follow user fails, like article fails, unlike article fails|
 |(own profile, my articles)| unfollow user fails, like article fails, unlike article fails|
-|(# profile, my articles)| like article fails and user is redirected to the signup page|
+|(unauth user, my articles)| like article fails and user is redirected to the signup page|
+|(unauth user, my articles)| follow profile fails and user is redirected to the signup page|
 
-The resulting 8 user scenarios are then gathered as follows:
+The resulting 9 user scenarios are then gathered as follows:
 
  ```javascript
 const userStories = [
@@ -184,13 +183,18 @@ const userStories = [
     USER_NAVIGATES_TO_PROFILE_LIKES_AND_IS_REDIRECTED,
     USER_NAVIGATES_TO_PROFILE_LIKES_AND_IS_REDIRECTED_INPUTS,
     USER_NAVIGATES_TO_PROFILE_LIKES_AND_IS_REDIRECTED_COMMANDS
+  ],
+  [
+    USER_NAVIGATES_TO_PROFILE_FOLLOWS_AND_IS_REDIRECTED,
+    USER_NAVIGATES_TO_PROFILE_FOLLOWS_AND_IS_REDIRECTED_INPUTS,
+    USER_NAVIGATES_TO_PROFILE_FOLLOWS_AND_IS_REDIRECTED_COMMANDS
   ]
 ];
 
 ```
 
 ## Refactoring
-We take advantage of our TDD refactoring stage to do a little bit of cleanup in our application shell. We also identified some possible target for refactoring (some actions are duplicated) but do not act on them just yet. When we will stop and have a look at our application performance and size, we may DRY things up.
+We take advantage of our TDD refactoring stage to do a little bit of cleanup in our application shell. We also initially started with events such as `FOLLOW_OK`, `UNFOLLOW_OK`, `FOLLOW_NOK`, `UNFOLLOW_NOK`, i.e. 4 events to cover the API responses linked to the follow/unfollow functionality. We brought that down to 2: `TOGGLE_FOLLOW_OK` and `TOGGLE_FOLLOW_NOK`. We also identified some possible target for refactoring (some actions are duplicated) but do not act on them just yet. When we will stop and have a look at our application performance and size, we may DRY things up further.
 
 ## Behaviour implementation
 The implementation (`src/behaviour/profile.js`) derives directly from the modelization. We reproduce here the main part which are the transitions:
@@ -246,42 +250,41 @@ export const profileTransitions = [
   {
     from: "user-profile-rendering",
     event: TOGGLED_FOLLOW,
+    to: "fetch-auth-for-profile-follow",
+    action: fetchAuthentication,
+  },
+  {
+    from: "fetch-auth-for-profile-follow",
+    event: AUTH_CHECKED,
     guards: [
       {
-        predicate: and(not(isOwnProfile), not(isFollowed)),
-        to: "user-profile-rendering",
-        action: followProfileAndRender
+        predicate: isUserNotAuthenticated,
+        to: "routing",
+        action: redirectToSignUp
       },
       {
-        predicate: and(not(isOwnProfile), isFollowed),
+        predicate: isUserAuthenticatedAndFollowedProfile,
         to: "user-profile-rendering",
         action: unfollowProfileAndRender
+      },
+      {
+        predicate: isUserAuthenticatedAndUnfollowedProfile,
+        to: "user-profile-rendering",
+        action: followProfileAndRender
       },
     ]
   },
   {
     from: "user-profile-rendering",
-    event: FOLLOW_OK,
+    event: TOGGLE_FOLLOW_OK,
     to: "user-profile-rendering",
-    action: renderFollowedProfile
+    action: renderToggleFollowedProfile
   },
   {
     from: "user-profile-rendering",
-    event: FOLLOW_NOK,
+    event: TOGGLE_FOLLOW_NOK,
     to: "user-profile-rendering",
-    action: renderFollowProfileFailed
-  },
-  {
-    from: "user-profile-rendering",
-    event: UNFOLLOW_OK,
-    to: "user-profile-rendering",
-    action: renderUnfollowedProfile
-  },
-  {
-    from: "user-profile-rendering",
-    event: UNFOLLOW_NOK,
-    to: "user-profile-rendering",
-    action: renderUnfollowProfileFailed
+    action: renderToggleFollowProfileFailed
   },
   {
     from: "user-profile-rendering",
@@ -342,7 +345,6 @@ export const profileTransitions = [
   },
   { from: "profile", event: ROUTE_CHANGED, to: "routing", action: updateURL },
 ];
-
 ```
 
 ## Summary

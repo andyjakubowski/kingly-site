@@ -40,13 +40,15 @@ Using Kingly as a state machine library has the following advantage:
 
 ## Implementation
 The typical process I follow consists in:
-- get an understanding of the interface behaviour from its informal specifications
-- identify the events and commands that the machine receives and produces
-- draw the machine with a graph editor (I recommend [yed](https://www.yworks.com/downloads#yEd))
-- write some tests for the basic scenarios
-- write the definition of the machine (i.e. initial state, events, transitions, guards, action factories)
-- write the other parts of the UI (like UI rendering, UI effects)
-- fully test the machine with automatically generated tests (see the section on testing)
-- write a few integration tests for the basic scenarios
+- get a refined understanding of the interface behaviour from its informal specifications
+- define the user interface's interface (i.e. *props* interface, and dispatched events)
+- implement and test the user interface
+- define the command module interface (i.e. which commands are triggered by the user, the shape of those commands, and which events they produce as a result of their execution)
+- implement and test the command module
+- modelize the interface behaviour with a graph editor (I recommend [yed](https://www.yworks.com/downloads#yEd))
+- write some tests (with at least all-transitions coverage of the modelized machine)
+- write the definition of the machine (i.e. initial state, events, transitions, guards, action factories) and pass the previous tests
+- write and pass a few integration tests (all-states coverage may suffice if high confidence derived from unit tests)
+- fully test the machine with automatically generated tests
 
-We will address testing in a dedicated section. We are now going to see in the following tutorials some examples of UI modelization with Kingly state machines.
+We will address automated test generation in a future dedicated section. We are now going to see in the following tutorials some examples of UI modelization with Kingly state machines.

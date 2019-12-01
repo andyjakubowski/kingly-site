@@ -15,6 +15,16 @@ The second rule is one that we added ourselves. The [demo app](https://demo.real
 
 You should see in each tab the user feeds corresponding to each user. Further navigation however will use the latest logged in user as current user, which is at best confusing, and in the worse case unsafe. In the context of this demo application, the impact is not huge, but we nonetheless insist here on taking a safer approach. 
 
+## UI
+The screens for the *sign in* route are similar to those of the *sign up* screen with the difference that there is no `username` field in the *sign in* page.
+
+Implementation for the `src/UI/SignIn.svelte` component is similar to that of the `SignUp` component.
+
+The [full source code](https://github.com/brucou/realworld-kingly-svelte/blob/with-sign-in-route/src/UI/SignIn.svelte) for the `SignIn` component can be accessed in the repository.
+
+## UI testing
+As before, we test the UI with [Storybook](https://storybook.js.org/). The [corresponding stories](https://github.com/brucou/realworld-kingly-svelte/blob/with-sign-in-route/stories/RealWorld.SignIn.stories.js) are available in the source repository.
+
 ## Events
 We have the following events for the *sign in* route:
 
@@ -33,16 +43,6 @@ We have the following commands for the *sign in* route:
 |:---|:---|:---|
 | `REDIRECT`| hash to redirect to| redirects the user to a new/same hash location| 
 | `SIGN_IN`| sign in form data (`{email, password}`)| sends an API request to sign the user in|
-
-## UI
-The screens for the *sign in* route are similar to those of the *sign up* screen with the difference that there is no `username` field in the *sign in* page.
-
-Implementation for the `src/UI/SignIn.svelte` component is similar to that of the `SignUp` component.
-
-The [full source code](https://github.com/brucou/realworld-kingly-svelte/blob/with-sign-in-route/src/UI/SignIn.svelte) for the `SignIn` component can be accessed in the repository.
-
-## UI testing
-As before, we test the UI with [Storybook](https://storybook.js.org/). The [corresponding stories](https://github.com/brucou/realworld-kingly-svelte/blob/with-sign-in-route/stories/RealWorld.SignIn.stories.js) are available in the source repository.
 
 ## Commands implementation
 We already have implemented the `REDIRECT` command, so we will reuse that. 

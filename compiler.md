@@ -180,3 +180,30 @@ So:
   - better, if I want to reuse machines, I need a renaming facility at inclusion site
 - then I also need a macro system...
 - will be better to procsss files with node and generate a .js file instead of using babel!
+
+## Syntax
+JSX!
+
+const fsmFactory = (
+  <FsmFactory initialExtendedState=... initialControlState updateState controlStates whatelse?>
+    <T from=... event, to, action />
+    <T from=... event >
+      <W to=... action  predicate />
+      <W to=... action  predicate />
+      <W to=... action  predicate />
+    </T>
+  </FsmFactory>
+)
+- then cf. [babel-plugin-brahmos](https://github.com/brahmosjs/brahmos/blob/master/docs/HOW_IT_WORKS.md#Brahmos-Transformation-with-babel-plugin-brahmos) for jsx babel transformation
+- when not compiled, transform it to `createFsm(...)`
+  - f(props, children) => createFsm(merge(props, transitions: process(children)})
+  - I might even be able to use a createElement which actually generate an array...  
+- when compiled
+  - (function fsmFactory(initialExtendedState, initialControlState, ...){
+    let local state
+    return function fsm(){...}
+  })(...)
+- that is a way that means I don't have to create a specific extension!! but I do have to create a babel plugin
+  - but I can get inspiration from other jsx plugins!
+- only issue is I may have other jsx with a different createElement!! how to handle that
+  - look for magic comment line as first lineof the file!

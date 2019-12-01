@@ -147,15 +147,17 @@ Authentication consists of login and registration (sign up). The Conduit API spe
 This being a reasonably complex application, we are going to follow an iterative implementation process. At each implementation step, we will seek to implement a larger portion of the specification.
 
 In each step, we will follow the same process:
-- select the user flows we want to implement 
-- identify both the corresponding events, and the triggered actions
-- implement the UI
-- test the UI with storybook
-- implement the actions (we will skip testing the actions, as they are pretty straight forward)
-- write tests for the user flows
-- modelize the behaviour of the application corresponding to those user flows
-- implement the corresponding Kingly machine and pass the predefined tests
-- use property-based testing and generative testing to further test the implementation
-- update the implementation to pass the possibly failing tests
+- select the user flows we want to implement (generally will be those associated to a given route)
+- get a refined understanding of the interface behaviour associated to the selected user flows
+- define the user interface's interface (i.e. *props* interface, and dispatched events)
+- implement and test the user interface
+- define the command module interface (i.e. which commands are triggered by the user, the shape of those commands, and which events they produce as a result of their execution)
+- implement and test the command module
+- modelize the interface behaviour with a graph editor (I recommend [yed](https://www.yworks.com/downloads#yEd))
+- write some tests (with at least all-transitions coverage of the modelized machine)
+- write the definition of the machine (i.e. initial state, events, transitions, guards, action factories) and pass the previous tests
+- pass a few end-to-end tests (all-states coverage may suffice if high confidence derived from unit tests)
 
-In each step, we will seek to implement a route. We start with the home route.
+For the sake of this demo app, the command module will not be tested separately but indirectly as part of the end-to-end tests. End-to-end tests will be performed manually.
+
+In each step, we will seek to implement a route. We start with the *Home* route.
