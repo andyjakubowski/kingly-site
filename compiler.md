@@ -179,7 +179,7 @@ So:
 - we could then have an import as mechanism for renaming states? TO THINK ABOUT
   - better, if I want to reuse machines, I need a renaming facility at inclusion site
 - then I also need a macro system...
-- will be better to procsss files with node and generate a .js file instead of using babel!
+- will be better to process files with node and generate a .js file instead of using babel!
 
 ## Syntax
 JSX!

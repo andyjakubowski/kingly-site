@@ -1,4 +1,6 @@
 **TODO**
+** ADD ADDRESS FOR DEMO: https://rw-kingly-svelte.bricoi1.now.sh/**
+**medium-like image: https://blog.bitsrc.io/react-at-60fps-building-a-medium-inspired-zoom-with-react-pose-667499a3922**
 **TODO: review, I actually have to modelize first before writing the tests. Taht is still TDD because I don't write the implementation before the tests. And then add that we chose tests that guarantee transition coverage. So new order would be to write the view first, that gives the user events and the render command interface. Then test UI. Then identify the commands on the intrefaced systeems. The implement the commands. That gives the interfaced system events (generally coming as a result for interfaced system commands). Then write the modelization (we have events, and commands shape by now). Then write the tests for transition coverage. Then implement. Change the documentation?? ONLY AT THE END. Just change it for the user profile for now.**
 
 ** View input/output interface: props. In props, callbacks are the output interface. But they delegate that function to events which are emitted by the callbacks.**

@@ -18,6 +18,12 @@
         <li><h3 class="new">RealWorld clone</h3></li>
       <% } %>
     <% } %>
+    <% if (type === 'tooling') { %>
+      <% if (fileName === 'graph_editing') { %>
+      <% } %>
+      <% if (fileName === 'compiling') { %>
+      <% } %>
+    <% } %>
     <li>
       <a href="<%- url_for(p.path) %>" class="sidebar-link<%- page.title === p.title ? ' current' : '' %><%- p.is_new ? ' new' : '' %>"><%- p.title %></a>
     </li>

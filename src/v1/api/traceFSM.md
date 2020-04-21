@@ -1,6 +1,6 @@
 ---
 title: traceFSM
-type: api
+type: _api
 order: 2
 ---
 

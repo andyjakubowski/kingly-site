@@ -1,6 +1,6 @@
 ---
 title: Routing
-type: tutorials
+type: :tutorials
 order: 17
 ---
 

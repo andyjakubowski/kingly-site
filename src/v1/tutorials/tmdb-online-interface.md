@@ -1,6 +1,6 @@
 ---
 title: Specifications
-type: tutorials
+type: :tutorials
 order: 15
 ---
 

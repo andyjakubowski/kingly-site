@@ -10,6 +10,39 @@ If the (authenticated) user navigating to the route is the same as the user whos
 
 The user needs not be authenticated to access the *User profile* route and its functionalities. The user however needs to authenticate himself to like/unlike an article, or follow a user profile. When attempting to do so, the user will be redirected to the *Sign up* page.
 
+## UI
+We already have identified the screens in the *Specifications* section. Ler's remind them here:
+
+{% fullwidth %}
+
+|Route|State|Main screen|
+|:---|:---|:---:|
+|`#/@bcouriol`|profile settings, authenticated user is viewing his profile, My articles tab|![profile-settings](../../images/real-world/screenshot-demo.profile-settings.realworld.io-2019.08.06-23_13_56.png)|
+|`#/@deneme22`|profile settings, profile is not that of visiting user, My articles tab|![user](../../images/real-world/screenshot-demo.user.realworld.io-2019.08.06-22_28_43.png)|
+|`#/@bcouriol/favorites`|profile settings, authenticated user is viewing his profile, Favorited tab|![profile-settings](../../images/real-world/screenshot-demo.profile-settings-same-user.realworld.io-2019.11.11-17_36_08.png)|
+|`#/@deneme22/favorites`|profile settings, profile is not that of visiting user, Favorited tab|![profile-settings](../../images/real-world/screenshot-demo.profile-settings-different-user.realworld.io-2019.11.11-17_36_08.png)|
+
+{% endfullwidth %}
+
+The UI for the *editor* route will be implemented with a *UserProfile* Svelte component. The [full source code](https://github.com/brucou/realworld-kingly-svelte/blob/with-profile-route/src/UI/UserProfile.svelte) for the `UserProfile` component can be accessed in the repository.
+
+## UI testing
+As before, we test the UI with [Storybook](https://storybook.js.org/). The [corresponding stories](https://github.com/brucou/realworld-kingly-svelte/tree/with-profile-route/stories) are available in the source repository.
+
+## Commands
+We have the following commands for the *User profile* route (some of which also being used for the *Home* route):
+
+| Command | Command parameters |Description|
+|:---|:---|:---|
+| `REDIRECT`| hash to redirect to| redirects the user to a new/same hash location| 
+| `FETCH_AUTHENTICATION`| -- | fetches user session data if any| 
+| `FAVORITE_ARTICLE`| article slug| sends an [API request](https://github.com/gothinkster/realworld/tree/master/api#favorite-article) to like an article| 
+| `UNFAVORITE_ARTICLE`| article slug| sends an [API request](https://github.com/gothinkster/realworld/tree/master/api#unfavorite-article) to unlike an article| 
+| `FETCH_PROFILE`| username | sends an API request to the [*Get profile* end point](https://github.com/gothinkster/realworld/tree/master/api#get-profile)|
+| `FOLLOW_PROFILE`| username | sends an API request to the [*Follow user* end point](https://github.com/gothinkster/realworld/tree/master/api#follow-user)|
+| `UNFOLLOW_PROFILE`| username | sends an API request to the [*Unfollow user* end point](https://github.com/gothinkster/realworld/tree/master/api#unfollow-user)|
+| `FETCH_AUTHOR_FEED`| articles' author's username and page index | sends an API request to the [*List Articles* end point](https://github.com/gothinkster/realworld/tree/master/api#list-articles)|
+
 ## Events
 We have the following events for the *User profile* route (some of which also being used for the *Home* route):
 
@@ -31,39 +64,6 @@ We have the following events for the *User profile* route (some of which also be
 |`FETCHED_PROFILE`|profile data|api response to a *Get profile* request|
 |`FETCH_PROFILE_NOK`|error|api error response to a *Get profile* request|
 {% endfullwidth %}
-
-## Commands
-We have the following commands for the *User profile* route (some of which also being used for the *Home* route):
-
-| Command | Command parameters |Description|
-|:---|:---|:---|
-| `REDIRECT`| hash to redirect to| redirects the user to a new/same hash location| 
-| `FETCH_AUTHENTICATION`| -- | fetches user session data if any| 
-| `FAVORITE_ARTICLE`| article slug| sends an [API request](https://github.com/gothinkster/realworld/tree/master/api#favorite-article) to like an article| 
-| `UNFAVORITE_ARTICLE`| article slug| sends an [API request](https://github.com/gothinkster/realworld/tree/master/api#unfavorite-article) to unlike an article| 
-| `FETCH_PROFILE`| username | sends an API request to the [*Get profile* end point](https://github.com/gothinkster/realworld/tree/master/api#get-profile)|
-| `FOLLOW_PROFILE`| username | sends an API request to the [*Follow user* end point](https://github.com/gothinkster/realworld/tree/master/api#follow-user)|
-| `UNFOLLOW_PROFILE`| username | sends an API request to the [*Unfollow user* end point](https://github.com/gothinkster/realworld/tree/master/api#unfollow-user)|
-| `FETCH_AUTHOR_FEED`| articles' author's username and page index | sends an API request to the [*List Articles* end point](https://github.com/gothinkster/realworld/tree/master/api#list-articles)|
-
-## UI
-We already have identified the screens in the *Specifications* section. Ler's remind them here:
-
-{% fullwidth %}
-
-|Route|State|Main screen|
-|:---|:---|:---:|
-|`#/@bcouriol`|profile settings, authenticated user is viewing his profile, My articles tab|![profile-settings](../../images/real-world/screenshot-demo.profile-settings.realworld.io-2019.08.06-23_13_56.png)|
-|`#/@deneme22`|profile settings, profile is not that of visiting user, My articles tab|![user](../../images/real-world/screenshot-demo.user.realworld.io-2019.08.06-22_28_43.png)|
-|`#/@bcouriol/favorites`|profile settings, authenticated user is viewing his profile, Favorited tab|![profile-settings](../../images/real-world/screenshot-demo.profile-settings-same-user.realworld.io-2019.11.11-17_36_08.png)|
-|`#/@deneme22/favorites`|profile settings, profile is not that of visiting user, Favorited tab|![profile-settings](../../images/real-world/screenshot-demo.profile-settings-different-user.realworld.io-2019.11.11-17_36_08.png)|
-
-{% endfullwidth %}
-
-The UI for the *editor* route will be implemented with a *UserProfile* Svelte component. The [full source code](https://github.com/brucou/realworld-kingly-svelte/blob/with-profile-route/src/UI/UserProfile.svelte) for the `UserProfile` component can be accessed in the repository.
-
-## UI testing
-As before, we test the UI with [Storybook](https://storybook.js.org/). The [corresponding stories](https://github.com/brucou/realworld-kingly-svelte/tree/with-profile-route/stories) are available in the source repository.
 
 ## Commands implementation
 The `REDIRECT`, `FETCH_AUTHENTICATION`, `FAVORITE_ARTICLE`, `UNFAVORITE_ARTICLE` have already been written when implementing the *Home* route. For `FETCH_PROFILE`, `FOLLOW_PROFILE`, `UNFOLLOW_PROFILE`, `FETCH_AUTHOR_FEED`, we defer to the [API](https://github.com/gothinkster/realworld/tree/master/api) passed on through effect handlers:
@@ -115,7 +115,7 @@ The modelization we reach is the following:
 Zooming in on the *Profile route* compound control state:
 
 {% fig %}
-![settings route behaviour modelization zoomed in](../../graphs/real-world/realworld-routing-profile-level-1.png)
+![profile route behaviour modelization zoomed in](../../graphs/real-world/realworld-routing-profile-level-1.png)
 {% endfig %}
 
 ## User scenarios test

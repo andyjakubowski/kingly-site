@@ -1,6 +1,6 @@
 ---
 title: Top level breakdown
-type: tutorials
+type: :tutorials
 order: 16
 ---
 

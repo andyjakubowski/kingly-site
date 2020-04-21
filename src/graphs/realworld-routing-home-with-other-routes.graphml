@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:java="http://www.yworks.com/xml/yfiles-common/1.0/java" xmlns:sys="http://www.yworks.com/xml/yfiles-common/markup/primitives/2.0" xmlns:x="http://www.yworks.com/xml/yfiles-common/markup/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:y="http://www.yworks.com/xml/graphml" xmlns:yed="http://www.yworks.com/xml/yed/3" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://www.yworks.com/xml/schema/graphml/1.1/ygraphml.xsd">
+  <!--Created by yEd 3.19-->
+  <key attr.name="Description" attr.type="string" for="graph" id="d0"/>
+  <key for="port" id="d1" yfiles.type="portgraphics"/>
+  <key for="port" id="d2" yfiles.type="portgeometry"/>
+  <key for="port" id="d3" yfiles.type="portuserdata"/>
+  <key attr.name="url" attr.type="string" for="node" id="d4"/>
+  <key attr.name="description" attr.type="string" for="node" id="d5"/>
+  <key for="node" id="d6" yfiles.type="nodegraphics"/>
+  <key for="graphml" id="d7" yfiles.type="resources"/>
+  <key attr.name="url" attr.type="string" for="edge" id="d8"/>
+  <key attr.name="description" attr.type="string" for="edge" id="d9"/>
+  <key for="edge" id="d10" yfiles.type="edgegraphics"/>
+  <graph edgedefault="directed" id="G">
+    <data key="d0" xml:space="preserve"/>
+    <node id="n0">
+      <data key="d6">
+        <y:GenericNode configuration="com.yworks.flowchart.start2">
+          <y:Geometry height="40.0" width="80.0" x="760.0" y="0.0"/>
+          <y:Fill color="#FFCC00" color2="#FF6600" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="20.0078125" x="29.99609375" xml:space="preserve" y="10.6494140625">Init<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n1">
+      <data key="d6">
+        <y:GenericNode configuration="com.yworks.flowchart.terminator">
+          <y:Geometry height="40.0" width="95.0" x="752.5" y="160.0"/>
+          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="40.69140625" x="27.154296875" xml:space="preserve" y="10.6494140625">routing<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n2" yfiles.foldertype="group">
+      <data key="d4" xml:space="preserve"/>
+      <data key="d5"/>
+      <data key="d6">
+        <y:ProxyAutoBoundsNode>
+          <y:Realizers active="0">
+            <y:GroupNode>
+              <y:Geometry height="1350.0" width="1180.0" x="230.0" y="370.0"/>
+              <y:Fill color="#F5F5F5" transparent="false"/>
+              <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
+              <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="1180.0" x="0.0" xml:space="preserve" y="0.0">Home</y:NodeLabel>
+              <y:Shape type="roundrectangle"/>
+              <y:State closed="false" closedHeight="50.0" closedWidth="50.0" innerGraphDisplayEnabled="false"/>
+              <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
+              <y:BorderInsets bottom="5" bottomF="5.0" left="15" leftF="15.0" right="45" rightF="45.0" top="3" topF="2.62353515625"/>
+            </y:GroupNode>
+            <y:GenericGroupNode configuration="PanelNode">
+              <y:Geometry height="50.0" width="50.0" x="210.0" y="320.0"/>
+              <y:Fill color="#68B0E3" transparent="false"/>
+              <y:BorderStyle hasColor="false" type="line" width="1.0"/>
+              <y:NodeLabel alignment="right" autoSizePolicy="node_width" borderDistance="0.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="50.0" x="0.0" xml:space="preserve" y="0.0">Home</y:NodeLabel>
+              <y:StyleProperties>
+                <y:Property class="java.awt.Color" name="headerBackground" value="#68b0e3"/>
+              </y:StyleProperties>
+              <y:State autoResize="true" closed="true" closedHeight="50.0" closedWidth="50.0"/>
+              <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
+              <y:BorderInsets bottom="0" bottomF="0.0" left="0" leftF="0.0" right="0" rightF="0.0" top="0" topF="0.0"/>
+            </y:GenericGroupNode>
+          </y:Realizers>
+        </y:ProxyAutoBoundsNode>
+      </data>
+      <graph edgedefault="directed" id="n2:">
+        <node id="n2::n0" yfiles.foldertype="group">
+          <data key="d4" xml:space="preserve"/>
+          <data key="d5"/>
+          <data key="d6">
+            <y:ProxyAutoBoundsNode>
+              <y:Realizers active="0">
+                <y:GroupNode>
+                  <y:Geometry height="720.0" width="630.0" x="260.0" y="980.0"/>
+                  <y:Fill color="#F5F5F5" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
+                  <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="630.0" x="0.0" xml:space="preserve" y="0.0">Fetching global feed</y:NodeLabel>
+                  <y:Shape type="roundrectangle"/>
+                  <y:State closed="false" closedHeight="50.0" closedWidth="50.0" innerGraphDisplayEnabled="false"/>
+                  <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
+                  <y:BorderInsets bottom="5" bottomF="5.0" left="48" leftF="47.5" right="208" rightF="207.5" top="3" topF="2.62353515625"/>
+                </y:GroupNode>
+                <y:GenericGroupNode configuration="PanelNode">
+                  <y:Geometry height="50.0" width="50.0" x="140.0" y="430.0"/>
+                  <y:Fill color="#68B0E3" transparent="false"/>
+                  <y:BorderStyle hasColor="false" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="right" autoSizePolicy="node_width" borderDistance="0.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="148.078125" x="-49.0390625" xml:space="preserve" y="0.0">Fetching Home data</y:NodeLabel>
+                  <y:StyleProperties>
+                    <y:Property class="java.awt.Color" name="headerBackground" value="#68b0e3"/>
+                  </y:StyleProperties>
+                  <y:State autoResize="true" closed="true" closedHeight="50.0" closedWidth="50.0"/>
+                  <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
+                  <y:BorderInsets bottom="0" bottomF="0.0" left="0" leftF="0.0" right="0" rightF="0.0" top="0" topF="0.0"/>
+                </y:GenericGroupNode>
+              </y:Realizers>
+            </y:ProxyAutoBoundsNode>
+          </data>
+          <graph edgedefault="directed" id="n2::n0:">
+            <node id="n2::n0::n0">
+              <data key="d6">
+                <y:GenericNode configuration="com.yworks.flowchart.terminator">
+                  <y:Geometry height="40.0" width="95.0" x="542.5" y="1380.0"/>
+                  <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="76.041015625" x="9.4794921875" xml:space="preserve" y="3.298828125">Fetching tags
+and articles<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+                </y:GenericNode>
+              </data>
+            </node>
+            <node id="n2::n0::n1">
+              <data key="d6">
+                <y:GenericNode configuration="com.yworks.flowchart.terminator">
+                  <y:Geometry height="40.0" width="95.0" x="322.5" y="1640.0"/>
+                  <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="66.033203125" x="14.4833984375" xml:space="preserve" y="3.298828125">Failed fetch
+Home data<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+                </y:GenericNode>
+              </data>
+            </node>
+            <node id="n2::n0::n2">
+              <data key="d6">
+                <y:GenericNode configuration="com.yworks.flowchart.terminator">
+                  <y:Geometry height="40.0" width="95.0" x="572.5" y="1640.0"/>
+                  <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="47.359375" x="23.8203125" xml:space="preserve" y="3.298828125">Fetched
+articles<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+                </y:GenericNode>
+              </data>
+            </node>
+            <node id="n2::n0::n3">
+              <data key="d6">
+                <y:GenericNode configuration="com.yworks.flowchart.start2">
+                  <y:Geometry height="40.0" width="80.0" x="550.0" y="1020.0"/>
+                  <y:Fill color="#FFCC00" color2="#FF6600" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="20.0078125" x="29.99609375" xml:space="preserve" y="10.6494140625">Init<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+                </y:GenericNode>
+              </data>
+            </node>
+          </graph>
+        </node>
+        <node id="n2::n1" yfiles.foldertype="group">
+          <data key="d4" xml:space="preserve"/>
+          <data key="d5"/>
+          <data key="d6">
+            <y:ProxyAutoBoundsNode>
+              <y:Realizers active="0">
+                <y:GroupNode>
+                  <y:Geometry height="540.0" width="310.0" x="1040.0" y="410.0"/>
+                  <y:Fill color="#F5F5F5" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
+                  <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="310.0" x="0.0" xml:space="preserve" y="0.0">Fetching filtered articles</y:NodeLabel>
+                  <y:Shape type="roundrectangle"/>
+                  <y:State closed="false" closedHeight="50.0" closedWidth="50.0" innerGraphDisplayEnabled="false"/>
+                  <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
+                  <y:BorderInsets bottom="5" bottomF="5.0" left="28" leftF="27.5" right="18" rightF="17.5" top="3" topF="2.62353515625"/>
+                </y:GroupNode>
+                <y:GenericGroupNode configuration="PanelNode">
+                  <y:Geometry height="50.0" width="50.0" x="140.0" y="-40.0"/>
+                  <y:Fill color="#68B0E3" transparent="false"/>
+                  <y:BorderStyle hasColor="false" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="right" autoSizePolicy="node_width" borderDistance="0.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="172.9609375" x="-61.48046875" xml:space="preserve" y="0.0">Fetching filtered articles</y:NodeLabel>
+                  <y:StyleProperties>
+                    <y:Property class="java.awt.Color" name="headerBackground" value="#68b0e3"/>
+                  </y:StyleProperties>
+                  <y:State autoResize="true" closed="true" closedHeight="50.0" closedWidth="50.0"/>
+                  <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
+                  <y:BorderInsets bottom="0" bottomF="0.0" left="0" leftF="0.0" right="0" rightF="0.0" top="0" topF="0.0"/>
+                </y:GenericGroupNode>
+              </y:Realizers>
+            </y:ProxyAutoBoundsNode>
+          </data>
+          <graph edgedefault="directed" id="n2::n1:">
+            <node id="n2::n1::n0">
+              <data key="d6">
+                <y:GenericNode configuration="com.yworks.flowchart.terminator">
+                  <y:Geometry height="40.0" width="95.0" x="1132.5" y="650.0"/>
+                  <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="89.376953125" x="2.8115234375" xml:space="preserve" y="3.298828125">Fetching filtered
+articles<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+                </y:GenericNode>
+              </data>
+            </node>
+            <node id="n2::n1::n1">
+              <data key="d6">
+                <y:GenericNode configuration="com.yworks.flowchart.terminator">
+                  <y:Geometry height="40.0" width="95.0" x="1082.5" y="890.0"/>
+                  <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="81.361328125" x="6.8193359375" xml:space="preserve" y="3.298828125">Fetched
+filtered articles<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+                </y:GenericNode>
+              </data>
+            </node>
+            <node id="n2::n1::n2">
+              <data key="d6">
+                <y:GenericNode configuration="com.yworks.flowchart.terminator">
+                  <y:Geometry height="40.0" width="95.0" x="1222.5" y="890.0"/>
+                  <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="81.361328125" x="6.8193359375" xml:space="preserve" y="3.298828125">Failed fetch
+filtered articles<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+                </y:GenericNode>
+              </data>
+            </node>
+            <node id="n2::n1::n3">
+              <data key="d6">
+                <y:GenericNode configuration="com.yworks.flowchart.start2">
+                  <y:Geometry height="40.0" width="80.0" x="1140.0" y="450.0"/>
+                  <y:Fill color="#FFCC00" color2="#FF6600" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="20.0078125" x="29.99609375" xml:space="preserve" y="10.6494140625">Init<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+                </y:GenericNode>
+              </data>
+            </node>
+          </graph>
+        </node>
+        <node id="n2::n2">
+          <data key="d6">
+            <y:GenericNode configuration="com.yworks.flowchart.start2">
+              <y:Geometry height="40.0" width="80.0" x="850.0" y="450.0"/>
+              <y:Fill color="#FFCC00" color2="#FF6600" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="20.0078125" x="29.99609375" xml:space="preserve" y="10.6494140625">Init<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+            </y:GenericNode>
+          </data>
+        </node>
+        <node id="n2::n3" yfiles.foldertype="group">
+          <data key="d4" xml:space="preserve"/>
+          <data key="d5"/>
+          <data key="d6">
+            <y:ProxyAutoBoundsNode>
+              <y:Realizers active="0">
+                <y:GroupNode>
+                  <y:Geometry height="720.0" width="320.0" x="930.0" y="980.0"/>
+                  <y:Fill color="#F5F5F5" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
+                  <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="320.0" x="0.0" xml:space="preserve" y="0.0">Fetching user feed</y:NodeLabel>
+                  <y:Shape type="roundrectangle"/>
+                  <y:State closed="false" closedHeight="50.0" closedWidth="50.0" innerGraphDisplayEnabled="false"/>
+                  <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
+                  <y:BorderInsets bottom="5" bottomF="5.0" left="28" leftF="27.5" right="28" rightF="27.5" top="3" topF="2.62353515625"/>
+                </y:GroupNode>
+                <y:GenericGroupNode configuration="PanelNode">
+                  <y:Geometry height="50.0" width="50.0" x="490.0" y="570.0"/>
+                  <y:Fill color="#68B0E3" transparent="false"/>
+                  <y:BorderStyle hasColor="false" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="right" autoSizePolicy="node_width" borderDistance="0.0" fontFamily="Dialog" fontSize="16" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="23.6015625" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#FFFFFF" verticalTextPosition="bottom" visible="true" width="136.5234375" x="-43.26171875" xml:space="preserve" y="0.0">Fetching user feed</y:NodeLabel>
+                  <y:StyleProperties>
+                    <y:Property class="java.awt.Color" name="headerBackground" value="#68b0e3"/>
+                  </y:StyleProperties>
+                  <y:State autoResize="true" closed="true" closedHeight="50.0" closedWidth="50.0"/>
+                  <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
+                  <y:BorderInsets bottom="0" bottomF="0.0" left="0" leftF="0.0" right="0" rightF="0.0" top="0" topF="0.0"/>
+                </y:GenericGroupNode>
+              </y:Realizers>
+            </y:ProxyAutoBoundsNode>
+          </data>
+          <graph edgedefault="directed" id="n2::n3:">
+            <node id="n2::n3::n0">
+              <data key="d6">
+                <y:GenericNode configuration="com.yworks.flowchart.terminator">
+                  <y:Geometry height="40.0" width="95.0" x="1032.5" y="1380.0"/>
+                  <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="54.033203125" x="20.4833984375" xml:space="preserve" y="3.298828125">Fetching 
+user feed<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+                </y:GenericNode>
+              </data>
+            </node>
+            <node id="n2::n3::n1">
+              <data key="d6">
+                <y:GenericNode configuration="com.yworks.flowchart.terminator">
+                  <y:Geometry height="40.0" width="95.0" x="1112.5" y="1640.0"/>
+                  <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="54.033203125" x="20.4833984375" xml:space="preserve" y="3.298828125">Fetched
+user feed<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+                </y:GenericNode>
+              </data>
+            </node>
+            <node id="n2::n3::n2">
+              <data key="d6">
+                <y:GenericNode configuration="com.yworks.flowchart.terminator">
+                  <y:Geometry height="40.0" width="95.0" x="972.5" y="1640.0"/>
+                  <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="66.033203125" x="14.4833984375" xml:space="preserve" y="3.298828125">Failed fetch
+user feed<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+                </y:GenericNode>
+              </data>
+            </node>
+            <node id="n2::n3::n3">
+              <data key="d6">
+                <y:GenericNode configuration="com.yworks.flowchart.start2">
+                  <y:Geometry height="40.0" width="80.0" x="1040.0" y="1020.0"/>
+                  <y:Fill color="#FFCC00" color2="#FF6600" transparent="false"/>
+                  <y:BorderStyle color="#000000" type="line" width="1.0"/>
+                  <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="20.0078125" x="29.99609375" xml:space="preserve" y="10.6494140625">Init<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+                </y:GenericNode>
+              </data>
+            </node>
+          </graph>
+        </node>
+        <node id="n2::n4">
+          <data key="d6">
+            <y:GenericNode configuration="com.yworks.flowchart.terminator">
+              <y:Geometry height="40.0" width="95.0" x="842.5" y="650.0"/>
+              <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="78.724609375" x="8.1376953125" xml:space="preserve" y="3.298828125">Fetching
+authentication<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+            </y:GenericNode>
+          </data>
+        </node>
+        <node id="n2::n5">
+          <data key="d6">
+            <y:GenericNode configuration="com.yworks.flowchart.start2">
+              <y:Geometry height="40.0" width="80.0" x="260.0" y="450.0"/>
+              <y:Fill color="#993300" color2="#FF6600" transparent="false"/>
+              <y:BorderStyle color="#000000" type="line" width="1.0"/>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="12.666015625" x="33.6669921875" xml:space="preserve" y="10.6494140625">H<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+            </y:GenericNode>
+          </data>
+        </node>
+      </graph>
+    </node>
+    <edge id="e0" source="n0" target="n1">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-0.5" sy="20.0" tx="0.5" ty="-20.0">
+            <y:Point x="799.5" y="60.0"/>
+            <y:Point x="800.0" y="60.0"/>
+            <y:Point x="800.0" y="130.0"/>
+            <y:Point x="800.5" y="130.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.45133819951338194" textColor="#000000" verticalTextPosition="bottom" visible="true" width="112.6796875" x="-55.83984375" xml:space="preserve" y="45.6494140625">ROUTE_CHANGED<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e1" source="n1" target="n2">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-3.5" sy="20.0" tx="-110.0" ty="-675.0">
+            <y:Point x="796.5" y="220.0"/>
+            <y:Point x="710.0" y="220.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="left" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.7043546694648478" textColor="#000000" verticalTextPosition="bottom" visible="true" width="55.943359375" x="-114.4716796875" xml:space="preserve" y="81.0869140625">['/#' route]<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e2" source="n2" target="n2">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="590.0" sy="-515.0" tx="560.0" ty="-675.0">
+            <y:Point x="1510.0" y="530.0"/>
+            <y:Point x="1510.0" y="350.0"/>
+            <y:Point x="1380.0" y="350.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.0" textColor="#000000" verticalTextPosition="bottom" visible="true" width="94.046875" x="7.5390625" xml:space="preserve" y="-9.3505859375">clicked user feed<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e3" source="n2" target="n2::n1">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="560.0" sy="675.0" tx="125.0" ty="-270.0">
+            <y:Point x="1380.0" y="1740.0"/>
+            <y:Point x="1540.0" y="1740.0"/>
+            <y:Point x="1540.0" y="330.0"/>
+            <y:Point x="1320.0" y="330.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.4679444370241752" textColor="#000000" verticalTextPosition="bottom" visible="true" width="60.6953125" x="129.65234375" xml:space="preserve" y="-694.3505859375">clicked tag<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e4" source="n2" target="n2::n0">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-560.0" sy="675.0" tx="-285.0" ty="-360.0">
+            <y:Point x="260.0" y="1740.0"/>
+            <y:Point x="150.0" y="1740.0"/>
+            <y:Point x="150.0" y="960.0"/>
+            <y:Point x="290.0" y="960.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.44865700023769906" textColor="#000000" verticalTextPosition="bottom" visible="true" width="102.73046875" x="-161.365234375" xml:space="preserve" y="-341.3856445312499">global feed clicked<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::e0" source="n2::n2" target="n2::n4">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-0.5" sy="20.0" tx="0.5" ty="-20.0">
+            <y:Point x="889.5" y="510.0"/>
+            <y:Point x="890.0" y="510.0"/>
+            <y:Point x="890.0" y="620.0"/>
+            <y:Point x="890.5" y="620.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.6576182136602452" textColor="#000000" verticalTextPosition="bottom" visible="true" width="107.39453125" x="-53.197265625" xml:space="preserve" y="87.97412109375">/ fetch session data<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::e1" source="n2::n4" target="n2::n3">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="19.5" sy="20.0" tx="-130.0" ty="-360.0">
+            <y:Point x="909.5" y="710.0"/>
+            <y:Point x="960.0" y="710.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.8650762865270235" textColor="#000000" verticalTextPosition="bottom" visible="true" width="92.72265625" x="4.138671875" xml:space="preserve" y="221.14485677083326">[isAuthenticated]<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::e2" source="n2::n4" target="n2::n0">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-11.5" sy="20.0" tx="255.0" ty="-360.0">
+            <y:Point x="878.5" y="710.0"/>
+            <y:Point x="830.0" y="710.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.8642336716107207" textColor="#000000" verticalTextPosition="bottom" visible="true" width="96.056640625" x="-96.5283203125" xml:space="preserve" y="221.14485677083326">[!isAuthenticated]<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n0::e0" source="n2::n0::n0" target="n2::n0::n0">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-45.09375" sy="-9.5" tx="-29.5" ty="-20.0">
+            <y:Point x="340.0" y="1390.5"/>
+            <y:Point x="340.0" y="1330.0"/>
+            <y:Point x="560.5" y="1330.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.7066957787481805" textColor="#000000" verticalTextPosition="bottom" visible="true" width="192.783203125" x="-191.0228271484375" xml:space="preserve" y="-77.201171875">fetched tags [articles fetch pending]
+/ render fetching Home screen<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n0::e1" source="n2::n0::n0" target="n2::n0::n0">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-47.21875" sy="-3.5" tx="-18.5" ty="-20.0">
+            <y:Point x="320.0" y="1396.5"/>
+            <y:Point x="320.0" y="1260.0"/>
+            <y:Point x="571.5" y="1260.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.49122499122499125" textColor="#000000" verticalTextPosition="bottom" visible="true" width="192.783203125" x="-221.78125" xml:space="preserve" y="-153.201171875">fetched articles [tags fetch pending]
+/ render fetching Home screen<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n0::e2" source="n2::n0::n0" target="n2::n0::n2">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="7.5" sy="20.0" tx="-29.5" ty="-20.0">
+            <y:Point x="597.5" y="1460.0"/>
+            <y:Point x="480.0" y="1460.0"/>
+            <y:Point x="480.0" y="1610.0"/>
+            <y:Point x="590.5" y="1610.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.6070389761489238" textColor="#000000" verticalTextPosition="bottom" visible="true" width="162.748046875" x="-198.8740234375" xml:space="preserve" y="126.9482421875">fetched tags [articles fetched]
+/ render fetched Home screen<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n0::e3" source="n2::n0::n0" target="n2::n0::n2">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="29.5" sy="20.0" tx="12.5" ty="-20.0">
+            <y:Point x="619.5" y="1440.0"/>
+            <y:Point x="750.0" y="1440.0"/>
+            <y:Point x="750.0" y="1610.0"/>
+            <y:Point x="632.5" y="1610.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.5978321289605336" textColor="#000000" verticalTextPosition="bottom" visible="true" width="226.146484375" x="17.4267578125" xml:space="preserve" y="121.9482421875">fetched articles [tags fetched not pending]
+/ render fetched Home screen<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n0::e4" source="n2::n0::n0" target="n2::n0::n0">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-47.5" sy="2.5" tx="-7.5" ty="-20.0">
+            <y:Point x="300.0" y="1402.5"/>
+            <y:Point x="300.0" y="1190.0"/>
+            <y:Point x="582.5" y="1190.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="right" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.49037668408028595" textColor="#000000" verticalTextPosition="bottom" visible="true" width="224.8046875" x="-241.5" xml:space="preserve" y="-229.201171875">fetched tags failed [articles fetch pending]
+/ render no tags home screen<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n0::e5" source="n2::n0::n0" target="n2::n0::n1">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-3.5" sy="20.0" tx="0.5" ty="-20.0">
+            <y:Point x="586.5" y="1440.0"/>
+            <y:Point x="370.0" y="1440.0"/>
+            <y:Point x="370.0" y="1610.0"/>
+            <y:Point x="370.5" y="1610.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="right" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.7459701492537313" textColor="#000000" verticalTextPosition="bottom" visible="true" width="156.068359375" x="-294.5341796875" xml:space="preserve" y="88.298828125">fetched articles failed
+/ render failure Home screen<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n0::e6" source="n2::n0::n0" target="n2::n0::n2">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="18.5" sy="20.0" tx="-8.5" ty="-20.0">
+            <y:Point x="608.5" y="1460.0"/>
+            <y:Point x="610.0" y="1460.0"/>
+            <y:Point x="610.0" y="1610.0"/>
+            <y:Point x="611.5" y="1610.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.3412698412698413" textColor="#000000" verticalTextPosition="bottom" visible="true" width="192.109375" x="-94.5546875" xml:space="preserve" y="69.6494140625">fetched tags failed [articles fetched]
+/ render no tags home screen<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n0::e7" source="n2::n0::n3" target="n2::n0::n0">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-0.5" sy="20.0" tx="3.5" ty="-20.0">
+            <y:Point x="589.5" y="1080.0"/>
+            <y:Point x="590.0" y="1080.0"/>
+            <y:Point x="590.0" y="1150.0"/>
+            <y:Point x="593.5" y="1150.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.151676206050695" textColor="#000000" verticalTextPosition="bottom" visible="true" width="127.3984375" x="-63.19921875" xml:space="preserve" y="45.6494140625">/ fetch tags and articles<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n1::e0" source="n2::n1::n0" target="n2::n1::n1">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-11.5" sy="20.0" tx="0.5" ty="-20.0">
+            <y:Point x="1168.5" y="710.0"/>
+            <y:Point x="1130.0" y="710.0"/>
+            <y:Point x="1130.0" y="800.0"/>
+            <y:Point x="1130.5" y="800.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.42751981879954704" textColor="#000000" verticalTextPosition="bottom" visible="true" width="126.05078125" x="-101.525390625" xml:space="preserve" y="48.298828125">fetched filtered articles
+/ render filtered articles<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n1::e1" source="n2::n1::n0" target="n2::n1::n2">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="19.5" sy="20.0" tx="0.5" ty="-20.0">
+            <y:Point x="1199.5" y="710.0"/>
+            <y:Point x="1240.0" y="710.0"/>
+            <y:Point x="1240.0" y="860.0"/>
+            <y:Point x="1270.5" y="860.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="right" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.6483679525222551" textColor="#000000" verticalTextPosition="bottom" visible="true" width="156.080078125" x="-37.5400390625" xml:space="preserve" y="106.9482421875">fetched filtered articles failed
+/ render fetched failure<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n1::e2" source="n2::n1::n3" target="n2::n1::n0">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-0.5" sy="20.0" tx="0.5" ty="-20.0">
+            <y:Point x="1179.5" y="510.0"/>
+            <y:Point x="1180.0" y="510.0"/>
+            <y:Point x="1180.0" y="620.0"/>
+            <y:Point x="1180.5" y="620.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.6576182136602452" textColor="#000000" verticalTextPosition="bottom" visible="true" width="117.37890625" x="-58.189453125" xml:space="preserve" y="87.97412109375">/ fetch filtered articles<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n3::e0" source="n2::n3::n0" target="n2::n3::n1">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="19.5" sy="20.0" tx="0.5" ty="-20.0">
+            <y:Point x="1099.5" y="1440.0"/>
+            <y:Point x="1140.0" y="1440.0"/>
+            <y:Point x="1140.0" y="1610.0"/>
+            <y:Point x="1160.5" y="1610.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.6807802093244529" textColor="#000000" verticalTextPosition="bottom" visible="true" width="164.08984375" x="-41.544921875" xml:space="preserve" y="121.9482421875">fetched user feed
+/ render failure fetch user feed<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n3::e1" source="n2::n3::n0" target="n2::n3::n2">
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-11.5" sy="20.0" tx="0.5" ty="-20.0">
+            <y:Point x="1068.5" y="1440.0"/>
+            <y:Point x="1030.0" y="1440.0"/>
+            <y:Point x="1030.0" y="1550.0"/>
+            <y:Point x="1020.5" y="1550.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="right" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.6381381381381381" textColor="#000000" verticalTextPosition="bottom" visible="true" width="141.419921875" x="-109.2099609375" xml:space="preserve" y="95.59765625">fetched user feed failed
+/ render fetched user feed<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="n2::n3::e2" source="n2::n3::n3" target="n2::n3::n0">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-0.5" sy="20.0" tx="0.5" ty="-20.0">
+            <y:Point x="1079.5" y="1080.0"/>
+            <y:Point x="1080.0" y="1080.0"/>
+            <y:Point x="1080.0" y="1150.0"/>
+            <y:Point x="1080.5" y="1150.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.1531791907514451" textColor="#000000" verticalTextPosition="bottom" visible="true" width="90.05078125" x="-44.525390625" xml:space="preserve" y="45.6494140625">/ fetch user feed<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e5" source="n2" target="n2::n5">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-530.0" sy="675.0" tx="0.5" ty="-20.0">
+            <y:Point x="290.0" y="1760.0"/>
+            <y:Point x="70.0" y="1760.0"/>
+            <y:Point x="70.0" y="350.0"/>
+            <y:Point x="300.5" y="350.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.4822171774498676" textColor="#000000" verticalTextPosition="bottom" visible="true" width="106.087890625" x="-273.0439453125" xml:space="preserve" y="-681.701171875">clicked page
+/ update pagination<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e6" source="n2" target="n1">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="100.0" sy="-675.0" tx="29.5" ty="20.0">
+            <y:Point x="920.0" y="220.0"/>
+            <y:Point x="829.5" y="220.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.09692122463020295" textColor="#000000" verticalTextPosition="bottom" visible="true" width="76.0234375" x="-38.01171875" xml:space="preserve" y="-48.818522135416686">clicked article<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e7" source="n2" target="n1">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="30.0" sy="-675.0" tx="18.5" ty="20.0">
+            <y:Point x="850.0" y="240.0"/>
+            <y:Point x="818.5" y="240.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.4397453387903592" textColor="#000000" verticalTextPosition="bottom" visible="true" width="67.357421875" x="-33.6787109375" xml:space="preserve" y="-95.57698567708331">clicked user<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+    <edge id="e8" source="n2" target="n1">
+      <data key="d9"/>
+      <data key="d10">
+        <y:PolyLineEdge>
+          <y:Path sx="-40.0" sy="-675.0" tx="7.5" ty="20.0">
+            <y:Point x="780.0" y="240.0"/>
+            <y:Point x="807.5" y="240.0"/>
+          </y:Path>
+          <y:LineStyle color="#000000" type="line" width="1.0"/>
+          <y:Arrows source="none" target="standard"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="center_slider" preferredPlacement="on_edge" ratio="0.11238958623895862" textColor="#000000" verticalTextPosition="bottom" visible="true" width="80.728515625" x="-40.3642578125" xml:space="preserve" y="-45.490071614583314">route changed<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" placement="anywhere" side="on_edge" sideReference="relative_to_edge_flow"/></y:EdgeLabel>
+          <y:BendStyle smoothed="false"/>
+        </y:PolyLineEdge>
+      </data>
+    </edge>
+  </graph>
+  <data key="d7">
+    <y:Resources/>
+  </data>
+</graphml>

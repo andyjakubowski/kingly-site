@@ -1,8 +1,9 @@
 <%- partial('partials/learn_dropdown') %>
 <li>
   <a href="<%- url_for("/v1/api/index.html") %>" class="nav-link team<%- page.path.match
-  (/api\.html/) ? ' current' : '' %>">API</a>
+  (/api(\/|$)/) ? ' current' : '' %>">API</a>
 </li>
+<%- partial('partials/tooling_dropdown') %>
 <%- partial('partials/integrations_dropdown') %>
 <li>
   <a href="<%- url_for("/v1/testing/index.html") %>" class="nav-link team<%- page.path.match

@@ -1,0 +1,12 @@
+<li class="nav-dropdown-container tooling">
+  <a class="nav-link<%- page.path.match(/\/(tooling)(\/|$)/) ? ' current' : '' %>">Tooling</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li>
+      <ul>
+        <li><a href="<%- url_for("/v1/tooling/graph_editing.html") %>" class="nav-link<%- page.path.match(/\/graph_editing\.html(\/|$)/) ? ' current' : '' %>">Graph editing</a></li>
+        <li><a href="<%- url_for("/v1/tooling/compiling.html") %>" class="nav-link<%- page.path.match(/\/compiling\.html(\/|$)/) ? ' current' : '' %>">Compiling</a></li>
+        <li><a href="<%- url_for("/v1/tooling/devtool.html") %>" class="nav-link<%- page.path.match(/\/devtool\.html(\/|$)/) ? ' current' : '' %>">Devtool</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
