@@ -5,27 +5,56 @@ order: 1
 is_new: true
 ---
 
-## yEd
+## Graph editing with yEd
+`yEd` is a fairly intuitive graph editor. Instructions on how to use it can be found online. A short video (90s) introduction to `yEd` features is as follows:
+
+{% youtube OmSTwKw7dX4 %}
+
+A longer and more practical introduction addressing basic editing of graphs with `yEd`:
+ 
+{% youtube ujMhxPJnJCw %}
+
+You will need to go to `yEd`'s website and download the editor to use on your desktop. You can also use `yEd live` which is the online version of the editor. In that case, you need not download anything, and can edit a graph entirely from the browser. I do recommend the desktop version though for continuous use.
+
+In a typical graph editing session, the machine designer will use two types of shapes: one for pseudo-control-states, another one for regular control states. In accordance with conventions, I commonly use a round, small shape for initial control states origin node, and history states. For atomic control states, I use a rectangular shape. I leave the shape for compound control states to be the default offered by `yEd`. 
+
+Shapes representing nodes can be linked with edges, which are entered by the user by clicking on the origin node of the edge, and dragging the mouse towards the destination node of the edge.  Edges can be edited by selecting them and pressing F2, or double-clicking on the edge. There are faster ways to do many node and edge handling which users will acquire once they get acquainted with the keyboard shortcuts. 
+
+To create a compound control state, also called a group, simply create a node, select that node, then right-click, then click *Grouping* (or <kbd>Ctrl-Alt-G</kbd>). Once you have such a group, you can double click on it to enter that group and see only the contents of that group. You can navigate back up with the right menu *Grouping -> Previous view* or <kbd>Alt-Page-Up</kbd>. Groups can be collapsed or expanded (click on -/+ icon in the top-left corner of the compound node). 
+
+One of the things that make `yEd` great is that you do not need to think about layouting the graph. Just add the nodes in random places, and focus on having the graph relations right. You can then use a large set of computer-generated layouts. The ones I use most commonly are the hierarchic layout, the orthogonal layout, the flowchart, and the BPMN layout. After playing a bit with the layouts, you will pick the one that expressees visually the best the relationship. Hierarchic layouts are for instance often useful when writing machines for user interfaces, because such machines often have a preferred direction, with a few dropbacks: the user progresses on a user flow, with occasionally returning to a previous stage of the flow (error, correcting inputs, etc.). Orthogonal layouts often use better the space, but do not display visually well graphs with expanded compound nodes. It takes only a few trials to get a sense of the layouts and their utility.
+
+All layouts can be customized with an extensive suite of parameters (minimum distance between nodes, etc.). Layout option windows can be floated or docked (my favorite option). Once docked, running a layout consists only of clicking a play button. You will then see your graph visually morph into the selected layout. 
+
+Most of the graphs on the current documentation site have been authored and laid out with `yEd`. An example graph is as follows:
+
+  ![example of yed graph with history pseudo-state and compound state](https://imgur.com/VjKaIkL.png)
+
+In the previous example, compound control states, i.e. nodes which contain other nodes, are represented in gray color. Pseudo-control-states are represented in dark orange color, while atomic control states, i.e. nodes which do not contain any other nodes are represented in yellow. There is no convention enforced for colors, nor for shapes, so feel free to pick the one you liked the most from the *Shape node* palette on the right (cf. video). 
+
+In the next section, we will describe the `yed2Kingly` utility script which supports converting a `yEd` graphml file containing nodes, edges, node labels and edge labels into a Kingly state machine.
+
+## yed2Kingly
 ### Motivation
 The `yed2Kingly` package aims at supporting the creation of state machines with the [Kingly state machine library](https://brucou.github.io/documentation/). While by design the Kingly configuration for state machines follows a simple and minimal syntax, crafting and maintaining a large state machine by hand can involve repetitive tasks. Such tasks include for instance looking up a transition and remove it, or checking that a new transition to add does not conflict with an existing one.
  
- Furthermore, a large machine is rarely written directly in a written format but is rather supported by some kind of visualization whether hand-written graphs, or professional graph editors. When switching to text editing, the visual information is lost, the text-based version becomes desynchronized with the visual support. 
+ Furthermore, a large machine is rarely written directly in a textual format but is rather supported by some kind of visualization whether hand-written graphs or professional graph editors. When switching to text editing, the visual information is lost, the text-based version eventually becomes desynchronized with the visualization. 
 
 This is a case in hand where visual tooling can strengthen part of an error-prone manual process, and automate the repetitive tasks.
 
-[yEd](https://www.yworks.com/products/yed) is a versatile professional graph editor that produce high-quality diagrams for a large set of use cases. yEd is not open source, however there is no fee linked to its usage as an end-user. I have been using it for the past four years to generate all kind of diagrams including state machine graphs. The key features that I found extremely valuable in this time are the accessibility to non-professional users (this is no photoshop), its large set of sophisticated automatic highly-customizable layouts, and its text-based versionable graphml format.
+[yEd](https://www.yworks.com/products/yed) is a versatile professional graph editor that produces high-quality diagrams for a large set of use cases. yEd is not open source, however, there is no fee linked to its usage as an end-user. I have been using it for the past four years to generate all kinds of diagrams including state machine graphs. The key features that I found extremely valuable in this time are the accessibility to non-professional users (this is no photoshop), its large set of sophisticated automatic highly-customizable layouts, and its text-based versionable graphml format.
 
-This makes yEd a valuable tool to use for state machine creation, edition and maintenance. yEd exists in desktop and online versions. I recommend the desktop version anytime of the day on the grounds that it is more productive for serious tasks, but your mileage may vary. For educational or demonstration purposes, there may be educational value in the online version.
+This makes yEd a valuable tool to use for state machine creation, edition and maintenance. yEd exists in desktop and online versions. I recommend strongly the desktop version on the grounds that it is more productive for serious tasks, but your mileage may vary. For educational or demonstration purposes, there may be educational value in the online version.
 
 ### How does it work?
-In a typical process, I start designing a machine from the specifications by drawing it in the yEd editor. When I am done or ready to test the results of my design, I save the file. yEd by default saves its files in a `.grpahml` format. I save the graphml file in the same directory in which I want to use the created state machine. From there, a previously launched watcher runs the `yEd2Kingly` node script on the newly saved file and generates a JavaScript file which exports the events, state hierarchy and transitions contained in the graph -- you can of course also run the script manually instead of using a watcher. The provided exports can then be used as parameters to create a Kingly state machine.
+In a typical process, I start designing a machine from the specifications by drawing it in the yEd editor. When I am done or ready to test the results of my design, I save the file. yEd by default saves its files in a `.graphml` format. I save the graphml file in the same directory in which I want to use the created state machine. From there, a previously launched watcher runs the `yed2Kingly` node script on the newly saved file and generates a JavaScript file that exports the events, state hierarchy and transitions contained in the graph -- you can of course also run the script manually instead of using a watcher. The provided `exports` can then be used as parameters to create a Kingly state machine.
 
 ### Install
-`npm install yEd2Kingly`
+`npm install yed2Kingly`
 
 ### Usage
 ```bash
-yEd2Kingly file.graphml
+yed2Kingly file.graphml
 ```
 
 Running the converter produces two files, targeted at consumption in a browser and node.js environment:
@@ -50,20 +79,21 @@ Some definitions:
   - An initial transition is that which originates from a node whose label is `init`
   - A top-level initial transition is that initial transition which does not have any parent node
   - A history pseudo-state is a node whose label is H (shallow history) or H* (deep history)
-  - A compound node is a node which is created in the yEd interface by using the group functionality (*Grouping > Group* or *Ctrl-Alt-G* in version 3.19).
+  - A compound node is a node that is created in the yEd interface by using the group functionality (*Grouping > Group* or *Ctrl-Alt-G* in version 3.19).
 
-- yEd2Kingly rules:
+- yed2Kingly rules:
   - With the exception of history and init pseudo-states, all nodes are converted to Kingly states
-  - The Kingly name for a compound state will be the label displayed in the yEd editor for then matching group nodes in a non-collapsed state. This is important as yEd has another name for group node in collapsed state.
+  - The Kingly name for a compound state will be the label displayed in the yEd editor for the matching group nodes in a non-collapsed state. This is important as yEd has another name for group nodes in the collapsed state.
   - The label for any edge in the graph maps to a Kingly transition record. The chosen syntax is `event [guard] / action`. Anyone of the event, guard and action can be empty. Hence `[]/` is a valid syntax though not recommended.
   - There cannot be an action in the (unique by construction) top-level initial transition. There may be guards.
   - Labels **must not** include the reserved character `ღ`
-  - action label cannot be the reserved label `ACTION_IDENTITY`
-  - A label x must be so that the following JavaScript `{[x]: value}` is valid syntactically. This means label can have spaces and a large set of unicode characters as allowed by the JavaScript specifications. Action labels such as *do this, do that* are also valid.
+  - you can use the exact same label for different nodes (I do so in some of the tests), however, beware that this may come and bite you when you are tracing or debugging
+  - The action label cannot be the reserved label `ACTION_IDENTITY`
+  - A label x must be so that the following JavaScript `{[x]: value}` is valid syntactically. This means labels can have spaces and a large set of Unicode characters, as allowed by the JavaScript specifications. Action labels such as *do this, do that* are thus valid.
   - Edge labels **must not** have more than one `/` character (action separator)
   
 ### Conventions
-The following conventions are not rules and are not enforced in any way. They exists for practicality or readability purposes.
+The following conventions are not rules and are not enforced in any way. They exist for practicality or readability purposes.
 
 - Nodes for machine states have a rectangular shape
 - Init pseudo-states are represented by a small circle with a different color than regular nodes
@@ -183,6 +213,7 @@ The exported events, states, getKinglyTransitions can then be used in a regular 
 
 
 ### Final note
-I chose this process after plenty of reflection of pondering over what was the best approach for this functionality. A babel plugin or macro was a possibility but the level of complexity was much higher -- both from a macro creator and a macro user perspective,and the predictable requirements in term of maintenance were also appreciable. The retained solution is to produce the outputs of the file conversion in a separate, independent JavaScript file. There is thus no necessity to write proprietary JavaScript, it is programming as usual.
+This process was chosen after plenty of reflection of pondering over what was the best approach for this functionality. A Babel plugin or macro was a possibility but the level of complexity was much higher -- both from a macro creator and a macro user perspective, and the predictable requirements in terms of maintenance were also appreciable. The retained solution is to produce the outputs of the file conversion in a separate, independent JavaScript file. There is thus no necessity to write proprietary JavaScript, it is programming as usual.
 
-This is a first version based on my personal usage. I am interested in hearing your comments and recommendations if you have them about a better way to handle the integration of a graph editor with Kingly JavaScript library. Feel free to open an issue.
+This is a first version based on personal usage. Comments and recommendations are welcome if you have them about a better way to handle the integration of a graph editor with Kingly JavaScript library. Feel free to open an issue.
+
