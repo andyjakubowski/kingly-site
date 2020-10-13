@@ -1,6 +1,6 @@
 ---
 title: Movie details
-type: tutorials
+type:: tutorials
 order: 19
 ---
 

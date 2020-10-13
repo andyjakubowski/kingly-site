@@ -1,3 +1,19 @@
+- add counter with Ink in react terminal in the docs!!
+Excellent doc structure:
+- https://docs.microsoft.com/en-us/azure/static-web-apps/custom-domain
+- overview
+- quick starts
+- concepts
+- how to guide
+- tutorials
+- resources
+- Q&A (on top)
+- code samples (on top)
+- also feedback section in all pages
+  - and the view all pages feddback
+  - and the was that information useful yes/no
+- filter **by title** button (I can do that client-side!!)
+- also a share this document button would be good to attract people... Add nice articles people want to read and share 
 **TODO**
 ** ADD ADDRESS FOR DEMO: https://rw-kingly-svelte.bricoi1.now.sh/**
 **medium-like image: https://blog.bitsrc.io/react-at-60fps-building-a-medium-inspired-zoom-with-react-pose-667499a3922**

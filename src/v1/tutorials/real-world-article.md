@@ -8,7 +8,7 @@ In this section, we will modelize and implement the user flows related to the *A
 
 An example of article route is as follows: `/#/article/real-worl-editor-9zlwb7`.
 
-The user needs not be authenticated to access the *Article* route. However, if the user tries to follow or like/unlike an article's author, he will be redirected to the *Sign up* route. Additionally, if the user is not authenticated, he cannot post comments.
+The user does not need to be authenticated to access the *Article* route. However, if the user tries to follow or like/unlike an article's author, he will be redirected to the *Sign-up* route. Additionally, if the user is not authenticated, he cannot post comments.
 
 ## UI
 We already have identified the screens in the *Specifications* section. Ler's remind them here:
@@ -23,7 +23,7 @@ We already have identified the screens in the *Specifications* section. Ler's re
 
 {% endfullwidth %}
 
-The UI for the *Article* route will be implemented with a *Article* Svelte component. The [full source code](https://github.com/brucou/realworld-kingly-svelte/blob/with-article-route/src/UI/Article.svelte) for the `Article` component can be accessed in the repository.
+The UI for the *Article* route will be implemented with an *Article* Svelte component. The [full source code](https://github.com/brucou/realworld-kingly-svelte/blob/with-article-route/src/UI/Article.svelte) for the `Article` component can be accessed in the repository.
 
 
 ## UI testing
@@ -36,15 +36,15 @@ We have the following commands for the *Article* route (some of which also being
 |:---|:---|:---|
 | `REDIRECT`| hash to redirect to| redirects the user to a new/same hash location| 
 | `FETCH_AUTHENTICATION`| -- | fetches user session data if any| 
-| `FETCH_ARTICLE`| slug| sends an API request to the [*Get Article* end point](https://github.com/gothinkster/realworld/tree/master/api#get-article)|
-| `FETCH_COMMENTS`| slug| sends an API request to the [*Get Comments from an Article* end point](https://github.com/gothinkster/realworld/tree/master/api#get-comments-from-an-article)|
-| `DELETE_COMMENT`| slug, comment id| sends an API request to the [*Delete Comment* end point](https://github.com/gothinkster/realworld/tree/master/api#delete-comment)|
-| `POST_COMMENT`| slug, comment to post| sends an API request to the [*Add Comments to an Article* end point](https://github.com/gothinkster/realworld/tree/master/api#add-comments-to-an-article)|
-| `DELETE_ARTICLE`| slug| sends an API request to the [*Delete Article* end point](https://github.com/gothinkster/realworld/tree/master/api#delete-article)|
+| `FETCH_ARTICLE`| slug| sends an API request to the [*Get Article* endpoint](https://github.com/gothinkster/realworld/tree/master/api#get-article)|
+| `FETCH_COMMENTS`| slug| sends an API request to the [*Get Comments from an Article* endpoint](https://github.com/gothinkster/realworld/tree/master/api#get-comments-from-an-article)|
+| `DELETE_COMMENT`| slug, comment id| sends an API request to the [*Delete Comment* endpoint](https://github.com/gothinkster/realworld/tree/master/api#delete-comment)|
+| `POST_COMMENT`| slug, comment to post| sends an API request to the [*Add Comments to an Article* endpoint](https://github.com/gothinkster/realworld/tree/master/api#add-comments-to-an-article)|
+| `DELETE_ARTICLE`| slug| sends an API request to the [*Delete Article* endpoint](https://github.com/gothinkster/realworld/tree/master/api#delete-article)|
 | `FAVORITE_ARTICLE`| article slug| sends an [API request](https://github.com/gothinkster/realworld/tree/master/api#favorite-article) to like an article| 
 | `UNFAVORITE_ARTICLE`| article slug| sends an [API request](https://github.com/gothinkster/realworld/tree/master/api#unfavorite-article) to unlike an article| 
-| `FOLLOW_PROFILE`| username | sends an API request to the [*Follow user* end point](https://github.com/gothinkster/realworld/tree/master/api#follow-user)|
-| `UNFOLLOW_PROFILE`| username | sends an API request to the [*Unfollow user* end point](https://github.com/gothinkster/realworld/tree/master/api#unfollow-user)|
+| `FOLLOW_PROFILE`| username | sends an API request to the [*Follow user* endpoint](https://github.com/gothinkster/realworld/tree/master/api#follow-user)|
+| `UNFOLLOW_PROFILE`| username | sends an API request to the [*Unfollow user* endpoint](https://github.com/gothinkster/realworld/tree/master/api#unfollow-user)|
 
 ## Commands implementation
 The `REDIRECT`, `FETCH_AUTHENTICATION`, `FETCH_ARTICLE`, `FAVORITE_ARTICLE`, `UNFAVORITE_ARTICLE`, `FOLLOW_PROFILE`, `UNFOLLOW_PROFILE`, have already been written when implementing the *User profile* route. For the rest of commands, we defer to the [API](https://github.com/gothinkster/realworld/tree/master/api) passed on through effect handlers:
@@ -93,10 +93,10 @@ We have the following events for the *Article* route:
 |:---|:---|:---|
 |`ROUTE_CHANGED`| hash | direct href linking or redirection for authentication |
 |`AUTH_CHECKED`| user| user session data is retrieved|
-|`FETCHED_ARTICLE`|article data|api response to a *Get profile* request|
-|`FAILED_FETCH_ARTICLE`|--|api response to a *Get profile* request|
-|`FETCH_COMMENTS_OK`|comments|api error response to a *Get profile* request|
-|`FETCH_COMMENTS_NOK`|--|api error response to a *Get profile* request|
+|`FETCHED_ARTICLE`|article data|API response to a *Get profile* request|
+|`FAILED_FETCH_ARTICLE`|--|API response to a *Get profile* request|
+|`FETCH_COMMENTS_OK`|comments|API error response to a *Get profile* request|
+|`FETCH_COMMENTS_NOK`|--|API error response to a *Get profile* request|
 |`DELETE_COMMENTS_OK`|--|comment is successfully deleted|
 |`DELETE_COMMENTS_NOK`|--|comment is not successfully deleted|
 |`POST_COMMENTS_OK`|created comment (with id)|comment is successfully posted|
@@ -122,23 +122,23 @@ We have the following events for the *Article* route:
 The modelization we reach is the following:
 
 {% fig %}
-![article route behaviour modelization high level](../../graphs/real-world/realworld-routing-article.png)
+![article route behavior modelization high level](../../graphs/real-world/realworld-routing-article.png)
 {% endfig %}
 
 Zooming in on the *Article route* compound control state:
 
 {% fig %}
-![article route behaviour modelization zoomed in](../../graphs/real-world/realworld-routing-article-level-1.png)
+![article route behavior modelization zoomed in](../../graphs/real-world/realworld-routing-article-level-1.png)
 {% endfig %}
 
 ## Refactor
-We used a `API_REQUEST_FAILED` event gathering failure for some API requests for which we have the same failure processing: *post comment*, *delete article*, *delete comments*, *fetch comments*. As a matter of fact, if any of these three API calls fail, we just ignore that failure. We do not include however in that list the *fetch article* API call, as we think it is important to show some message to the user in that case to indicate that something went wrong fetching the article. Similarly, the follow/unfollow and like/unlike feature are also excluded from the list, as the corresponding button is re-enabled in case of request failure. The `API_REQUEST_FAILED` event thus replaces the following events: `POST_COMMENTS_NOK`, `DELETE_ARTICLE_NOK`, `DELETE_ARTICLE_NOK`, `FETCH_COMMENTS_NOK`.
+We used an `API_REQUEST_FAILED` event gathering failure for some API requests for which we have the same failure processing: *post comment*, *delete article*, *delete comments*, *fetch comments*. As a matter of fact, if any of these three API calls fail, we just ignore that failure. We do not include however in that list the *fetch article* API call, as we think it is important to show, in that case, some message to the user to indicate that something went wrong fetching the article. Similarly, the follow/unfollow and like/unlike feature are also excluded from the list, as the corresponding button is re-enabled in case of request failure. The `API_REQUEST_FAILED` event thus replaces the following events: `POST_COMMENTS_NOK`, `DELETE_ARTICLE_NOK`, `DELETE_ARTICLE_NOK`, `FETCH_COMMENTS_NOK`.
 
-Second refactor we did, is isolate the common path structure describing the execution of an API which requires user authentication. Here, the following features require authentication: *post comment*, *delete article*, *delete comments*, *like/unlike article*, *follow/unfollow user*. The common structure then goes as follows:
+Our second refactor had us isolating the common path structure describing the execution of an API which requires user authentication. Here, the following features require authentication: *post comment*, *delete article*, *delete comments*, *like/unlike article*, *follow/unfollow user*. The common structure then goes as follows:
 
 ![API call with authentication required](../../graphs/real-world/API%20call%20with%20auth%20required.png)
 
-The parameters (*trigger*, *cond*, *API call*, *Start*, *Next*, *Fallback*, *fallback*) allow to fully specify the sought-out behaviour.
+The parameters (*trigger*, *cond*, *API call*, *Start*, *Next*, *Fallback*, *fallback*) allow us to fully specify the sought-out behavior.
 
 ## User scenarios test
 As before, we pick our user scenarios to fulfill the *all-transitions* coverage criteria. 
@@ -311,4 +311,4 @@ export const articleTransitions = [
 ```
 
 ## Summary
-We implemented the *Article* route of our Conduit clone demo application. We recognized recurring behaviour patterns and abstracted them to compose the machine modelizing the route's behaviour.
+We implemented the *Article* route of our Conduit clone demo application. We recognized recurring behavior patterns and abstracted them to compose the machine modelizing the route's behavior.

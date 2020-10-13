@@ -6,7 +6,7 @@ is_new: true
 ---
 
 ## Install
-To install the extension, go to the Google Chrome Store, and search for *Courtesan* (or go [here](https://chrome.google.com/webstore/search/courtesan)), then click on *Add to Chrome*. The extension should work on all Chromium browsers. I do my tests with the [Brave browser](https://brave.com/) rather than Chrome.
+To install the extension, go to the Google Chrome Store, and search for *Courtesan* (or go [here](https://chrome.google.com/webstore/search/courtesan)), then click on *Add to Chrome*. The extension should work on all Chromium browsers. Tests are performed with the [Brave browser](https://brave.com/) rather than Chrome.
 
 ## Screenshot
 

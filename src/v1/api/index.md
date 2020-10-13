@@ -197,7 +197,7 @@ Additionally the following applies:
 - history pseudo states must be target states and refer to a given declared compound state
 - there cannot be two transitions with the same `(from, event, predicate)` - sameness defined for predicate by referential equality
 
-#### **Semantical contracts**
+#### **Semantic contracts**
 - The machine behaviour is as explicit as possible
   - if a transition is taken, and has guards configured, one of those guards must be fulfilled, i.e. guards must cover the entire state space when they exist
 - A transition evaluation must end

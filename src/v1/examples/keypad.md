@@ -1,7 +1,7 @@
 ---
 title: Keypad
 type: examples
-is_new: true
+is_new: false
 order: 2
 ---
 

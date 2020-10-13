@@ -32,11 +32,11 @@ Most of the graphs on the current documentation site have been authored and laid
 
 In the previous example, compound control states, i.e. nodes which contain other nodes, are represented in gray color. Pseudo-control-states are represented in dark orange color, while atomic control states, i.e. nodes which do not contain any other nodes are represented in yellow. There is no convention enforced for colors, nor for shapes, so feel free to pick the one you liked the most from the *Shape node* palette on the right (cf. video). 
 
-In the next section, we will describe the `yed2Kingly` utility script which supports converting a `yEd` graphml file containing nodes, edges, node labels and edge labels into a Kingly state machine.
+In the next section, we will describe the `yed2kingly` utility script which supports converting a `yEd` graphml file containing nodes, edges, node labels and edge labels into a Kingly state machine.
 
-## yed2Kingly
+## yed2kingly
 ### Motivation
-The `yed2Kingly` package aims at supporting the creation of state machines with the [Kingly state machine library](https://brucou.github.io/documentation/). While by design the Kingly configuration for state machines follows a simple and minimal syntax, crafting and maintaining a large state machine by hand can involve repetitive tasks. Such tasks include for instance looking up a transition and remove it, or checking that a new transition to add does not conflict with an existing one.
+The `yed2kingly` package aims at supporting the creation of state machines with the [Kingly state machine library](https://brucou.github.io/documentation/). While by design the Kingly configuration for state machines follows a simple and minimal syntax, crafting and maintaining a large state machine by hand can involve repetitive tasks. Such tasks include for instance looking up a transition and remove it, or checking that a new transition to add does not conflict with an existing one.
  
  Furthermore, a large machine is rarely written directly in a textual format but is rather supported by some kind of visualization whether hand-written graphs or professional graph editors. When switching to text editing, the visual information is lost, the text-based version eventually becomes desynchronized with the visualization. 
 
@@ -47,14 +47,14 @@ This is a case in hand where visual tooling can strengthen part of an error-pron
 This makes yEd a valuable tool to use for state machine creation, edition and maintenance. yEd exists in desktop and online versions. I recommend strongly the desktop version on the grounds that it is more productive for serious tasks, but your mileage may vary. For educational or demonstration purposes, there may be educational value in the online version.
 
 ### How does it work?
-In a typical process, I start designing a machine from the specifications by drawing it in the yEd editor. When I am done or ready to test the results of my design, I save the file. yEd by default saves its files in a `.graphml` format. I save the graphml file in the same directory in which I want to use the created state machine. From there, a previously launched watcher runs the `yed2Kingly` node script on the newly saved file and generates a JavaScript file that exports the events, state hierarchy and transitions contained in the graph -- you can of course also run the script manually instead of using a watcher. The provided `exports` can then be used as parameters to create a Kingly state machine.
+In a typical process, I start designing a machine from the specifications by drawing it in the yEd editor. When I am done or ready to test the results of my design, I save the file. yEd by default saves its files in a `.graphml` format. I save the graphml file in the same directory in which I want to use the created state machine. From there, a previously launched watcher runs the `yed2kingly` node script on the newly saved file and generates a JavaScript file that exports the events, state hierarchy and transitions contained in the graph -- you can of course also run the script manually instead of using a watcher. The provided `exports` can then be used as parameters to create a Kingly state machine.
 
 ### Install
-`npm install yed2Kingly`
+`npm install yed2kingly`
 
 ### Usage
 ```bash
-yed2Kingly file.graphml
+yed2kingly file.graphml
 ```
 
 Running the converter produces two files, targeted at consumption in a browser and node.js environment:
@@ -81,7 +81,7 @@ Some definitions:
   - A history pseudo-state is a node whose label is H (shallow history) or H* (deep history)
   - A compound node is a node that is created in the yEd interface by using the group functionality (*Grouping > Group* or *Ctrl-Alt-G* in version 3.19).
 
-- yed2Kingly rules:
+- yed2kingly rules:
   - With the exception of history and init pseudo-states, all nodes are converted to Kingly states
   - The Kingly name for a compound state will be the label displayed in the yEd editor for the matching group nodes in a non-collapsed state. This is important as yEd has another name for group nodes in the collapsed state.
   - The label for any edge in the graph maps to a Kingly transition record. The chosen syntax is `event [guard] / action`. Anyone of the event, guard and action can be empty. Hence `[]/` is a valid syntax though not recommended.
@@ -89,9 +89,50 @@ Some definitions:
   - Labels **must not** include the reserved character `ღ`
   - you can use the exact same label for different nodes (I do so in some of the tests), however, beware that this may come and bite you when you are tracing or debugging
   - The action label cannot be the reserved label `ACTION_IDENTITY`
-  - A label x must be so that the following JavaScript `{[x]: value}` is valid syntactically. This means labels can have spaces and a large set of Unicode characters, as allowed by the JavaScript specifications. Action labels such as *do this, do that* are thus valid.
-  - Edge labels **must not** have more than one `/` character (action separator)
-  
+  - A label `x` must be so that the following JavaScript `{[x]: value}` is valid syntactically. This means labels can have spaces and a large set of Unicode characters, as allowed by the JavaScript specifications. Action labels such as *do this, do that* are thus valid.
+  - edge labels (which contain the event/guard/action triple under the following syntax `event [guard] / action (comment)`) are parsed with an [EBNF grammar](https://github.com/brucou/slim/blob/master/yedEdgeLabelGrammar.ne). As of June 2020, to avoid having to handle an ambiguous grammar:
+    - `event` cannot have the characters `[`, `]`, `/`, `,` and `|` 
+    - `guard` cannot have the characters `[`, `]`, and `,`
+    - `actions` cannot have the characters `[`, `]`, `/`, `,` `(`, `)`, and `|`
+  - an edge label may encode several transitions, separated by `|`. All rules above apply to each of the transition as if it was alone
+  - edge labels can encode multiple transitions, provided those transitions encoding are separated by the `|` (pipe) character:
+    - e.g. `| event1 [guard1] / action1 | event2 [guard2] / action2` encodes two transitions triggered respectively by `event1` and `event2`
+  - edge labels also encode composite guards and composite actions. Composite guards and actions are comma-separated actions. `guard1, guard2` encodes a guard which will be satisfied only and only if both `guard1` and `guard2` are satisfied. Similarly, `action1, action2` encode two actions that will be composed to form a single action. The outputs of the composed is the concatenation of the outputs of each action, in the same order
+    - e.g. `event [cond1, cond2] / action1, action2 (comment)`
+
+
+In short:
+
+|Edge label| Valid|
+|---|---|
+|start / display initial screen | Yes |
+|start / display / initial screen | No |
+|typed [letters?] / display password| Yes |
+|typed [!letters?] / | Yes |
+|typed [!letters?]  | Yes |
+| [!letters?]  | Yes |
+| [!letters?] / display password | Yes |
+| start | Yes |
+| [] | Yes |
+| / | Yes |
+| [] / | Yes |
+|   | Yes |
+|  / display password | Yes |
+|  成為   [或不]   / 成為 | Yes |
+|  である[またはない] /である | Yes |
+| &#124; start / display initial screen &#124; reset / navigate back| Yes, parses two transitions |
+| &#124; start [letters? &#124; ] / display initial screen &#124; reset / navigate back| No |
+| &#124; start [visible?, letters?] / display initial screen, navigate back| Yes |
+
+We recommend to use the pipe character `|` exclusively and only to separate transitions. We recommend the comma `,` character exclusively to separate the components of a composite guard or action.
+
+#### Language support
+Unfortunately, as of today, only English and German are supported in the yed interface. However, all UTF-8 characters are accepted in the graphs that you can edit. The previous chinese and japanese characters have been copy/pasted into yed and are displayed fine. 
+
+There is however an old issue (dating from 2015) that seems to indicate that it may not be possible to write the characters from a chinese/japanese keyboard. Please open an issue in the github directory if you encounter a problem.
+
+Lastly, right-to-left, and vertical languages will not be displayed in the correct order. Shamefully, yed offers very little in terms of internationalization and localization.
+
 ### Conventions
 The following conventions are not rules and are not enforced in any way. They exist for practicality or readability purposes.
 
@@ -100,11 +141,11 @@ The following conventions are not rules and are not enforced in any way. They ex
 - Compound states (group nodes in yEd terminology) should also be displayed in a third color 
 
 ### Examples
-There are plenty of graph examples in the [test directory](https://github.com/brucou/yed2Kingly/tree/master/tests/graphs). An example, extracted from the tests directory and involving compound states and history pseudo-states is as follows:
+There are plenty of graph examples in the [test directory](https://github.com/brucou/yed2kingly/tree/master/tests/graphs). An example, extracted from the tests directory and involving compound states and history pseudo-states is as follows:
 
 ![example of yed graph with history pseudo-state and compound state](https://imgur.com/VjKaIkL.png)
 
-Running the `yed2Kingly` script produces the following JavaScript file:
+Running the `yed2kingly` script produces the following JavaScript file:
 
 ```js
 // Copy-paste help

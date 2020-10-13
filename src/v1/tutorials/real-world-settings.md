@@ -5,7 +5,7 @@ order: 35
 ---
 
 In this section, we will modelize and implement the user flows related to the *settings* route. In that route, the user may:
-- update his profile picture, username, biography, email and password 
+- update his profile picture, username, biography, email, and password 
 - logout
 
 The following rules apply:
@@ -76,7 +76,7 @@ To implement the `UPDATE_SETTINGS`, we defer to the API. The `LOG_OUT` command o
 ```
 
 ## User scenarios test
-We test four key user scenarios, checking the aforementioned behaviour rules, the content of which should be clear from their identifiers in the code:
+We test four key user scenarios, checking the aforementioned behavior rules, the content of which should be clear from their identifiers in the code:
 
 ```javascript
 const userStories = [
@@ -107,17 +107,17 @@ const userStories = [
 The modelization we reach is the following:
 
 {% fig %}
-![settings route behaviour modelization high level](../../graphs/real-world/realworld-routing-settings.png)
+![settings route behavior modelization high level](../../graphs/real-world/realworld-routing-settings.png)
 {% endfig %}
 
 Zooming in on the *Editor route* compound control state:
 
 {% fig %}
-![settings route behaviour modelization zoomed in](../../graphs/real-world/realworld-routing-settings-level-1.png)
+![settings route behavior modelization zoomed in](../../graphs/real-world/realworld-routing-settings-level-1.png)
 {% endfig %}
 
 ## Refactoring
-Remember than in the previous route (the *Editor* route), we identified a recurring pattern of behaviour (authenticated form submission) which we abstracted in a function `getAuthenticatedFormPageTransitions`. We are going to use that function for our implementation, given that we again have the same pattern appearing for the *Settings* route.
+Remember than in the previous route (the *Editor* route), we identified a recurring pattern of behavior (authenticated form submission) which we abstracted in a function `getAuthenticatedFormPageTransitions`. We are going to use that function for our implementation, given that we again have the same pattern appearing for the *Settings* route.
 
 We take advantage of our TDD refactoring stage to do a little bit of cleanup here and there in our Svelte UI code.
 

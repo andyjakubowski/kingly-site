@@ -1,6 +1,6 @@
 ---
 title: Movie query
-type: :tutorials
+type:: tutorials
 order: 18
 ---
 

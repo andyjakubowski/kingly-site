@@ -12,7 +12,11 @@ pwdFsm(typed '2') = display ...
 pwdFsm(clicked submit) = submit `a2` password
 ```
 
-The machine definition in argument of the Kingly's machine factory is mostly a translation of the previous graph into a data structure, together with the list of events accepted by the machine and the initial state of the machine:
+The machine definition (passed as a first argument of the Kingly's machine factory) is mostly a translation of the previous graph into a data structure, together with the list of events accepted by the machine and the initial state of the machine:
+
+{% tufte %}
+Note that we defined in our implementation the content of the password field as event data for the `TYPED_CHAR` event instead of just the new character keyed in. This is a better choice as it accounts for keys that are not associated with visible characters, such as backspace.
+{% endtufte %} 
 
 ```js
 // The simplest update function possible :-)
@@ -70,45 +74,47 @@ const pwdFsmDef = {
 const pwdFsm = createStateMachine(pwdFsmDef);
 ```
 
+
 {% ptip %}
-Kingly allows you to pick your favorite representation and manipulation of state by configuring the property *updateState*. All extended state updates for the machine will be run through the *updateState* function. In this simple example, we use simple cloning. You may use reducers, json patch, `Immer`, or whatever function which takes a state, and produce a new state from a list of state updates.
+Kingly allows you to pick your favorite representation and manipulation of state by configuring the property *updateState*. All extended state updates for the machine will be run through the *updateState* function. In this simple example, we use simple cloning. You may use any reducer you fancy. I have used in the past [JSON patch](http://jsonpatch.com/), `Immer`  and `Object.assign` but whatever function which takes a state, and produces a new state from a list of state updates will work.
 {% endptip %}
 
 You can try the interactive demo in the following playground:
-<iframe src="https://stackblitz.com/edit/js-xmybfo?embed=1&file=index.js&hideNavigation=1&view=preview" title="password-meter-nanomorph" style="width:100%; height:400px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<iframe src="https://codesandbox.io/embed/6y3zj?fontsize=12&hidenavigation=1" title="Counter app" style="width:1000px; height:700px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
-Open the console, pass inputs to the `pwdFsm` machine, and observe the log messages to follow the evolution of the machine state:
+The demo creates the same machine but with the `console` and `devTool` properties set (second parameter of the `createStateMachine` factory). These optional settings are very useful when developing a machine to trace and inspect its computation. The playground will not allow you to see the devtool, but you will be able to pass inputs to the machine `pwdFsm` and observe the logs generated in the console. To see the dev tool, you need to [install the devtool extension](https://brucou.github.io/documentation/v1/tooling/devtool.html), run the playground in a separate window (click on *open sandbox*), open the console (F12), and navigate to the *Courtesan* tab: you can now run commands in the console and observe the results on the dev tool.
 
-{% tufte %}
-Note that we defined in our implementation the content of the password field as event data for the `TYPED_CHAR` event instead of just the new character keyed in. This is a better choice as it accounts for keys which are not associated to visible characters, such as backspace.
-{% endtufte %} 
+Alright, let's open the console then, run a series of inputs through the machine with the devtool on and see what we get. We logged here the results observed:
 
-```bash
-# Events not configured in the machine
-pwdFsm({rqwe: 314});
-// > null
-pwdFsm({START:void 0})
-// > [{command:"RENDER", params:{props: undefined, screen: "INIT_SCREEN"}}]
-pwdFsm({CLICKED_SUBMIT:void 0})
-// > null
-pwdFsm({CLICKED_SUBMIT:void 0})
-// > null
-pwdFsm({TYPED_CHAR:'a'})
-// > [{command:"RENDER", params:{props: "a", screen: "RED_INPUT"}}]
-pwdFsm({CLICKED_SUBMIT:void 0})
-// > null
-pwdFsm({TYPED_CHAR:'a2'})
-// > [{command:"RENDER", params:{props: "a2", screen: "GREEN_INPUT"}}]
-pwdFsm({CLICKED_SUBMIT:void 0})
-// > [{command:"RENDER", params:{props: "a2", screen: "SUBMITTED_PASSWORD"}}]
-```
+{% fullwidth %}
+| Shell command |Devtool shows|Machine output|
+|:---|:---|:---|
+|`pwdFsm()`| error message |null|
+|`pwdFsm({})`| warning message |null|
+|`pwdFsm({rqwe: 314})`| warning message  |null|
+|`pwdFsm({START:void 0})`| output,  machine state|[{command:"RENDER", params:{props: undefined, screen: "INIT_SCREEN"}}]|
+|`pwdFsm({CLICKED_SUBMIT:void 0})`| warning message   |null|
+|`pwdFsm({CLICKED_SUBMIT:void 0})`| warning message   |null|
+|`pwdFsm({pwdFsm({TYPED_CHAR:'a'})})`| output,  machine state |[{command:"RENDER", params:{props: "a", screen: "RED_INPUT"}}]|
+|`pwdFsm({CLICKED_SUBMIT:void 0})`| warning message |null|
+|`pwdFsm({pwdFsm({TYPED_CHAR:'a2'})})`| output,  machine state |[{command:"RENDER", params:{props: "a2", screen: "GREEN_INPUT"}}]|
+|`pwdFsm({CLICKED_SUBMIT:void 0})`| output,  machine state |[{command:"RENDER", params:{props: "a2", screen: "SUBMITTED_PASSWORD"}}]|
+{% endfullwidth %}
+
+If you do not have the dev tool installed, here is a quick video showing the dev tool in action:
+![Imgur](https://imgur.com/qjqttZC.png)
+
+You can already gather some of the machine semantics:
+- if the machine receives a malformed input it returns an error object (and logs an error message in the console and the dev tool)
+- if the machine receives an input for which there are no transitions configured, it returns null (and logs a warning message in the console and the dev tool)
+
 
 ## API dive
-This section will go deeper on details of the `createStateMachine` API. Feel free to skip it and come back to it later if you are more interested in having a quick overview.
+This section will go deeper into details of the `createStateMachine` API. Feel free to skip it and come back to it later if you are more interested in having a quick overview.
 
 We mentioned previously that our machine is a graph whose edges are mapped to a triple of the form `event [condition] / actions`, and which is encoded in a machine definition object accepted by the `createStateMachine` factory. Let's assume `fsm = createStateMachine(fsmDef)`, where `fsmDef` is the machine definition -- an object, and `fsm` the actual executable machine -- a stateful function.
 
-In the machine definition, events are strings containing the name or moniker for a given event. Events can also carry data. The `fsm` will be called with inputs/events as follows: `fsm([eventName]: eventData)` and return and array of commands if any.
+In the machine definition, events are strings containing the name or moniker for a given event. Events can also carry data. The `fsm` will be called with inputs/events as follows: `fsm([eventName]: eventData)` and return an array of commands if any.
 
 The `condition` portion of the triple corresponds in the machine definition to a predicate, called a **guard**, which will compute a boolean from the received event data, and the extended state of the machine. Thereafter follows the guards used in the password meter example:
 
@@ -176,7 +182,7 @@ function displaySubmittedPassword(extendedState, eventData) {
 
 As shown in the previous code:
 - `outputs` is an array of commands of the shape `{command:String, params:*}`.
-- updates is an array of state updates. The form of those state updates is that expected by the `updateState` reducer which will *in fine* perform the extended state update. Here we choose a trivial updater which simply replaces the current state by the new state:
+- updates is an array of state updates. The form of those state updates is that expected by the `updateState` reducer which will *in fine* perform the extended state update. Here we choose a trivial updater which simply replaces the current state with the new state:
 
 ```js
 // The simplest update function possible :-)

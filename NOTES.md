@@ -1,3 +1,6 @@
+# Github
+published as kingly-site, private repository
+
 # Math support
 - had to solve an hexo bug with ``` code by adding a webstorm live template called det which expands into <details> <summary> ... 
 - had to modify the distribution and make changes in node_modules !!

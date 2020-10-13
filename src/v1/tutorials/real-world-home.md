@@ -52,7 +52,7 @@ To run in dev:
 npm run dev
 ```
 
-Following with tests setup, we will use good old *QUnit* as a test runner and *parcel* as a test bundler. This allows us to test in a real browser, and not to bother with configuration, given *parcel*'s sane defaults.
+Continuing with the tests setup, we will use good old *QUnit* as a test runner and *parcel* as a test bundler. This allows us to test in a real browser, and not to bother with configuration, given *parcel*'s sane defaults.
 
 We run in the home directory of the repository:
 
@@ -61,7 +61,7 @@ npm install --save-dev qunitjs
 npm install --save-dev parcel
 ```
 
-We update the package json to include our test script:
+We update the `package.json` to include our test script:
 
 ```diff
 {
@@ -148,12 +148,12 @@ We are going to have an architecture where the Kingly machine receives events fr
 Following the terminology used in the [*Observer pattern*](https://en.wikipedia.org/wiki/Observer_pattern), and in [Rxjs](https://rxjs-dev.firebaseapp.com/guide/subject), we will sometimes say that the event bus is a *Subject*, defined as an object which implements both the [Observer](http://reactivex.io/rxjs/class/es6/MiscJSDoc.js~ObserverDoc.html) (listener) and [Observable](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html) (emitter) interface.
 {% endtufte %}
 
-Events will come from user inputs (clicks on links or other parts of the app) and external inputs (mostly responses to API calls). Clicking on links will trigger a (hash) route change, so we will need to listen for the browser window's location changes. Other events will be emitted by the application and we will need to proxy those events to the Kingly machine. To that purpose we are going to use an event bus. The event bus must be both an event listener which can subscribe to event sources, and an event emitter which the machine can subscribe to.
+Events will come from user inputs (clicks on links or other parts of the app) and external inputs (mostly responses to API calls). Clicking on links will trigger a (hash) route change, so we will need to listen for the browser window's location changes. Other events will be emitted by the application and we will need to proxy those events to the Kingly machine. To that purpose, we are going to use an event bus. The event bus must be both an event listener which can subscribe to event sources, and an event emitter to which the machine can subscribe.
 
-Our interfaced systems include the screen (browser DOM), the browser window's location, the API endpoint (`https://conduit.productionready.io/api`), and the user session (for authentication purposes). As detailed in our [preliminary architecture](/documentation/v1/tutorials/real-world.html#Architecture), we will define command handlers for each command issued by the machine. In line with the [Hexagonal Architecture](https://dzone.com/articles/hexagonal-architecture-is-powerful) guidelines, we refine our preliminary architecture and limit our command handlers responsibilities to orchestrating requests to and responses from the interfaced systems. Concretely, we will introduce an *effect handlers* module which isolate domain methods (fetch articles, like article, etc.), so that effect handlers have a single concern which is to handle a specific domain operation. 
+Our interfaced systems include the screen (browser DOM), the browser window's location, the API endpoint (`https://conduit.productionready.io/api`), and the user session (for authentication purposes). As detailed in our [preliminary architecture](/documentation/v1/tutorials/real-world.html#Architecture), we will define command handlers for each command issued by the machine. In line with the [Hexagonal Architecture](https://dzone.com/articles/hexagonal-architecture-is-powerful) guidelines, we refine our preliminary architecture and limit our command handlers' responsibilities to orchestrating requests to and responses from the interfaced systems. Concretely, we will introduce an *effect handlers* module that isolate domain methods (fetch articles, like article, etc.), so that effect handlers have a single concern which is to handle a specific domain operation. 
 
-Separating effect handlers from command handlers is not strictly necessary but it is good practice for a separation of concern point of view, but also for testing purposes as it allows to test the command handlers by mocking the effect handlers. We take the pain to define an architecture with an increased level of decoupling in order to be able to test easily, debug faster, and to reduce the impact of a change in specifications on any of our modules. As a matter of fact, with our architecture, we can:
- - test the machine independently of the other modules, simply by passing input sequences
+Separating effect handlers from command handlers is not strictly necessary but it is good practice from a separation of concern point of view, but also for testing purposes as it allows to test the command handlers by mocking the effect handlers. We take the pain to define an architecture with an increased level of decoupling in order to be able to test easily, debug faster, and to reduce the impact of a change in specifications on any of our modules. As a matter of fact, with our architecture, we can:
+ - test the machine independently of the other modules, by simply passing input sequences
  - test the command handlers by mocking the effect handlers
  - test easily the effect handlers, as they usually have a single concern
 
@@ -163,7 +163,7 @@ The refined architecture can be represented as follows:
 ![refined Conduit clone architecture](../../graphs/real-world/realworld-hexgaonal-architecture%20v2.png)
 {% endfig %}
 
-We group the API calls in a [*API gateway*](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/direct-client-to-microservice-communication-versus-the-api-gateway-pattern#what-is-the-api-gateway-pattern) which further decouple the effect handlers from the endpoint. This is also not strictly necessary but also fits the hexagonal architecture.
+We group the API calls in an [*API gateway*](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/architect-microservice-container-applications/direct-client-to-microservice-communication-versus-the-api-gateway-pattern#what-is-the-api-gateway-pattern) which further decouple the effect handlers from the endpoint. This is also not strictly necessary but also fits the hexagonal architecture.
 
 We additionally create a session repository interface to hold our authentication data. The session repository allows us to abstract storage (here local storage, but it could be any other persistent storage method) and surface a custom authentication API (typically CRUD operations such as retrieving or updating user authentication data). 
 
@@ -388,7 +388,7 @@ export default app;
 ## Testing strategy
 Let's quickly note that TDD is less about testing than it is about development. Writing the tests first forces us to **think ahead** about the features we want to implement, how we organize the implementation's modules, how we define their interfaces, how, and in which order we test the implementation. None of these actually implies writing tests but thinking tests first is how we arrived in the first place to the chosen architecture made of decoupled modules and the [implementation strategy](/documentation/v1/tutorials/real-world.html#Implementation-strategy) mentioned in a previous section.
 
-The UI will be tested with Storybook. The machine will be tested by matching its outputs to the expected outputs originating from its specifications. The command handlers won't be tested, being fairly trivial. The effect handlers come already tested out of the box (we took them from another Conduit clone).
+The UI will be tested with Storybook. The machine will be tested by matching its outputs to the expected outputs originating from its specifications. The command handlers won't be tested, being fairly simple. The effect handlers come already tested out of the box (we took them from another Conduit clone).
 
 Regarding our machine tests, we will need to:
 - explicit the shape of machine inputs (events), and machine outputs (commands)
@@ -405,7 +405,7 @@ We thus create the following files/directory:
 - `tests/home-route-fsm-specs` to hold tests related to the home route
 - `tests/fixtures`
 
-In what follows, we are going to implement our application by implementing a series of user scenarios, the sum of which covers the whole set of specifications for the home route. Let's start small, considering unauthenticated user scenarios, to later incorporate authenticated users scenarios, and the rest of the specifications. We follow the [implementation strategy](/documentation/v1/tutorials/real-world.html#Implementation-strategy) mentioned in the previous section.
+In what follows, we are going to implement our application by implementing a series of user scenarios, the sum of which covers the whole set of specifications for the home route. Let's start small, considering unauthenticated user scenarios, to later incorporate authenticated user scenarios, and the rest of the specifications. We follow the [implementation strategy](/documentation/v1/tutorials/real-world.html#Implementation-strategy) mentioned in the previous section.
 
 ## Unauthenticated user sees global feed
 We are first going to implement the following scenarios:
@@ -447,7 +447,7 @@ We thus will use the following properties for the `<RealWorld />` Svelte compone
 - `articles`: a string with the loading message, or an error (articles fetch not successful), or an array of tags (articles fetch successful)
 - `page`: the current page
 
-The `<RealWorld />` component can be broken down into smaller components as usual. Here we use smaller components such as `GlobalFeedTab`, `Header`, `Banner`, `ArticleList` or `Tags`. Those components must be imported before usage.
+The `<RealWorld />` component can be broken down into smaller components as usual. Here we use smaller components such as `GlobalFeedTab`, `Header`, `Banner`, `ArticleList`, or `Tags`. Those components must be imported before usage.
 
 This gives us the following code for `src/UI/RealWord.svelte`:
 
@@ -529,11 +529,11 @@ This gives us the following code for `src/UI/RealWord.svelte`:
 ```
 
 ### User interface tests
-We use [Storybook](https://storybook.js.org/) to test our user interface. Storybook is a component explorer, which provides a sandbox to design, build, test and organize UI components in isolation. Developers document use cases as stories and can navigate through the stories to check the correct behaviour of components. Storybook works with several UI libraries, including Svelte. To install Storybook for Svelte, follow the [instructions](https://storybook.js.org/docs/guides/guide-svelte/) published by Storybook.
+We use [Storybook](https://storybook.js.org/) to test our user interface. Storybook is a component explorer, which provides a sandbox to design, build, test, and organize UI components in isolation. Developers document use cases as stories and can navigate through the stories to check the correct behavior of components. Storybook works with several UI libraries, including Svelte. To install Storybook for Svelte, follow the [instructions](https://storybook.js.org/docs/guides/guide-svelte/) published by Storybook.
 
-Thanks to Storybook, we can define stories corresponding to diverse points of the `<RealWorld />` component parameter space and check that the correct view is displayed. Additionally we use Storybook addons to check the behaviour of event handlers, or test the UI with [snapshots](https://storybook.js.org/docs/testing/structural-testing/). Storybook also allows [interaction testing](https://storybook.js.org/docs/testing/interaction-testing/) and [automated visual testing](https://storybook.js.org/docs/testing/automated-visual-testing/). 
+Thanks to Storybook, we can define stories corresponding to diverse points of the `<RealWorld />` component parameter space and check that the correct view is displayed. Additionally, we use Storybook addons to check the behavior of event handlers or test the UI with [snapshots](https://storybook.js.org/docs/testing/structural-testing/). Storybook also allows for [interaction testing](https://storybook.js.org/docs/testing/interaction-testing/) and [automated visual testing](https://storybook.js.org/docs/testing/automated-visual-testing/). 
 
-The following stories allows us to check manually that the screens generated by our UI component is correct:  
+The following stories allow us to check manually that the screens generated by our UI component are correct:  
 
 {% fig %}
 ![stories for the home route unauthenticated user scenarios](../../images/real-world/storybook/home-route-unauthenticated-basic.png)
@@ -560,7 +560,7 @@ We also have two commands to implement:
 |FETCH_GLOBAL_FEED|fetches a paged list of articles and tags or issues an error|page (limited to 10 items)|
 
 ### Command handling
-The command `FETCH_GLOBAL_FEED` fetches a list of articles and tags from the API end point and reports possible errors. The command needs a page parameter to run, as it will fetch only a limited portion of the articles and tags available at the end point. Commands receive three parameters:
+The command `FETCH_GLOBAL_FEED` fetches a list of articles and tags from the API endpoint and reports possible errors. The command needs a page parameter to run, as it will fetch only a limited portion of the articles and tags available at the endpoint. Commands receive three parameters:
 
 - `dispatch`: this is the event bus converted to an event emitter connected to the Kingly machine 
 - `params`: this is the parameters necessary to execute the command
@@ -569,7 +569,7 @@ The command `FETCH_GLOBAL_FEED` fetches a list of articles and tags from the API
 The implementation is as follows (`src/main.js`):
 
 {% tufte %}
-Note how the `apiGatewayFactory` abstracts out the implementation details (fetching method, storage, end point) of the domain methods. Also, as mentioned, the command handler only does orchestration of effects which are delegated to the effect handlers. I have not structured the code for command handlers and effect handlers to be tested separately, as the command handlers are pretty simple, and the effect handlers are taken verbatim from another Conduit clone implementation, and come already tested out of the box.
+Note how the `apiGatewayFactory` abstracts out the implementation details (fetching method, storage, endpoint) of the domain methods. Also, as mentioned, the command handler only does orchestration of effects which are delegated to the effect handlers. I have not structured the code for command handlers and effect handlers to be tested separately, as the command handlers are pretty simple, the effect handlers are taken verbatim from another Conduit clone implementation, and come already tested out of the box.
 {% endtufte %}
 
 ```javascript
@@ -608,11 +608,11 @@ A machine passing the previously defined tests can be modelized as follows:
 
 ![machine fetching global feed](../../graphs/real-world/realworld-routing-home.png)
 
-To be able to understand the machine behaviour from the previous graph, it is useful to remember the formalism for the visual representation of state machines:
+To be able to understand the machine behavior from the previous graph, it is useful to remember the formalism for the visual representation of state machines:
 
 - a node is a control state
 - the *Init* node is the initial control state for the state machine
-- an edge between nodes is called a transition and is labelled with an (optional) event, a (optional) guard, and (optional) actions.
+- an edge between nodes is called a transition and is labeled with an (optional) event, an (optional) guard, and (optional) actions.
 - Typically we write a transition in the form `event [ guard ] / actions`
 
 Let's also recall here some necessary terminology:
@@ -630,11 +630,11 @@ As a final reminder, the visual representation maps to the semantics for the cor
 - a transition with label `event [ guard ] / actions` evaluates to `true` against an incoming event if and only if the incoming event matches the `event` in the transition label, and the guard is fulfilled 
 - when an event occurs, the transitions originating from the current control state of the machine are evaluated
   - the first evaluated transition that is fulfilled will be taken, leading to a new control state for the machine, the update of the machine extended state, and the machine computing an output (here outputs are commands for the interfaced systems). These computations relate to the `actions` part of the transition label (`event [ guard ] / actions`)
-- when an event occurs, if no transitions evaluates to `true`, the machine remains in its current control state, with identical extended state, and outputs a zero action (represented by the constant `NO_OUTPUT` in Kingly). This is akin to a no-op.
-- if the machine is in a transient control state, the outgoing transitions for that control states are eveluated **immediately** when the machine enters the transient control state
+- when an event occurs, if no transition evaluates to `true`, the machine remains in its current control state, with an identical extended state, and outputs a zero action (represented by the constant `NO_OUTPUT` in Kingly). This is akin to a no-op.
+- if the machine is in a transient control state, the outgoing transitions for that control states are evaluated **immediately** when the machine enters the transient control state
 - note that Kingly does not accept a machine whose initial control state is a transient control state
  
-With this in mind, you should be able to check that the previous machine visualization indeed implements the behaviour referred to in our 9 test sequences:
+With this in mind, you should be able to check that the previous machine visualization indeed implements the behavior referred to in our 9 test sequences:
 
 - the machine starts in the *Init* control state
 - when receiving the routing event it transitions to the *routing* control state, which is a transient control state
@@ -653,7 +653,7 @@ The first scenario corresponds to a Kingly machine with the following mapping:
 The second scenario goes as follows:
 
 {% tufte %}
-Note that in what follows, we chose to immediately display the results of fetch operations (tags and articles) when they arrive, instead of waiting for both fetches to be completed before updating the UI. We thereby replicate the behaviour of the Conduit official implementation. This may or may not be better in terms of UX.
+Note that in what follows, we chose to immediately display the results of fetch operations (tags and articles) when they arrive, instead of waiting for both fetches to be completed before updating the UI. We thereby replicate the behavior of the Conduit official implementation. This may or may not be better in terms of UX.
 {% endtufte %}
 
 | Input | Output|
@@ -808,7 +808,7 @@ Our tests runner now gives us a list of failing tests:
 Nice! We have our tests running but failing. We can now implement the machine which passes the tests.
 
 ### Machine implementation
-In the previous visualization, we focused on the control flow of the application and skipped key information which matter for implementation purposes:
+In the previous visualization, we focused on the control flow of the application and skipped key information which matters for implementation purposes:
 
 - we entirely skipped discussing the extended state of the state machine
 - we obviously did not include any code for the guards and actions
@@ -819,11 +819,11 @@ We have to precise all that now.
 It is also possible to **compile** at build time the data structure into a standard JavaScript function. This avoids having to import the Kingly library and may result in smaller payloads. The compiler functionality is not yet fully tested hence not published.
 {% endtufte%}
 
-With Kingly, a state machine is defined through a data structure `FsmDef`, which is then used by a factory to construct an executable version of the machine. That executable version is a mere JavaScript function, which is generated by the factory `createStateMachine`. The factory also admits `settings` by which dependencies can be injected and debugging/tracing behaviour can be configured. You should always start by using the debugging options when implementing a machine, till you have enough confidence that the machine syntax is correct. A value of `{debug: {console}}` will output to the console tracing information about the execution of the machine. A value of `{debug: {checkContracts: fsmContracts}}` will check that the machine definition `fsmDef` fulfills all contracts enforcing the machine syntax and semantics.
+With Kingly, a state machine is defined through a data structure `FsmDef`, which is then used by a factory to construct an executable version of the machine. That executable version is a mere JavaScript function, which is generated by the factory `createStateMachine`. The factory also admits `settings` by which dependencies can be injected and debugging/tracing behavior can be configured. You should always start by using the debugging options when implementing a machine, till you have enough confidence that the machine syntax is correct. A value of `{debug: {console}}` will output to the console tracing information about the execution of the machine. A value of `{debug: {checkContracts: fsmContracts}}` will check that the machine definition `fsmDef` fulfills all contracts enforcing the machine syntax and semantics.
 
 Let's fill the fields for the `FsmDef` machine data structure one by one:
 
-1. `initialControlState`: per the modelization we start with `INIT`
+1. `initialControlState`: per the modelization, we start with `INIT`
 2. `initialExtendedState`: per the tests we already wrote, most of the information we needed was in the event data. We will however need to keep track of the current page for the pagination feature to render correctly the home route. So for now we pick  `{currentPage: 0}`.
 3. `updateState`: as a reducer, we use a variant of `Object.assign` to incorporate the state updates into the old state 
 4. `events`: that is an array of the 5 events (1 user event, 4 system events), we already identified in our tests.
@@ -849,7 +849,7 @@ The `transitions` property is an array whose elements are the edges of the graph
 If you are familiar with [Elm](https://elm-lang.org/) and its `update:: Msg -> Model ` `-> (Model, Cmd Msg)` function, you should feel in familiar waters. The action factory is akin to the `update` function: it turns an incoming event (`Msg`) into updates on the machine's extended state (`Model`) and commands (`Cmd Msg`). The only difference is that the Elm's update function directly produces a new state from the old state, while action factories produce updates to the old state which, combined with the `updateState` property of a Kingly machine, produce the new state.
 {% endtufte %}
 
-The action factory takes the same parameters than the guards but return an object with two properties:
+The action factory takes the same parameters as the guards but returns an object with two properties:
 - `updates`: the list of updates to perform on the machine's extended state
 - `outputs`: values to aggregate to the outputs of the machine as a result of receiving the incoming event
 
@@ -943,7 +943,7 @@ In a second phase, we proceeded to implement portions of our specifications:
 - we identified the events and commands related to those scenarios
 - we implemented the UI and tested it with Storybook
 - we wrote the command handlers for the new commands appearing in the scenarios
-- we wrote basic tests for the machine which implements the behaviour related to the scenarios
+- we wrote basic tests for the machine which implements the behavior related to the scenarios
 - we modelized the machine passing the tests, without getting too deep into implementation details (internal state updates, etc.)
 - we implemented that machine and passed the tests
 
@@ -951,7 +951,7 @@ In the next steps and till we complete the home route scenarios, we are going to
 
 ## Unauthenticated user clicks on a page
 {% tufte %}
-One could argue that the tags may have changed and it could be a good idea to fetch them anew, but we stay true here to the behaviour of the demo app.
+One could argue that the tags may have changed and it could be a good idea to fetch them anew, but we stay true here to the behavior of the demo app.
 {% endtufte %}
 
 In this new scenario, we have to handle a page click user event `CLICKED_PAGE`), and fetching the global feed for the clicked page. The main changes vs. the previous scenarios is that we should not fetch twice the tags, as the [demo Conduit app](https://demo.realworld.io/#/) does not. This means that we need to keep track of whether the tags have already been successfully fetched, and if that is the case, we should only fetch the articles for the given page.
@@ -964,12 +964,12 @@ This modelization showcases specific aspects of the visualization semantics (nam
 - when a machine transitions to a compound state, it immediately evaluates the transitions leaving the initial state for that compound state
   - this happens for instance when the machine receives a `ROUTE_CHANGED` event with the home route as event data. The machine will transition to the compound state *Fetching global feed*, and thus immediately evaluates the two transitions going respectively to the *Pending global feed articles* and *Pending global feed* compound state.
   - the machine thus transitions as usual to the first transition whose guard is fulfilled
-- every compound state has defined two special states called history pseudo states: shallow history state, deep history state.
+- every compound state has defined two special states called history pseudo-states: shallow history state, deep history state.
   - a deep history state is a placeholder for the last atomic control state belonging to the associated compound state that the machine was in before exiting that compound state
   - here, assuming that the tags were already fetched, the machine would transition to the *Pending global feed articles* atomic state. On receiving the fetched articles, the machine would transition back to the *Pending global feed articles* state
   - assuming that the tags were not already fetched, the machine would transition to the *Pending global feed * atomic state. On receiving the fetched articles, the machine would transition back to the *Pending global feed* state, state in which it may receive the fetched tags
 
-History states are important 'rewind' mechanism. It can be used to interrupt a behaviour temporarily (leaving a compound state), replace it by another behaviour, and resume the previous behaviour at a later point (transition to the history state for the compound state). Here we intercalated the article fetch response processing within the global feed request and response behaviour.
+History states are important 'rewind' mechanism. It can be used to interrupt a behavior temporarily (leaving a compound state), replace it with another behavior, and resume the previous behavior at a later point (transition to the history state for the compound state). Here we intercalated the article fetch response processing within the global feed request and response behavior.
 
 Alright, let's move on to the authenticated user scenarios.
 
@@ -986,12 +986,12 @@ There is also an important point which we haven't introduced previously, in orde
 - [fetch on render](https://reactjs.org/docs/concurrent-mode-suspense.html#approach-1-fetch-on-render-not-using-suspense), in which the user is notified visually that some content is being loaded
 - [incremental data loading](https://reactjs.org/blog/2019/11/06/building-great-user-experiences-with-concurrent-mode-and-suspense.html#load-data-incrementally), which aims at improving perceived performance by presenting important parts of the view as soon as we have the relevant data.
 
-Those patterns are chosen to replicate the Conduit demo app. However, we could have just easily adopted a [suspended data fetching](https://reactjs.org/docs/concurrent-mode-suspense.html) pattern by adding a timeout event, and the corresponding extra arrows in the modelization (cf. [Svelte Suspense example](https://brucou.github.io/documentation/v1/examples/svelte%20suspense.html)). This is to prove that, having a behaviour entirely decoupled from the UI, we have no limits as per the behaviours which we can express.
+Those patterns are chosen to replicate the Conduit demo app. However, we could have just easily adopted a [suspended data fetching](https://reactjs.org/docs/concurrent-mode-suspense.html) pattern by adding a timeout event, and the corresponding extra arrows in the modelization (cf. [Svelte Suspense example](https://brucou.github.io/documentation/v1/examples/svelte%20suspense.html)). This is to prove that, having a behavior entirely decoupled from the UI, we have no limits as per the behaviors which we can express.
 
 Let's move on to the tag filtering scenarios.
 
 ## User can filter feeds per tags
-In this new scenario, the user can click on one of the displayed tags, after which a new tab will appear with the global feed filtered by the clicked tag. As usual the user can also change the page to see other results in the feed.
+In this new scenario, the user can click on one of the displayed tags, after which a new tab will appear with the global feed filtered by the clicked tag. As usual, the user can also change the page to see other results in the feed.
 
 The machine implementing those scenarios goes like this:
 
@@ -1009,9 +1009,9 @@ The machine implementing those scenarios goes like this:
 {% endfig %}
 
 ## User can favorite/unfavorite an article
-Here, an user can click on an article. If the article had been previously liked by him, then the article is unliked. Otherwise the article is liked. The counter of likes for the articles is incremented or decremented as appropriate. In order to be able to favorite an article, the user must be authenticated. If he is not, then he is redirected to a sign up page.  
+Here, a user can click on an article. If the article had been previously liked by him, then the article is unliked. Otherwise, the article is liked. The counter of likes for the articles is incremented or decremented as appropriate. In order to be able to favorite an article, the user must be authenticated. If he is not, then he is redirected to a sign-up page.  
 
-The favoriting specifications apply to all article-displaying tabs, so we use a single arrow on the common super state of *Fetching user feed*, *Fetching global feed*, and *Fetching filtered articles*. This is the kind of factorization that hierarchy gives us: instead of having three similar arrows, we can have only one. However, when the article is liked or unliked, we want the machine to return where it was: the behaviour of the machine returns to be the same than it was. Once again, we implement this 'rewind' behaviour with a deep history pseudo state on the common super state *Home*.
+The favoriting specifications apply to all article-displaying tabs, so we use a single arrow on the common super state of *Fetching user feed*, *Fetching global feed*, and *Fetching filtered articles*. This is the kind of factorization that hierarchy gives us: instead of having three similar arrows, we can have only one. However, when the article is liked or unliked, we want the machine to return where it was: the behavior of the machine returns to be the same as it was. Once again, we implement this 'rewind' behavior with a deep history pseudo state on the common super state *Home*.
 
 The machine implementing those scenarios goes like this:
 
@@ -1019,10 +1019,10 @@ The machine implementing those scenarios goes like this:
 ![realworld-home-tag-filter](../../graphs/real-world/realworld-routing-home-user-can-favorite.png)
 {% endfig %}
 
-Note how we collapsed the *Fetching user feed*, *Fetching global feed*, and *Fetching filtered articles* states in order to have a bettr visibility of the feature we just added. This is yet another advantage of modeling using a hierarchy of states. It is possible to zoom in and out to take a high-level view, or, on the opposite a fairly detailed view of a part of the machine behaviour. 
+Note how we collapsed the *Fetching user feed*, *Fetching global feed*, and *Fetching filtered articles* states in order to have a better visibility of the feature we just added. This is yet another advantage of modeling using a hierarchy of states. It is possible to zoom in and out to take a high-level view, or, on the opposite a fairly detailed view of a part of the machine behavior. 
 
 ## User can also navigate out of the home route
-Last scenario, the user can click on links (sign in, sign up, etc.) which leads to a change of url. We capture that with the following modelization:
+Last scenario, the user can click on links (sign in, sign up, etc.) which leads to a change of URL. We capture that with the following modelization:
 
 {% fig %}
 ![realworld-home-tag-filter](../../graphs/real-world/realworld-routing-home-user-can-navigate.png)
@@ -1038,4 +1038,4 @@ We refactor the previous machine to include all user flows corresponding to the 
 The full implementation can be accessed in the [corresponding branch](https://github.com/brucou/realworld-kingly-svelte/tree/home-route-complete) of the [GitHub repository](https://github.com/brucou/realworld-kingly-svelte).
 
 ## Summary
-We set up the architecture for our application, we decided to implement the application route by route, starting with the home route. The home route itself being complex enough, we broke it down in multiple user scenarios which we implemented one by one. In the process we iteratively built our state machine. Having the behaviour of our application entirely separated from the rest of the application allows us to design for any UX pattern (fetch-on-render, render-as-you-fetch, etc.) without being limited by an UI library.
+We set up the architecture for our application, we decided to implement the application route by route, starting with the home route. The home route itself being complex enough, we broke it down into multiple user scenarios which we implemented one by one. In the process, we iteratively built our state machine. Having the behavior of our application entirely separated from the rest of the application allows us to design for any UX pattern (fetch-on-render, render-as-you-fetch, etc.) without being limited by a UI library.

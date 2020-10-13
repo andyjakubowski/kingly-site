@@ -8,7 +8,7 @@ In this section, we will modelize and implement the user flows related to the *U
 
 If the (authenticated) user navigating to the route is the same as the user whose profile must be displayed, that user may edit his profile settings. Otherwise, the navigating user may follow the user whose profile page is displayed. In both cases, the navigating user may view and like/unlike any displayed articles, just like in the *Home* route.
 
-The user needs not be authenticated to access the *User profile* route and its functionalities. The user however needs to authenticate himself to like/unlike an article, or follow a user profile. When attempting to do so, the user will be redirected to the *Sign up* page.
+The user does not need to be authenticated to access the *User profile* route and its functionalities. The user however needs to authenticate himself to like/unlike an article or follow a user profile. When attempting to do so, the user will be redirected to the *Sign-up* page.
 
 ## UI
 We already have identified the screens in the *Specifications* section. Ler's remind them here:
@@ -38,10 +38,10 @@ We have the following commands for the *User profile* route (some of which also 
 | `FETCH_AUTHENTICATION`| -- | fetches user session data if any| 
 | `FAVORITE_ARTICLE`| article slug| sends an [API request](https://github.com/gothinkster/realworld/tree/master/api#favorite-article) to like an article| 
 | `UNFAVORITE_ARTICLE`| article slug| sends an [API request](https://github.com/gothinkster/realworld/tree/master/api#unfavorite-article) to unlike an article| 
-| `FETCH_PROFILE`| username | sends an API request to the [*Get profile* end point](https://github.com/gothinkster/realworld/tree/master/api#get-profile)|
-| `FOLLOW_PROFILE`| username | sends an API request to the [*Follow user* end point](https://github.com/gothinkster/realworld/tree/master/api#follow-user)|
-| `UNFOLLOW_PROFILE`| username | sends an API request to the [*Unfollow user* end point](https://github.com/gothinkster/realworld/tree/master/api#unfollow-user)|
-| `FETCH_AUTHOR_FEED`| articles' author's username and page index | sends an API request to the [*List Articles* end point](https://github.com/gothinkster/realworld/tree/master/api#list-articles)|
+| `FETCH_PROFILE`| username | sends an API request to the [*Get profile* endpoint](https://github.com/gothinkster/realworld/tree/master/api#get-profile)|
+| `FOLLOW_PROFILE`| username | sends an API request to the [*Follow user* endpoint](https://github.com/gothinkster/realworld/tree/master/api#follow-user)|
+| `UNFOLLOW_PROFILE`| username | sends an API request to the [*Unfollow user* endpoint](https://github.com/gothinkster/realworld/tree/master/api#unfollow-user)|
+| `FETCH_AUTHOR_FEED`| articles' author's username and page index | sends an API request to the [*List Articles* endpoint](https://github.com/gothinkster/realworld/tree/master/api#list-articles)|
 
 ## Events
 We have the following events for the *User profile* route (some of which also being used for the *Home* route):
@@ -61,8 +61,8 @@ We have the following events for the *User profile* route (some of which also be
 |`TOGGLED_FOLLOW`|username to follow, and whether that username is followed at the time of the toggling|user clicks to follow or unfollow a user|
 |`TOGGLE_FOLLOW_OK`|profile data|user successfully followed/unfollowed a profile|
 |`TOGGLE_FOLLOW_NOK`|err and profile data|user failed to follow/unfollow a profile|
-|`FETCHED_PROFILE`|profile data|api response to a *Get profile* request|
-|`FETCH_PROFILE_NOK`|error|api error response to a *Get profile* request|
+|`FETCHED_PROFILE`|profile data|API response to a *Get profile* request|
+|`FETCH_PROFILE_NOK`|error|API error response to a *Get profile* request|
 {% endfullwidth %}
 
 ## Commands implementation
@@ -109,17 +109,17 @@ The `REDIRECT`, `FETCH_AUTHENTICATION`, `FAVORITE_ARTICLE`, `UNFAVORITE_ARTICLE`
 The modelization we reach is the following:
 
 {% fig %}
-![profile route behaviour modelization high level](../../graphs/real-world/realworld-routing-profile.png)
+![profile route behavior modelization high level](../../graphs/real-world/realworld-routing-profile.png)
 {% endfig %}
 
 Zooming in on the *Profile route* compound control state:
 
 {% fig %}
-![profile route behaviour modelization zoomed in](../../graphs/real-world/realworld-routing-profile-level-1.png)
+![profile route behavior modelization zoomed in](../../graphs/real-world/realworld-routing-profile-level-1.png)
 {% endfig %}
 
 ## User scenarios test
-We pick a set of scenarios which covers the transitions of our modelized graph, so that every transition in our graph is exercised at least one during our tests. We can conceptually separate those scenarios into main cases and edge cases (API request failure, unexpected inputs etc.).
+We pick a set of scenarios that covers the transitions of our modelized graph so that every transition in our graph is exercised at least once during our tests. We can conceptually separate those scenarios into main cases and edge cases (API request failure, unexpected inputs, etc.).
 
 In the main cases group, we will select the following tests: 
 
@@ -194,7 +194,7 @@ const userStories = [
 ```
 
 ## Refactoring
-We take advantage of our TDD refactoring stage to do a little bit of cleanup in our application shell. We also initially started with events such as `FOLLOW_OK`, `UNFOLLOW_OK`, `FOLLOW_NOK`, `UNFOLLOW_NOK`, i.e. 4 events to cover the API responses linked to the follow/unfollow functionality. We brought that down to 2: `TOGGLE_FOLLOW_OK` and `TOGGLE_FOLLOW_NOK`. We also identified some possible target for refactoring (some actions are duplicated) but do not act on them just yet. When we will stop and have a look at our application performance and size, we may DRY things up further.
+We take advantage of our TDD refactoring stage to do a little bit of cleanup in our application shell. We also initially started with events such as `FOLLOW_OK`, `UNFOLLOW_OK`, `FOLLOW_NOK`, `UNFOLLOW_NOK`, i.e. 4 events to cover the API responses linked to the follow/unfollow functionality. We brought that down to 2: `TOGGLE_FOLLOW_OK` and `TOGGLE_FOLLOW_NOK`. We also identified some possible targets for refactoring (some actions are duplicated) but do not act on them just yet. When we will stop and have a look at our application performance and size, we may DRY things up further.
 
 ## Behaviour implementation
 The implementation (`src/behaviour/profile.js`) derives directly from the modelization. We reproduce here the main part which are the transitions:
@@ -348,4 +348,4 @@ export const profileTransitions = [
 ```
 
 ## Summary
-We implemented the *Profile* route of our Conduit clone application. As the user interface for the *Profile* route had commonalities both at the interface and behaviour level with the *Home* route, we were able to reuse part of the *Home* route implementation. We also identified further opportunities for code size reduction.
+We implemented the *Profile* route of our Conduit clone application. As the user interface for the *Profile* route had commonalities both at the interface and behavior level with the *Home* route, we were able to reuse part of the *Home* route implementation. We also identified further opportunities for code size reduction.

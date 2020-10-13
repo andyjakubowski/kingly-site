@@ -1,6 +1,6 @@
 ---
 title: What we learnt
-type: tutorials
+type: _tutorials
 order: 20
 ---
 
