@@ -5,7 +5,7 @@ order: 1
 ---
 
 ## Motivation
-This example is a trivial, user interface which serves to introduce the Kingly library. This example is used in the [tutorials](../tutorials) section.
+This example is a trivial user interface that serves to introduce the Kingly library. This example is used in the [tutorials](../tutorials) section.
 
 ## Visualization
 ![counter machine](../../graphs/trivial counter machine.png)

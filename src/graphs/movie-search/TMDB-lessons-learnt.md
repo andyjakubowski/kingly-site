@@ -1,5 +1,5 @@
 ---
-title: What we learnt
+title: What we learned
 type: _tutorials
 order: 20
 ---

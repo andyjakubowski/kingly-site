@@ -4,7 +4,7 @@ type: api
 order: 0
 ---
 
-To start defining state machine with Kingly, it is necessary to get acquainted with:
+To start defining a state machine with Kingly, it is necessary to get acquainted with:
 - the basic state machine formalism
 - its extension, including hierarchy (compound states), and history states
 - the library API
@@ -12,15 +12,15 @@ To start defining state machine with Kingly, it is necessary to get acquainted w
 
 For those with interest in software architecture, we will start with the principles at the core of Kingly design. Alternatively, you can skip to the next section where we introduce the Kingly configuration for standard state machines and hierarchical state machines. We then cover in detail the API semantics. 
 
-In the remainder of this page, we will dedicate a section to each function part of the Kingly API. Those sections aims to serve as reference documentation for the function. If there is anything you would like to add, ping me on [twitter](https://twitter.com/bricoi1). 
+In the remainder of this page, we will dedicate a section to each function part of the Kingly API. Those sections aim to serve as a reference documentation for the function. If there is anything you would like to add, ping me on [twitter](https://twitter.com/bricoi1). 
 
 ## API design
-The key objectives for the API was:
+The key objectives for the API were:
 
-- **generality**, **reusability** and **simplicity** 
+- **generality**, **reusability**, and **simplicity** 
   - there is no explicit provision made to accommodate specific use cases or frameworks
   - it must be possible to add a [concurrency and/or communication mechanism](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.92.6145&rep=rep1&type=pdf) on top of the current design
-  - it must be possible to integrate smoothly into React, Angular and your popular framework
+  - it must be possible to integrate smoothly into React, Angular, and your popular framework
   - support for both interactive and reactive programming
 - parallel and sequential composability of state machines
 
@@ -33,7 +33,7 @@ As a result of this, the following choices were made:
   - there is no loss of generality as both entry and exit actions can be implemented with our state machine. There is simply no syntactic support for it in the core API. This can however be provided through standard functional programming patterns (higher-order functions, etc.)
 - every computation performed is synchronous (asynchrony is an effect)
 - action factories return the **updates** to the extended state to avoid any unwanted direct modification of the extended state (API user must provide such update function, which in turn allows him to use any formalism to represent state - for instance `immutable.js`)
-- no restriction is made on output of Kingly machines, but inputs must follow some conventions (if a machine's output match those conventions, two such machines can be sequentially composed
+- no restriction is made on the outputs of Kingly machines, but inputs must follow some conventions (if a machine's output match those conventions, two such machines can be sequentially composed
 - parallel composition naturally occurs by feeding two state machines the same input(s))
   - as a result, reactive programming is naturally enabled. If `inputs` is a stream of well-formatted machine inputs, and `f` is the fsm, then the stream of outputs will be `inputs.map(f)`. It is so simple that we do not even surface it at the API level.
 
@@ -42,20 +42,20 @@ Concretely, our state machine will be created by the factory function `createSta
 - immediately positions itself in its configured initial state (as defined by its initial control state and initial extended state) 
 - will compute an output for any input that is sent to it since that
 
-Let us insist again on the fact that the state machine is not, in general, a pure function of its inputs. However, a given output of the machine depends exclusively on the sequence of inputs it has received so far ([causality property](https://en.wikipedia.org/wiki/Causal_system)). This means that it is possible to associate to a state machine another function which takes a sequence of inputs into a sequence of outputs, in a way that **that** function is pure. This is what enables simple and automated testing.
+Let us insist again on the fact that the state machine is not, in general, a pure function of its inputs. However, a given output of the machine depends exclusively on the sequence of inputs it has received so far ([causality property](https://en.wikipedia.org/wiki/Causal_system)). This means that it is possible to associate to a state machine another function that takes a sequence of inputs into a sequence of outputs, in a way that **that** function is pure. This is what enables simple and automated testing.
 
 ## General concepts
-We encourage the novice reader to refer to the [tutorials](../tutorials) for a step-by-step introduction to the concepts, with examples analyzed by order of complexity. In this section, we will use the example of a reasonably complex CD player application, whose behaviour is modelled by a hierarchical state machine. For this example, we will show a run of the machine, and by doing so, illustrate advanced concepts such as compound states, and history states. This example will be focused on the modelling rather than the implementation. The reader can refer to the [examples](../examples) section of this documentation for full-fledged examples. 
+We encourage the novice reader to refer to the [tutorials](../tutorials) for a step-by-step introduction to the concepts, with examples analyzed by order of complexity. In this section, we will use the example of a reasonably complex CD player application, whose behavior is modelized by a hierarchical state machine. For this example, we will show a run of the machine, and by doing so, illustrate advanced concepts such as compound states, and history states. This example will be focused on the modeling rather than the implementation. The reader can refer to the [examples](../examples) section of this documentation for full-fledged examples. 
 
 ### CD drawer modelization
-This example is taken from Ian Horrock's seminal book on statecharts and is the specification of a CD player. The behaviour of the CD player is pretty straight forward and understandable immediately from the visualization. From a didactical point of view, the example serves to feature advanced characteristics of hierarchical state machines, including history states, composite states,  transient states, automatic transitions, and entry points. For a deeper understanding of how the transitions work in the case of a hierarchical machine, you can have a look at the [terminology](https://github.com/brucou/kingly#terminology) and [sample run](#Example-run) for the CD player machine.
+This example is taken from Ian Horrock's seminal book on statecharts and is the specification of a CD player. The behavior of the CD player is pretty straight forward and understandable immediately from the visualization. From a didactical point of view, the example serves to feature advanced characteristics of hierarchical state machines, including history states, composite states,  transient states, automatic transitions, and entry points. For a deeper understanding of how the transitions work in the case of a hierarchical machine, you can have a look at the [terminology](https://github.com/brucou/kingly#terminology) and [sample run](#Example-run) for the CD player machine.
  
 ![cd player state chart](http://i.imgur.com/ygsOVi9.jpg)
 
 The salient facts are:
-- `NO Cd loaded`, `CD_Paused` are control states which are composite states: they are themselves state machines comprised on control states.
+- `NO Cd loaded`, `CD_Paused` are control states which are composite states: they are themselves state machines comprised of control states.
 - The control state `H` is a pseudo-control state called shallow history state
-- All composite states feature an entry point and an automatic transition. For instance `CD_Paused` has the sixth control state as entry point, and the transition from `CD_Paused` into that control state is called an automatic transition. Entering the `CD_Paused` control state automatically triggers that transition.
+- All composite states feature an entry point and an automatic transition. For instance, `CD_Paused` has the sixth control state as an entry point, and the transition from `CD_Paused` into that control state is called an automatic transition. Entering the `CD_Paused` control state automatically triggers that transition.
 - `Closing CD drawer` is a transient state. The machine will automatically transition away from it, picking a path according to the guards configured on the available exiting transitions
 
 ### Example run
@@ -87,7 +87,7 @@ Note:
  
 
 ## Kingly machine semantics
-We give here a quick summary of the behaviour of the state machine:
+We give here a quick summary of the behavior of the state machine:
 
 **Preconditions**
 - the machine is configured with a set of control states, an initial extended state, transitions, guards, action factories, and user settings
@@ -109,14 +109,14 @@ We give here a quick summary of the behaviour of the state machine:
 - If there is a feasible transition, select the first transition according to what follows:
   - if there is an `INIT` transition, select that
   - if there is an eventless transition, select that
-  - otherwise select the first transition whose guard is fulfilled (as ordered per array index)
+  - otherwise, select the first transition whose guard is fulfilled (as ordered per array index)
 - evaluate the selected transition
-  - if the target control state is an history state, replace it by the control state it references (i.e. the last seen nested state for that compound state)
+  - if the target control state is a history state, replace it with the control state it references (i.e. the last seen nested state for that compound state)
   - run the action factory defined in the selected transition to get extended state updates, and machine outputs
   - **update the extended state** (with the updates produced by the action factory)
   - **aggregate** and memorize the outputs
   - update the control state to the target control state defined by the selected transition
-  - update the history for the control state (applies only if control state is a compound state)
+  - update the history for the control state (applies only if the control state is a compound state)
 - iterate on **Loop**
 - ***THE END***
 
@@ -125,7 +125,7 @@ A few interesting points:
 - a machine always transitions towards an atomic state at the end of event processing
 - on that path towards an atomic target state, all intermediary extended state updates are performed. Guards and action factories on that path are thus receiving a possibly evolving extended state. The computed outputs will be aggregated in an array of outputs.
  
-The aforedescribed behaviour is loosely summarized here:
+The aforedescribed behavior is loosely summarized here:
 
 {% fig %}
 ![event processing](../../api-assets/FSM%20event%20processing%20semantics.png)
@@ -134,7 +134,7 @@ The aforedescribed behaviour is loosely summarized here:
 
 **History states semantics**
 
-An history state relates to the past configuration a compound state. There are two kinds of history states: shallow history states (H), and deep history states (H*). A picture being worth more than words, thereafter follows an illustration of both history states:
+A history state relates to the past configuration of a compound state. There are two kinds of history states: shallow history states (H); and deep history states (H*). A picture being worth more than words, thereafter follows an illustration of both history states:
 
 {% fig %}
 ![deep and shallow history](../../api-assets/history%20transitions,%20INIT%20event%20CASCADING%20transitions.png)
@@ -147,7 +147,7 @@ Assuming the corresponding machine has had the following run `[INIT, EVENT1, EVE
  - the shallow history state for the `OUTER` control state will correspond to the `INNER` control state (the last direct substate of `OUTER`), leading to an automatic transition to INNER_S  
  - the deep history state for the `OUTER` control state will correspond to the `INNER.T` control state (the last substate of `OUTER` before exiting it)
 
-In short the history state allows to short-circuit the default fixed entry behaviour for a compound state, which is to follow the transition triggered by the `INIT` event. When transitioning to the history state, transition is towards the last seen state for the entered compound state.
+In short, the history state allows short-circuiting the default fixed entry behavior for a compound state, which is to follow the transition triggered by the `INIT` event. When transitioning to the history state, the transition has as a target the last seen state for the entered compound state.
 
 ### Contracts
 
@@ -170,7 +170,7 @@ By initial transition, we mean the transition with origin the machine's default 
 
 - An initial transition must be configured:
   - by way of a starting control state defined at configuration time
-  - by way of a initial transition at configuration time
+  - by way of an initial transition at configuration time
 - ~~the init event has the initial extended state as event data~~
 - ~~The machine cannot stay blocked in the initial control state. This means that at least one 
 transition must be configured and be executed between the initial control state and another state
@@ -194,15 +194,15 @@ Additionally the following applies:
   - e.g. `A -INIT_EVENT-> B` iff A is a compound state or A is the initial state
 - all states declared in `fsmDef.states` must be used as target or origin of transitions in `fsmDef.transitions`
 - all events declared in `fsmDef.events` must be used as triggering events of transitions in `fsmDef.transitions`
-- history pseudo states must be target states and refer to a given declared compound state
+- history pseudo-states must be target states and refer to a given declared compound state
 - there cannot be two transitions with the same `(from, event, predicate)` - sameness defined for predicate by referential equality
 
 #### **Semantic contracts**
-- The machine behaviour is as explicit as possible
-  - if a transition is taken, and has guards configured, one of those guards must be fulfilled, i.e. guards must cover the entire state space when they exist
+- The machine behavior is as explicit as possible
+  - if a transition is taken and has guards configured, one of those guards must be fulfilled, i.e. guards must cover the entire state space when they exist
 - A transition evaluation must end
   - eventless transitions must progress the state machine
-    - at least one guard must be fulfilled, otherwise we would remain forever in the same state
+    - at least one guard must be fulfilled, otherwise, we would remain forever in the same state
   - eventless self-transitions are forbidden (while theoretically possible, the feature is of little practical value, though being a possible source of ambiguity or infinite loops)
   - ~~eventless self-transitions must modify the extended state~~
     - ~~lest we loop forever (a real blocking infinite loop)~~
@@ -213,23 +213,23 @@ Additionally the following applies:
       - (particular case) eventless transitions must not be contradicted by event-ful transitions
       - e.g. if there is an eventless transition `A -eventless-> B`, there cannot be a competing `A -ev-> X`
       {% tufte %}
-      *** There exists however semantics which allow such transitions, thus possibilitating event bubbling.
+      *** There exists however semantics which allow such transitions, thus making event bubbling possible.
       {% endtufte %}
-  - `A -ev> B` and `A < OUTER_A` with `OUTER_A -ev> C` !!: there are two valid transitions triggered by `ev`. Such transitions would unduely complicate the input testing generation, and decrease the readability of the machine so we forbid such transitions[^*]. Note that this does not apply for reserved event like `INIT_EVENT` or the empty event (corresponding to eventless transitions)
+  - `A -ev> B` and `A < OUTER_A` with `OUTER_A -ev> C` !!: there are two valid transitions triggered by `ev`. Such transitions would unduly complicate the input testing generation, and decrease the readability of the machine so we forbid such transitions[^*]. Note that this does not apply for reserved events like `INIT_EVENT` or the empty event (corresponding to eventless transitions)
 - no transitions from the history state (history state is only a target state)
 - A transition evaluation must always end (!), and end in an atomic state
-  - Every compound state must have exactly one inconditional (unguarded) `INIT` transition, i.e. a transition whose triggering event is `INIT_EVENT`. That transition must have a target state which is a substate of the compound state (no hierarchy crossing), and which is not a history pseudo state
+  - Every compound state must have exactly one unconditional (unguarded) `INIT` transition, i.e. a transition whose triggering event is `INIT_EVENT`. That transition must have a target state which is a substate of the compound state (no hierarchy crossing), and which is not a history pseudo-state
   - Compound states must not have eventless transitions defined on them (would introduce ambiguity with the `INIT` transition)
   - (the previous conditions ensure that there is always a way down the hierarchy for compound states, and that way is always taken when entering the compound state, and the descent process always terminate)
 - the machine does not perform any effects
   - guards, action factories are pure functions
-    - as such exceptions while running those functions are fatal, and will not be caught
+    - as such, exceptions while running those functions are fatal, and will not be caught
   - `updateState:: ExtendedState -> ExtendedStateUpdates -> ExtendedState` must be a pure function (this is important in particular for the tracing mechanism which triggers two execution of this function with the same parameters)
 
-Those contracts ensure a good behaviour of the state machine. and we recommend that they all be observed. However, some of them are not easily enforcable:
+Those contracts ensure the good behavior of the state machine. and we recommend that they all be observed. However, some of them are not easily enforceable:
 
-- we can only check at runtime that transition with guards fulfill at least one of those guards. 
-In these cases, we only issue a warning, as this is not a fatal error. This leaves some flexibility to have a shorter machine configuration. Note that we recommend explicitness and disambiguity vs. conciseness. 
-- purity of functions cannot be checked, even at runtime
+- we can only check at runtime that transitions with guards fulfill at least one of those guards. 
+In these cases, we only issue a warning, as this is not a fatal error. This leaves some flexibility to have a shorter machine configuration. Note that we recommend explicitness and unambiguity vs. conciseness. 
+- the purity of functions cannot be checked, even at runtime
 
 Contracts enforcement can be parameterized with `settings.debug.checkContracts`.

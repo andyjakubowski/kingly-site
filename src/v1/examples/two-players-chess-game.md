@@ -5,11 +5,11 @@ order: 3
 ---
 
 ## Motivation
-This example is a simple user interface, which is used in the [tutorials](../tutorials) section to introduce hierarchical machines. Aside from that, it showcases example of reuse of existing battle-tested components (`ChessBoard` component for displaying a chess game, `chess.js` library to handle the game itself) so the machine only focuses on the UI.
+This example is a simple user interface that is used in the [tutorials](../tutorials) section to introduce hierarchical machines. Aside from that, it showcases how the reuse of battle-tested components (`ChessBoard` component for displaying a chess game, `chess.js` library to handle the game itself) allows the machine to focus only on the UI logic.
 
 Among the learnings from the example are:
 
-- use of `settings` parameter for dependency injection (chess engine)
+- use of the `settings` parameter for dependency injection (chess engine)
 - use of history states
 - you can do effects in the state machine if you immediately cancel them so that those effects are invisible from outside the machine
 

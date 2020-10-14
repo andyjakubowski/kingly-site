@@ -6,7 +6,7 @@ order: 8
 ---
 
 ## Motivation
-This example illustrates a simple hierarchical state machine implementing a behaviour similar to React Suspense. It also showcases how a state machine definition can be compiled into a standard standalone JavaScript function -- this is a key motivation behind Kingly's API design. Compiling the machine allows to mostly eliminate the footprint linked to the machine library.
+This example illustrates a simple hierarchical state machine implementing a behavior similar to React Suspense. It also showcases how a state machine definition can be compiled into a standard standalone JavaScript function -- this is a key motivation behind Kingly's API design. Compiling the machine allows us to mostly eliminate the footprint linked to the machine library.
 
 ## Modelization 
 The suspense functionality can be summarized by the following state machine:
@@ -64,8 +64,8 @@ function fetchAlbums(intents){
 
 The default slot content of the `Suspense` component will be immediately put in the DOM and hidden (`display: none`). Two things can happen:
 
-- completion is signalled (`done` or `failed`) before `timeout` milliseconds. In that case, the corresponding slot content (default slot or `error` slot) is displayed as soon as the completion signal is processed
-- completion is not signalled before `timeout` milliseconds expires. In that case, the fallback content (e.g. the `fallback` slot content) will be displayed. When the default slot content signals completion, it will be displayed. When completion is signalled (`done` or `failed`), the corresponding slot content (default slot or `error` slot) is displayed as soon as the completion signal is processed
+- completion is signaled (`done` or `failed`) before `timeout` milliseconds. In that case, the corresponding slot content (default slot or `error` slot) is displayed as soon as the completion signal is processed
+- completion is not signaled before `timeout` milliseconds expires. In that case, the fallback content (e.g. the `fallback` slot content) will be displayed. When the default slot content signals completion, it will be displayed. When completion is signaled (`done` or `failed`), the corresponding slot content (default slot or `error` slot) is displayed as soon as the completion signal is processed
  
 The `Album` component also benefits from the suspense functionality:
 
@@ -106,7 +106,7 @@ In the previous example too, in the main `App` component, the list of albums is 
 ## Takeaways
 Kingly machines can be compiled to standard standalone JavaScript functions. The size of the Kingly library is in this case become much less relevant. Kingly takes inspiration here from [Svelte](https://svelte.dev/), the front-end framework which compiles itself away.
 
-While using a formalized state machine may feel like too much for a simple behaviour like Suspense, the technique can however be generalized easily to more complex scenarios -- only by modifying the underlying machine. Using a Kingly state machine with Svelte is likely to improve Svelte's testing history, which is mostly based on end-to-end tests. A Svelte component is a sum of behaviour, style and content. If the behaviour is implemented with a Kingly machine, input sequences for the machine can be generated automatically, and testing can be performed independently of the browser or Svelte. 
+While using a formalized state machine may feel like too much for a simple behavior like Suspense, the technique can however be generalized easily to more complex scenarios -- only by modifying the underlying machine. Using a Kingly state machine with Svelte is likely to improve Svelte's testing history, which is mostly based on end-to-end tests. A Svelte component is a sum of behavior, style, and content. If the behavior is implemented with a Kingly machine, input sequences for the machine can be generated automatically, and testing can be performed independently of the browser or Svelte. 
  
 ## Credit
 The example is inspired from [previous work](https://reactgo.com/tutorial-reactlazy-react-suspense/) by [Sai gowtham](https://twitter.com/saigowthamr).
