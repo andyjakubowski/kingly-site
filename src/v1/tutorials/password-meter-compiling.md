@@ -7,7 +7,7 @@ is_new: true
 
 In the previous sections, we specified, designed, and implemented a password meter through two methods. The first method consisted of writing the machine entirely by hand, through the Kingly library API. The second method involved drawing the machine with the yEd professional graph editor, then getting all the parameters we could from the drawing in order to feed the Kingly API. Those parameters included the hierarchy of states, the events, and identifiers of actions and guards. 
 
-In this section, we are going to go  step further and bypass the Kingly library API entirely. We will compile the exact same drawing (`.graphml` file) into a standard plain JavaScript function that will have the exact same specifications as the drawn machine.
+In this section, we are going to go one step further and bypass the Kingly library API entirely. We will compile the exact same drawing (`.graphml` file) into a standard, plain JavaScript function that will have the exact same specifications as the drawn machine.
 
 Equipped with the compiler, developers no longer need to pay the cost of the library. Current measurements indicate that most machines will be under 1KB, and large machines (e.g. ~50 transitions) will be around 2KB. Through its compiler, Kingly essentially provides state machines as a zero-cost abstraction.
 
@@ -153,13 +153,13 @@ The machine is thus now created as follows:
 createStateMachine(pwdFsmDef, {});
 ```
 
-The full machine implementation can be access in the playground: 
+The full machine implementation can be accessed in the playground: 
 
 <iframe src="https://codesandbox.io/embed/f47nx?fontsize=12&hidenavigation=1" title="Counter app" style="width:1000px; height:700px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
  
 To check that our machine still works as before, we can repeat the same tests and check the results. We no longer have the devtool available this time, but we can still check the outputs of the machine to verify its good behavior.
  
- You can open the console tab, and check that the `pwdFsm` is available in the `window` object. From then you can run the following series of commands:
+ You can open the console tab, and check that the `pwdFsm` is available in the `window` object. You can then run the following series of commands:
 
 {% fullwidth %}
 |Command| Expecetd results|

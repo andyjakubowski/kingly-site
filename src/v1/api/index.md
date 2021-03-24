@@ -161,7 +161,8 @@ In short, the history state allows short-circuiting the default fixed entry beha
   - all states referenced in the `transitions` data structure must be defined in the `states` data structure
   - all transitions must define an action (even if that action does not modify the extended state or returns `NO_OUTPUT`)
 - all action factories must fill in the `updates` and `outputs` property (no syntax sugar)
-  - `NO_OUTPUT` must be used to indicate the absence of outputs
+  - `NO_OUTPUT` must be used to indicate the absence of outputs and only for that
+  - the `outputs` property should always be set (behavior in case of `undefined` is unspecified).
 - all transitions for a given origin control state and triggering event must be defined in one row of `fsmDef.transitions`
 - `fsmDef.settings` must include a `updateState` function covering the state machine's extended state update concern.
 

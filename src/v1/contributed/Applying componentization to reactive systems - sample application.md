@@ -1,23 +1,23 @@
 ---
-title: "Applying componentization to reactive systems : sample application"
+title: "Applying componentization to reactive systems: sample application"
 date: 2017-10-16
 lastmod: 2018-02-21
 draft: false
 tags: ["functional programming", "reactive programming", "components"]
 categories: ["programming"]
 author: "brucou"
-toc: true
+toc: false
 comment: false
 ---
 
 # Introduction
-As discussed in a [former post](/posts/user-interfaces-as-reactive-systems), user interfaces are reactive systems, and can be specified through a reactive function which associate events (originating from the user, or the interfaced systems) to actions to be executed. Expressing events, actions, and local state as streams, and expressing local state update also as an action, we have  : $actions = f(state, events)$, where $f$ is a pure function. In addition to that function, which expresses the logic of the application, interfaces with the relevant systems must be defined. Typically this means interfaces to receive events, and execute actions.
+As discussed in a [former post](/posts/user-interfaces-as-reactive-systems), user interfaces are reactive systems, and can be specified through a reactive function which associate events (originating from the user, or the interfaced systems) to actions to be executed. Expressing events, actions, and local state as streams, and expressing local state update also as an action, we have: $actions = f(state, events)$, where $f$ is a pure function. In addition to that function, which expresses the logic of the application, interfaces with the relevant systems must be defined. Typically this means interfaces to receive events, and execute actions.
 
 Our proposed approach is based on cyclejs framework, in which actions are executed through a dedicated interface called `driver` and events streams are created where and when necessary through streams and streams factories. Those streams factories themselves are passed as parameters to the reactive function. As such the reactive function, in a `cyclejs` context is not pure. Adjusting for this caveat, our reactive equation still holds.
 
 We enrich the `cyclejs` architectural choices, with a [componentization model](/posts/a-componentization-framework-for-cyclejs), which allows to build a larger application from a number of small components with the help of component combinators. A combinator library is provided to cover the most generic needs occurring while building a componentized application, including, but not limited to, sequential composition, data injection, control flow, routing, iteration, change propagation.
 
-The present document aims at showing how to translate a reactive system specification into an implementation with our proposed componentization model. It is hence :
+The present document aims at showing how to translate a reactive system specification into an implementation with our proposed componentization model. It is hence:
 
 - part documentation, addressing the question *How to leverage the proposed component model to write an application*
 - part showcase, in which the advantages of the componentization approach appear in connection with an iterative software development process
@@ -25,16 +25,15 @@ The present document aims at showing how to translate a reactive system specific
 In the first section, we will quickly describe the application under development. We will then proceed with setting up the structure (shell) in which the application logic will be contained. We will then in subsequent sections, iteratively extend our code to implement more and more of our target application. For each section, we will provide a link to the corresponding source code, contained in a dedicated branch of the demo repository. We will however not develop the whole application here, but the minimum subset necessary for us to reach our documentation and showcasing goals.
 
 # Target application
-The target application is a task management application, taken from the [Mastering Angular2 
-components](https://github.com/PacktPublishing/Mastering-Angular-2-Components) book. Users handle projects, projects have tasks, which can be in status finalized or pending. The user can review and update existing tasks, create new tasks, and delete existing ones. Tasks can be filtered by status. The user can add comments to a project which are presented chronologically. A summary of activities can be consulted in a dedicated section. A dashboard provides a summary view of the projects and tasks. Finally, plugins can be administered and integrated into the application to extend its functionality.
+The target application is a task management application, taken from the [Mastering Angular2 components](https://github.com/PacktPublishing/Mastering-Angular-2-Components) book. Users handle projects, projects have tasks, which can be in status finalized or pending. The user can review and update existing tasks, create new tasks, and delete existing ones. Tasks can be filtered by status. The user can add comments to a project which are presented chronologically. A summary of activities can be consulted in a dedicated section. A dashboard provides a summary view of the projects and tasks. Finally, plugins can be administered and integrated into the application to extend its functionality.
 
 This is an application with a reasonable size, and we will not seek to implement the full functionality previously described, in one go. In the present version of this document, we will focus on a first batch of features, which includes only the project browsing and task management. We will also detail only portions of our implementation, selecting and detailing those portions which illustrates a use of the component model not previously illustrated. This aims at covering as large a percentage possible of the available component combinators, and illustrating as many different techniques as possible.
 
 Rather than producing a detailed written specification, we will provide the following screenshot, from which a feature list is easy to guess. For supplementary details, we refer the reader to the book.
 
-![Angular2 project application](/img/screens/main_screen_ang2_example.png)
+![Angular2 project application](https://raw.githubusercontent.com/brucou/component-combinators/master/examples/AllInDemo/assets/images/animated_demo.gif)
 
-In addition to this, the following routes are specified :
+In addition to this, the following routes are specified:
 
 - `/dashboard`: handles the dashboard functionality
 - `/projects/:projectId`: shows the project description, together with a tab bar (`Tasks`, `Comments`, `Activities`)
@@ -44,9 +43,9 @@ In addition to this, the following routes are specified :
   - `/projects/:projectId/activities`: additionally shows the activities logged for a given   project 
 - `/plugins`: handles the plugin functionality
 
-# Step 0 : set up
+# Step 0: set up
 ## Domain model
-We will work with a domain model with three entities : projects, tasks, and activities. Data is stored remotely in a firebase repository. Thereafter follows an example of the physical data model (dictated only by our self-imposed constraint to allow for direct comparison with the Angular2 application - there are other ways to design that physical data model):
+We will work with a domain model with three entities: projects, tasks, and activities. Data is stored remotely in a firebase repository. Thereafter follows an example of the physical data model (dictated only by our self-imposed constraint to allow for direct comparison with the Angular2 application - there are other ways to design that physical data model):
 
 ```javascript
 projects: {
@@ -84,10 +83,10 @@ activities: [
     _id: 'ECEF8127-C237-9612-924B-2A087D6FACA4'
   },
   ]
-``` 
+```
 
 ## Interfaced systems' drivers
-Actions that are undertaken as a response to events are : domain data update, DOM update, route change, and of course updating local state (persisted and non persisted). As per events to be handled by the system, we have : user events (i.e. DOM events), local state update notification, route change notification.
+Actions that are undertaken as a response to events are: domain data update, DOM update, route change, and of course updating local state (persisted and non persisted). As per events to be handled by the system, we have: user events (i.e. DOM events), local state update notification, route change notification.
 
 This leads to the following drivers:
 
@@ -121,7 +120,7 @@ This leads us to the following set up code:
 
 For the full code and running demo, see [here](https://github.com/brucou/component-combinators/tree/project-management-app-step-0/examples/AllInDemo). 
 
-# Step 1 : SidePanel (navigation) and MainPanel
+# Step 1: SidePanel (navigation) and MainPanel
 We divide the application in two independent components, one handling the side navigation (`SidePanel`) and the other one handling functionalities depending on the current route (`MainPanel`). 
 
 Our starting code for the `App` is then:
@@ -137,7 +136,7 @@ This deserves a few words of explanation. `Combine` is a combinator which takes 
 
 [^merge]: Simple merge is used for non-DOM sinks (as in `Rx.Observable.merge`). Another example of such simple merge can be found in the [`cyclejs-utils`](https://github.com/cyclejs-community/cyclejs-utils) utility library for cycle.
 
-We are however going to do two things : inject pieces of state that will be used by both components, and massage the route input arriving through the router driver in a convenient form (basically removing a leading `/` if any). This can be done at any relevant level. However, as those sources of events and pieces of state will be used by the whole application, it is more DRY to inject them at the top level, so that all downstream components inherit them unless otherwise configured. For the same reason, we will configure the settings of the router driver once for all, and declare the list of sinks that the application handles at this level. `sinkNames` is mandatory for several components combinators to filter the sinks returned from children components, so we put it at the top level for the same DRY reasons. 
+We are however going to do two things: inject pieces of state that will be used by both components, and massage the route input arriving through the router driver in a convenient form (basically removing a leading `/` if any). This can be done at any relevant level. However, as those sources of events and pieces of state will be used by the whole application, it is more DRY to inject them at the top level, so that all downstream components inherit them unless otherwise configured. For the same reason, we will configure the settings of the router driver once for all, and declare the list of sinks that the application handles at this level. `sinkNames` is mandatory for several components combinators to filter the sinks returned from children components, so we put it at the top level for the same DRY reasons. 
    
 The `settings` and `sources` inheritance mechanism is described in the documentation for the `m` combinator and the [`InjectSourcesAndSettings` combinator](/projects/component-combinators/injectsourcesandsettings/). 
 
@@ -146,17 +145,17 @@ The corresponding code includes:
 ```javascript
 export const App = InjectSourcesAndSettings({
     sourceFactory: function (sources, settings) {
-      // NOTE : we need the current route which is a behaviour
+      // NOTE: we need the current route which is a behaviour
       const { router, domainQuery } = sources;
       const currentRouteBehaviour = router
         .map(location => {
           const route = location.pathname;
-          return (route && route[0] === '/') ? route.substring(1) : route
+          return (route && route[0] === '/') ? route.substring(1): route
         })
         // starts with home route
         .startWith('')
         .shareReplay(1);
-      // NOTE : we need the route change event
+      // NOTE: we need the route change event
       // Now it was important to do this in that order, because we want currentRouteBehaviour to
       // be subscribed before (no route change before having a current route)
       // A former implementation url$ = incomingRouteEvents$.shareReplay(1) failed as url$ was not
@@ -171,9 +170,9 @@ export const App = InjectSourcesAndSettings({
         // router
         url$: currentRouteBehaviour,
         [ROUTE_SOURCE]: incomingRouteEvents$,
-        // NOTE : domain driver always send behaviour observables (i.e. sharedReplayed already)
+        // NOTE: domain driver always send behaviour observables (i.e. sharedReplayed already)
         user$,
-        // NOTE : `values` to get the actual array because firebase wraps it around indices
+        // NOTE: `values` to get the actual array because firebase wraps it around indices
         projects$: projects$.map(values),
         projectsFb$: projects$
       }
@@ -196,32 +195,31 @@ export const App = InjectSourcesAndSettings({
 - the distinction between the route change event, and the route state which is a behaviour[^behaviour]. The general, and very important rule, is to **systematically** decide whether a reactive entity of interest is modelized better by an event or a behaviour, and to apply the corresponding marker (`share()` for events, `shareReplay(1)` for behaviours)[^marker]. Failing to do this is the origin of a **large portion of bugs** encountered when manipulating streams.
 
 [^behaviour]: The reason why we need both the route change event and the route state is that sometimes we want to get the current route without reacting to a route change, and the best way to achieve this is to use `shareReplay(1)` in connection with `sample` or `withLatestFrom`. 
-
+ 
 [^marker]: A good way to enforce this is to build on top of the stream library constructors for events and behaviours, and enforce their usage, effectively prohibiting direct manipulation of the underlying streams. We do not follow this option however, to avoid adding extra syntax. We might reconsider later on, based on feedback.
 
 For the full code and running demo, see [here](https://github.com/brucou/component-combinators/tree/project-management-app-step-1/examples/AllInDemo). 
 
 This example allows us to illustrate an important componentization tip. 
 
-## **Tip** : What makes a good breakdown
+## **Tip**: What makes a good breakdown
 What makes this breakdown a good one? Independence or loose coupling is the key here:
 
 - `MainPanel` can be implemented fairly independently from `SidePanel`
-- the only reason for change of `SidePanel` that would affect `MainPanel` is a change in the
-route associated to the projects[^routechange]
+- the only reason for change of `SidePanel` that would affect `MainPanel` is a change in the route associated to the projects[^routechange]
 - both components share no common events or actions or logic. We took our initial reactive system, split it in two, smaller, largely independent subsystems, whose complexity is strictly lower than the original system, and easier to write
 
 [^routechange]: The corresponding change could be anticipated by designing the main panel to allow for parameterization of these routes. This would ensure that a change in `SidePanel` does not entail a change in `MainPanel` implementation, but rather a change in parameterization (we have decided not to refactor our sample application in that direction though, to not distract the learner with implementation details)
 
 More generally, it is desirable to build a complex system by assembling, in a cohesive way, loosely coupled components, so that the cost of redesigning each of such adoptable components (or replacing by a better component) can be minimized.
 
-# Step 2 : SidePanel
-Let's implement our `SidePanel` component. Here are the specifications we can extract from the overall application's specifications :
+# Step 2: SidePanel
+Let's implement our `SidePanel` component. Here are the specifications we can extract from the overall application's specifications:
 
 | Events               | Actions                                             |
 |----------------------|-----------------------------------------------------|
-| INIT                 | DOM : display welcome message and task summary      |
-|                      | DOM : display 3 sections with  possibly subsections |
+| INIT                 | DOM: display welcome message and task summary      |
+|                      | DOM: display 3 sections with  possibly subsections |
 | click on subsections | navigate to the corresponding route                 |
 
 We define the routes to be navigated to as per specification:
@@ -338,7 +336,7 @@ function NavigationSection(navigationSectionSettings, componentArray){
 
 Pay attention to how:
 
-- the `div` vNode combinator has been extended with a slot module. That slot module marks the corresponding vTree with the name of the slot it belongs to. Note also how we set the slot for the `NavigationItem` components (reminder : `NavigationItem` are the expected children components for `NavigationSection`)
+- the `div` vNode combinator has been extended with a slot module. That slot module marks the corresponding vTree with the name of the slot it belongs to. Note also how we set the slot for the `NavigationItem` components (reminder: `NavigationItem` are the expected children components for `NavigationSection`)
 - For the `navigation-section` slot, content is provided. For the `navigation-item`, content is not provided, as it will be filled in by children components.
 - `navigation-section` slot is at the top level of the `vNode` tree for the `NavigationSectionContainerComponent`. Similarly, `NavigationItem` components will also have to have their slot set at top level, because slot merging only looks at the children's DOM top vNode for slots.
 
@@ -354,7 +352,7 @@ function getProjectNavigationItems$(sources, settings) {
        link: ['projects', project._id].join('/')
      })))
      .distinctUntilChanged()
-     // NOTE : this is a behaviour
+     // NOTE: this is a behaviour
      .shareReplay(1)
      ;
 }
@@ -368,13 +366,13 @@ const ListOfItemsComponent =
       ])
     ])
   ]);
-```   
+```  
 
 For each new value of `projectNavigationItems$`, the setting property `projectList` will be updated to that value, and a list of `NavigationItem` will be activated. Each of the `NavigationItem` will receive a `project` setting property which holds the value of one element of the `projectList` array, together with the index of that particular element. For more information, see the corresponding documentation of both operators. 
 
 For the full code and running demo, see [here](https://github.com/brucou/component-combinators/tree/project-management-app-step-2/examples/AllInDemo). 
 
-# Step 3 : Main panel
+# Step 3: Main panel
 As per specifications, the main panel is url-driven. This gives us the following breakdown:
 
 ```javascript
@@ -401,13 +399,13 @@ The project component has the following specifications:
 
 | Events                 | Actions                                             |
 |----------------------  |-----------------------------------------------------|
-| INIT  | DOM : display project header and tab bar with no tab selected  |
-| route change to `tasks` | DOM : display project task list              |
-| route change to `task/:nr` | DOM : display task detail for task `nr`   |
-| route change to `comments` | DOM : display project's comments          |
-| route change to `activities` | DOM : display project's activities      |
+| INIT  | DOM: display project header and tab bar with no tab selected  |
+| route change to `tasks` | DOM: display project task list              |
+| route change to `task/:nr` | DOM: display task detail for task `nr`   |
+| route change to `comments` | DOM: display project's comments          |
+| route change to `activities` | DOM: display project's activities      |
 
-The relevant piece of state here (reminder : the route here is `projects/:projectId`) is information about the specific project pointed at by the route. This is the object from which we will get the project's comments, activities, etc.
+The relevant piece of state here (reminder: the route here is `projects/:projectId`) is information about the specific project pointed at by the route. This is the object from which we will get the project's comments, activities, etc.
 
 The state we need is retrieved as follows  
 
@@ -460,7 +458,7 @@ Note how we have nested routes (`projects/:projectId/tasks`) as naturally as we 
 
 For more details on how the slot logic interacts with the `TabContainer` component, see the `TabContainer` code. For the full code and running demo, see [here](https://github.com/brucou/component-combinators/tree/project-management-app-step-3/examples/AllInDemo). 
 
-# Step 4 : `ProjectTaskList` component
+# Step 4: `ProjectTaskList` component
 We will seek to write the `ProjectTaskList` component as follows:
 
 ```javascript
@@ -483,24 +481,16 @@ export const ProjectTaskList =
 
 where:
 
-- `ProjectTaskListContainer` is a container component which allocates children content into their
- slots and applies some styling
+- `ProjectTaskListContainer` is a container component which allocates children content into their slots and applies some styling
 - `ToggleButton` handles the tasks filter (values to be picked within `All`, `Open`, `Done`)
 - `EnterTask` allows the user to enter a new task for the active project
 - `TaskList` displays a list of project tasks, taking into account the task filter set by the user
 
-Note again how the slot mechanism allows to separate a template (fixed part of the target 
-`vTree`), from the contents filling that template (variable part). It is important to become 
-familiar with the mechanism, as it is fundamental to divide the user interface in ever smaller 
-and isolated pieces. Pay attention also to how slots are declared : either directly through the 
-slot module, or with the `InSlot` combinator. The latter is useful in combination with other 
-components which do not declare slots for their DOM content, for instance generic components. 
-`InSlot` can also be used to override existing slots for a given component's DOM content. 
+Note again how the slot mechanism allows to separate a template (fixed part of the target `vTree`), from the contents filling that template (variable part). It is important to become familiar with the mechanism, as it is fundamental to divide the user interface in ever smaller and isolated pieces. Pay attention also to how slots are declared: either directly through the slot module, or with the `InSlot` combinator. The latter is useful in combination with other components which do not declare slots for their DOM content, for instance generic components. `InSlot` can also be used to override existing slots for a given component's DOM content. 
 
 Note the use of the utility function [`vLift`](https://github.com/brucou/component-combinators/blob/master/src/utils.js#L1118), which takes a `Vtree` and lifts it into a component (whose only sink is a DOM sink emitting that `vTree`).
 
-Let's go in further details about the `EnterTask` component (illustrating domain driver write 
-actions), and the `ToggleButton` component (illustrating local state driver actions).
+Let's go in further details about the `EnterTask` component (illustrating domain driver write actions), and the `ToggleButton` component (illustrating local state driver actions).
  
 ## Adding a task
 The `EnterTask` has obvious specifications:
@@ -543,7 +533,7 @@ export function EnterTask(sources, settings) {
         const {fbIndex: projectFbIndex, project} = projectFb;
         const tasks = project.tasks;
         const newTaskPosition = tasks.length;
-        const nr = tasks.reduce((maxNr, task) => task.nr > maxNr ? task.nr : maxNr, 0) + 1;
+        const nr = tasks.reduce((maxNr, task) => task.nr > maxNr ? task.nr: maxNr, 0) + 1;
         // NOTE: has to be computed just before it is used, otherwise might not get the current
         // value
         const _taskEnterDescription = getInputValue(document, taskEnterInputSelector);
@@ -587,16 +577,12 @@ Specifications for the `ToggleButton` component are as follows:
 | INIT  | task filter | DOM: display all tabs, emphasizing the tab corresponding to the task filter (i.e. active tab)|
 | click on a tab | task filter | local state: update the task filter|
 
-We will use the in-memory store driver to keep track of the task filter. As the
- task filter will also be used by the `TaskList` component to filter out the project's tasks, 
- it needs to be accessible by several components which are not in a parent/child relationship. 
- There are basically two ways to handle this:
+We will use the in-memory store driver to keep track of the task filter. As the task filter will also be used by the `TaskList` component to filter out the project's tasks, it needs to be accessible by several components which are not in a parent/child relationship. There are basically two ways to handle this:
   
   - The first one is to create and inject that piece of state at the closest ancestor level (this would be here at `ProjectTaskList` level). 
- - The second one is to create that piece of state at the global level (i.e. cutting across the component 
- hierarchy - that is what the in-memory store is), and access it anywhere necessary. 
+ - The second one is to create that piece of state at the global level (i.e. cutting across the component hierarchy - that is what the in-memory store is), and access it anywhere necessary. 
  
- We chose the second solution for didactic purposes (injecting `tasksFilter$`), as an example of use of the in-memory store driver. Concretely, the breakdown is as follows:
+We chose the second solution for didactic purposes (injecting `tasksFilter$`), as an example of use of the in-memory store driver. Concretely, the breakdown is as follows:
  
 ```javascript
 export const ToggleButton =
@@ -635,15 +621,10 @@ export function tasksFilter$(sources, settings) {
 }
 ```
 
-Note how we combine the store read and write drivers (`storeAccess`, `storeUpdate$`) to get  
-a *live* `taskFilter$` which emits the current value of the task filter and then the new values of 
-the task filter, every time that value changes. To ensure this, we listen on responses to 
-in-memory entity update requests. Such responses are objects which hold the updated entity in the 
-`response` property. For extra details, refer to the [configuration](https://github.com/brucou/component-combinators/blob/master/examples/AllInDemo/src/inMemoryStore/index.js#L21)
- of the in-memory driver, and at the documentation for the [domain `Action` driver](/projects/component-combinators/actiondriver/).
+Note how we combine the store read and write drivers (`storeAccess`, `storeUpdate$`) to get a *live* `taskFilter$` which emits the current value of the task filter and then the new values of the task filter, every time that value changes. To ensure this, we listen on responses to 
+in-memory entity update requests. Such responses are objects which hold the updated entity in the `response` property. For extra details, refer to the [configuration](https://github.com/brucou/component-combinators/blob/master/examples/AllInDemo/src/inMemoryStore/index.js#L21) of the in-memory driver, and at the documentation for the [domain `Action` driver](/projects/component-combinators/actiondriver/).
 
-The `ButtonFromButtonGroup` is a component which will display a button with a label passed 
-through `settings` and update the task filter when the button is clicked:
+The `ButtonFromButtonGroup` is a component which will display a button with a label passed through `settings` and update the task filter when the button is clicked:
 
 ```javascript
 const updateTaskTabButtonGroupStateAction = label => ({
@@ -688,8 +669,7 @@ Note that [in-memory store driver](https://github.com/brucou/component-combinato
 For the full code and running demo, see [here](https://github.com/brucou/component-combinators/tree/project-management-app-step-4/examples/AllInDemo).
 
 ## Displaying a list of tasks
-A `TaskList` is a list of tasks. We inject the corresponding state, compute the component with 
-`ListOf` combinator, and affect the DOM content to the corresponding slot:
+A `TaskList` is a list of tasks. We inject the corresponding state, compute the component with `ListOf` combinator, and affect the DOM content to the corresponding slot:
 
 ```javascript
 export const TaskList = InjectSourcesAndSettings({ sourceFactory: taskListStateFactory }, [TaskListContainer, [
@@ -704,10 +684,7 @@ export const TaskList = InjectSourcesAndSettings({ sourceFactory: taskListStateF
 ]]);
 ```
 
-a `Task` is made of a checkbox to change its status, a button to allow deletion, another button 
-to allow task edition, and the task information. Clicking on a task detail button should route 
-the user to another screen where he can modify the task information. The breakdown is hence 
-as follows: 
+A `Task` is made of a checkbox to change its status, a button to allow deletion, another button to allow task edition, and the task information. Clicking on a task detail button should route the user to another screen where he can modify the task information. The breakdown is hence as follows: 
 
 ```javascript
 function TaskContainer(sources, settings) {
@@ -762,20 +739,13 @@ const Task = InjectSourcesAndSettings({
 ]]);
 ```
 
-Using `CheckBox` and `Editor` generic UI components requires us to do some adaption of input, 
-and output to fit their APIs. This allows to illustrate two interesting techniques:
+Using `CheckBox` and `Editor` generic UI components requires us to do some adaption of input, and output to fit their APIs. This allows to illustrate two interesting techniques:
 
-- Inputs (here `settings`) are adapted through `InjectSourcesAndSettings` ahead of using the 
-generic UI components
-- Outputs are adapted through the use of the `Pipe` combinator. For instance, `Editor` returns a 
-`save$` sink which needs to be mapped to a `domainAction` sink to update the corresponding domain
- entity. As a matter of fact, the [`Pipe` combinator](/projects/component-combinators/pipe) allows to pass sinks of a component in the 
- pipe as sources for the next component in the pipe. In the mentioned case, for instance the 
- output adaptation is performed by `ComputeEditorActions`.
+- Inputs (here `settings`) are adapted through `InjectSourcesAndSettings` ahead of using the generic UI components
+- Outputs are adapted through the use of the `Pipe` combinator. For instance, `Editor` returns a `save$` sink which needs to be mapped to a `domainAction` sink to update the corresponding domain entity. As a matter of fact, the [`Pipe` combinator](/projects/component-combinators/pipe) allows to pass sinks of a component in the  pipe as sources for the next component in the pipe. In the mentioned case, for instance the  output adaptation is performed by `ComputeEditorActions`.
 
 # TIP: How to write a component
-Within the chosen architecture (cycle), writing a *leaf* component, i.e. a component 
-which is not derived from other components, but only from `sources` and `settings`, means:
+Within the chosen architecture (cycle), writing a *leaf* component, i.e. a component which is not derived from other components, but only from `sources` and `settings`, means:
 
 - having clear specifications as per the reactive behaviour to implement
   - from the equation `actions = f(state, events)`:
@@ -783,12 +753,9 @@ which is not derived from other components, but only from `sources` and `setting
       - identify the actions to trigger in response to events
       - identify the necessary pieces of state to compute the actions from the events
 - decide on the parameterization of the component
-  - this means deciding which parts, if any, of the component's behaviour will be parameterizable
-   through the component's `settings` property
+  - this means deciding which parts, if any, of the component's behaviour will be parameterizable through the component's `settings` property
 - compute the events
-  - while doing so, ensure in particular that events are coupled to unique selectors: this is 
-  particularly important when operating within the cycle architecture where events are decoupled 
-  from the elements that originate them.
+  - while doing so, ensure in particular that events are coupled to unique selectors: this is particularly important when operating within the cycle architecture where events are decoupled  from the elements that originate them.
 - compute the necessary pieces of state
 - compute the actions, as a function of the events and pieces of state
 
@@ -815,14 +782,7 @@ This helps us identifying the pieces of state part of the reactive function:
 | INIT  | isLinkActive: false (i.e. `route != project link`) | DOM: display emphasized project title |
 | click on project title | -- | router: navigate to the project link                 |
 
-We assure the unicity of the selector for the click event, by coupling the corresponding element 
-to the project link, which is unique as per the specification. This is a tradeoff of `cyclejs`'s 
-architectural choice to separate the event creation from the declaration of the view structure. 
-As a matter of fact, the view is conceptually tightly coupled to the event handlers, and forcing 
-the decoupling of the two results in having to define unequivocally, for each event handler, the DOM element to 
-which it relates. On the positive side of that tradeoff, we are able to test components, by 
-mocking their inputs. For readability and DRY reasons, we recommend to isolate the `css` selector by 
-which event handler and element are coupled into a separate variable. 
+We assure the unicity of the selector for the click event, by coupling the corresponding element to the project link, which is unique as per the specification. This is a tradeoff of `cyclejs`'s architectural choice to separate the event creation from the declaration of the view structure. As a matter of fact, the view is conceptually tightly coupled to the event handlers, and forcing the decoupling of the two results in having to define unequivocally, for each event handler, the DOM element to which it relates. On the positive side of that tradeoff, we are able to test components, by mocking their inputs. For readability and DRY reasons, we recommend to isolate the `css` selector by which event handler and element are coupled into a separate variable. 
 
 This leads to the implementation below: 
 
@@ -863,70 +823,48 @@ function NavigationItem(sources, settings) {
 ```
 
 # TIP: How to write a component combinator
-We have already given two examples of component combinators ([here](/posts/applying-componentization-to-reactive-system---sample-application/#navigation-combinator), and [here](/posts/applying-componentization-to-reactive-system---sample-application/#navigationsection-combinator)). The general 
-process is as follows:
+We have already given two examples of component combinators ([here](/posts/applying-componentization-to-reactive-system---sample-application/#navigation-combinator), and [here](/posts/applying-componentization-to-reactive-system---sample-application/#navigationsection-combinator)). The general process is as follows:
 
 - having clear specifications as per the combining behaviour to implement
-  - how is the component combinator to be parameterized ?
-  - is a container component necessary ?
+  - how is the component combinator to be parameterized?
+  - is a container component necessary?
   - what are the contracts which settings or component tree must fulfill?
   - how are the components' sinks combined?
-    - are default combining functions sufficient ?
-    - are specific combining functions necessary ?
+    - are default combining functions sufficient?
+    - are specific combining functions necessary?
 - implement the target behaviour
   - reuse as much as possible existing combinators
-  - select, when necessary, the most appropriate form of the `m` combinator (out of the three 
-  reducing patterns)
+  - select, when necessary, the most appropriate form of the `m` combinator (out of the three   reducing patterns)
       - reminder: `= m(componentCombinatorSpec, componentCombinatorSettings,
         childrenComponents | componentTree)`
-      - understanding `m` default reducing functions is paramount: often times, they have the 
-    behaviour that is sought for
+      - understanding `m` default reducing functions is paramount: often times, they have the    behaviour that is sought for
 
 # Generic, reusable components
-Components developed for a specific application usually have to be generalized to make them
-reusable. The generalized component can then be adapted, specialized or parameterized to be used
-for the specific application use case.
+Components developed for a specific application usually have to be generalized to make them reusable. The generalized component can then be adapted, specialized or parameterized to be used for the specific application use case.
 
-For instance, in our application's UI, we have a checkbox on which a click leads to miscellaneous
-actions on the domain model. Abstracting out the actions specific to the domain model, we can
-build a reusable checkbox UI component, where the clicks will emit a dummy action passing on the
-status of the checkbox (checked/unchecked).
+For instance, in our application's UI, we have a checkbox on which a click leads to miscellaneous actions on the domain model. Abstracting out the actions specific to the domain model, we can build a reusable checkbox UI component, where the clicks will emit a dummy action passing on the status of the checkbox (checked/unchecked).
 
-That generic UI checkbox can then be reused in different contexts, within the application, or in
-other applications, by specifying how the clicks translates into actions on the given domain
-model: the UI checkbox component is **adapted** to the application under development.
+That generic UI checkbox can then be reused in different contexts, within the application, or in other applications, by specifying how the clicks translates into actions on the given domain model: the UI checkbox component is **adapted** to the application under development.
 
-In other cases, the generalized component will be specialized (the `m` combinator is such a case,
- where the programmer can specialize the reduction of the component tree to one of three patterns).
+In other cases, the generalized component will be specialized (the `m` combinator is such a case, where the programmer can specialize the reduction of the component tree to one of three patterns).
 
-In yet other cases, the generalized component behaviour will be configured by parameterization
-through the component settings.
+In yet other cases, the generalized component behaviour will be configured by parameterization through the component settings.
 
 In our application, we have identified the following reusable UI components:
 
 - `CheckBox` component
   - for each click on the checkbox, passes the state of that checkbox  
 - `Editor` component
-  - allows to define an editable user content zone where the user can modify, save, delete
-  content.
+  - allows to define an editable user content zone where the user can modify, save, delete  content.
 
 Potential candidates for further refactoring into reusable components are:
 
 - ToggleButton (<em>xor</em> button group component)
 - EnterTask (input entry)
 
-A component such as `TaskInfo` is not a fruitful target for a generalization that allows to reuse
-it in other domains, as its behaviour seems very much tied (coupled) to the application's domain
-model. However, should that component be needed with slight modifications more than twice ([rule of three](https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)) in our application, we would have considered 
-writing a generalized version of the component.
+A component such as `TaskInfo` is not a fruitful target for a generalization that allows to reuse it in other domains, as its behaviour seems very much tied (coupled) to the application's domain model. However, should that component be needed with slight modifications more than twice ([rule of three](https://en.wikipedia.org/wiki/Rule_of_three_(computer_programming)) in our application, we would have considered writing a generalized version of the component.
 
-Ideally, there is already at hand a component (UI or domain) )library that is already tested, and 
-documented. That could be the case for example for UI components, such as those exposed 
-previously. This could also be the case if domain experts have succeeded in identifying repeating
- patterns in their domain, and produced a domain-specific component library. In the general case,
-  the software designer will have to find and assess the abstraction/generalization opportunities presented to
- him. Those opportunities are generally identified while refactoring. As explained in a [former article](/posts/componentization-against-complexity/#barriers-to-reuse), refactoring for reuse has a 
- cost, and the possible benefits to be derived have to be weighted against that cost.
+Ideally, there is already at hand a component (UI or domain) )library that is already tested, and documented. That could be the case for example for UI components, such as those exposed  previously. This could also be the case if domain experts have succeeded in identifying repeating patterns in their domain, and produced a domain-specific component library. In the general case,  the software designer will have to find and assess the abstraction/generalization opportunities presented to him. Those opportunities are generally identified while refactoring. As explained in a [former article](/posts/componentization-against-complexity/#barriers-to-reuse), refactoring for reuse has a  cost, and the possible benefits to be derived have to be weighted against that cost.
 
 For illustration purposes, here is part of the source code for the `CheckBox` component:
 
@@ -961,25 +899,15 @@ export function CheckBox(sources, settings) {
 }
 ```
 
-The `isChecked$` sink can later on be used in coordination with the `Pipe` combinator to produce 
-the desired sink.
+The `isChecked$` sink can later on be used in coordination with the `Pipe` combinator to produce the desired sink.
 
 # Conclusion
 We have seen while implementing the sample application how to address common issues arising when implementing a web application:
 
-- **routing**: a quintessential requirement such as routing is very naturally expressed with 
- the `OnRoute` combinator.
-- **state management**: state can be injected at any point of the component tree and becomes 
-visible to any component down the injection point. Alternatively, state can also be kept at the
- root level, through the use of in-memory store.
-- **change propagation**: at the lowest level, using streams as the corner stone of our 
-architecture solves the issue of updating a variable (behaviour) when one of its dependencies 
-change. *Live queries* can then be built on top of read and write drivers as exemplified in the 
-sample application. Additionally, we offer the `ForEach` combinator, to execute a given logic on 
-a every change of a behaviour. 
-- **communication between components**: parent-child communication may occur through passing 
-settings and sources, child-parent communication and communication between components with no 
-direct ascendency relationship in the component tree may occur via shared state. 
+- **routing**: a quintessential requirement such as routing is very naturally expressed with  the `OnRoute` combinator.
+- **state management**: state can be injected at any point of the component tree and becomes visible to any component down the injection point. Alternatively, state can also be kept at the root level, through the use of in-memory store.
+- **change propagation**: at the lowest level, using streams as the corner stone of our architecture solves the issue of updating a variable (behaviour) when one of its dependencies change. *Live queries* can then be built on top of read and write drivers as exemplified in the sample application. Additionally, we offer the `ForEach` combinator, to execute a given logic on a every change of a behaviour. 
+- **communication between components**: parent-child communication may occur through passing settings and sources, child-parent communication and communication between components with no direct ascendency relationship in the component tree may occur via shared state. 
 - **lists**: list of things are dealt with reactively with the `ListOf` and `ForEach` combinators. 
 
 While these were not encountered in the present sample application, our combinator library also helps deal with:

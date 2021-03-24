@@ -100,7 +100,7 @@ const gameFsm = createStateMachine(gameFsmDef, {
 We use here the chess engine to establish the validity of a move and detect the end game, but take care of reversing its effects. As a rule, guards and action factories **must be pure functions**. This avoids difficult-to-detect bugs where the game state is de-synchronized from the machine state. 
 {% endtufte %}
 
-Doing so make the event emitter and engine visible in guards and action factories. For instance:
+Doing so makes the event emitter and engine visible in guards and action factories. For instance:
 
 ```js
 function isLegalNonWinningMove(extendedState, eventData, settings){
@@ -122,7 +122,7 @@ function isLegalNonWinningMove(extendedState, eventData, settings){
 ```
 
 
-Unlike the previous example, we need to inject the event emitter in the machine. As a matter of fact, the `ChessBoard` stateless React component, exposes an `onSquareClick` handler which is run when a player clicks on a board square. We thus need to pass the `click` event to the machine and to do so we need to access the machine's event emitter. In the previous example, as we were the author of the rendering component, we injected directly the event emitter as property of the component. We cannot do that here as we cannot (and should not) modify the source code for `ChessBoard`:
+Unlike the previous example, we need to inject the event emitter in the machine. As a matter of fact, the `ChessBoard` stateless React component exposes an `onSquareClick` handler which is run when a player clicks on a board square. We thus need to pass the `click` event to the machine and to do so we need to access the machine's event emitter. In the previous example, as we were the author of the rendering component, we injected directly the event emitter as property of the component. We cannot do that here as we cannot (and should not) modify the source code for `ChessBoard`:
 
 ```js
 const onSquareClickFactory = memoize(function (eventEmitter){
@@ -188,7 +188,7 @@ will lead to rendering the React element `ChessBoard(draggable, width, position,
 Non-render commands are addressed by specifying a command handler that receives in addition to the commands parameters, the event emitter, and the effect handlers. Effect handlers isolate the execution of effects into single-concern functions. In our example, the `MOVE_PIECE` command handler will be called as a `function (next, {from, to}, effectHandlers)`, matching the parameters of the command (`params: {from: fromSquare, to:square}`): 
 
 {% tufte %}
-Note as the chess engine is passed as effect handler, and made available to the `MOVE_PIECE` command handler. At testing time, it will be easy to replace the chess engine by a mock without recurring to an extra mocking library or tying tests to a specific framework. This is yet another facet of Kingly's portable UI philosophy.
+Note how the chess engine is passed as effect handler, and made available to the `MOVE_PIECE` command handler. At testing time, it will be easy to replace the chess engine by a mock without recurring to an extra mocking library or tying tests to a specific framework. This is yet another facet of Kingly's portable UI philosophy.
 {% endtufte %} 
 
 ```js
@@ -235,7 +235,7 @@ We will use for the implementation the `ChessBoard` component from the [chessboa
 ## What we learned
 This example introduced new concepts and learnings:
 - control states can be nested -- the machine is then called a **hierarchical state machine**
-- compound states are control states which can have nested control states
+- compound states are control states that can have nested control states
 - compound states specify their initial control state with an initial transition to the target control state
 - the `createStateMachine` factory accepts an optional parameter which allows developers to inject dependencies into guards, and action factories
 - integration with React can be achieved manually or via the [`react-state-driven`](https://github.com/brucou/react-state-driven) library

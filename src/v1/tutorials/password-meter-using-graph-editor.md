@@ -7,7 +7,7 @@ is_new: true
 
 In the previous sections, we specified, designed, and implemented a password meter. In this section, we are going to reach the same implementation but this time, instead of writing the machine's transitions manually, we are going to draw them in a graph editor and convert the drawing to standard JavaScript. 
 
-This section aims at showcasing the yEd graph editor which the preferred tool to create and maintain Kingly state machines. yEd is simple to use, offers a series of automatic layouts, allows us to zoom in and out of compound states, and can save the machine graph in an XML textual format that can be versioned on GitHub.
+This section aims at showcasing the yEd graph editor which is the preferred tool to create and maintain Kingly state machines. yEd is simple to use, offers a series of automatic layouts, allows us to zoom in and out of compound states, and can save the machine graph in an XML textual format that can be versioned on GitHub.
 
 ## Install yEd
 - Go to the [yEd website](https://www.yworks.com/products/yed)
@@ -83,7 +83,7 @@ Now let's do the labels. The labels must follow the `event [guard] / action` for
 - the label between the *weak* node and the *strong* node is *typed [letter and numbers?] \n / display strong password screen*
 - the label between the *strong* node and the *strong* node is also *typed [letter and numbers?] \n / display strong password screen*
 - the label between the *strong* node and the *done* node is *clicked submit \n / display password submitted screen*
-- apply the hierarchic layout again -- this time, instead of clicking *Ok*, click on *Dock* -- this will set a panel on the left side, with a play button. Click that play button to activate the hierarchic layout. Docking a layout is practical if you are going to use it several times.
+- apply the hierarchic layout again. This time, instead of clicking *Ok*, click on *Dock* -- this will set a panel on the left side, with a play button. Click that play button to activate the hierarchic layout. Docking a layout is practical if you are going to use it several times.
 
 The result is not very readable:
 

@@ -29,7 +29,7 @@ Remember that the functional design of Kingly encourages implementing a user int
 
 ![kingly-favoured ui architecture](../../graphs/high%20level%20architecture%20ui%20implementation%20with%20kingly.jpg)
 
-The interfaced systems, including the input device (e.g. your laptop or mobile phone) send events to the Kingly machine. The machine computes commands which are executed by command handlers. Those commands may result in API calls on the interfaced systems, whose responses may be processed by the command handler module, which in turn decides whether to send an event back to the machine for processing. This is the architecture that is implemented through the `react-state-driven` library for use within the React ecosystem.
+The interfaced systems, including the input device (e.g. your laptop or mobile phone), send events to the Kingly machine. The machine computes commands which are executed by command handlers. Those commands may result in API calls on the interfaced systems, whose responses may be processed by the command handler module which in turn decides whether to send an event back to the machine for processing. This is the architecture that is implemented through the `react-state-driven` library for use within the React ecosystem.
 
 As such, modifying our current chess game implementation potentially implies modifying all, some, or none of the three modules.
 
