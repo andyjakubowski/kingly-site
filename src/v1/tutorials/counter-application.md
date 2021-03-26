@@ -1,10 +1,10 @@
 ---
-title: Counter application
+title: Implementation
 type: tutorials
-order: 1
+order: 3
 ---
 
-We continue here with a very trivial example often used as a starter by user interfaces libraries: a counter application. As with any trivial example, it does not properly illustrate the power of the library. We will be short on explanations. The example however is useful to give a feel of the API. 
+We continue here with a very trivial example often used as a starter by user interface libraries: a counter application. As with any trivial example, it does not properly illustrate the power of the library. We will be short on explanations. The example however is useful to give a feel of the API. 
 
 The counter behavior is described by the following state machine:
 
@@ -32,6 +32,6 @@ function controller(event){
 }
 ```
 
-This is it! There is nothing weird. We write stateful functions like `controller` all the time when implementing user interfaces. Using an explicit state machine to write those functions and drive our user interface brings a lot of benefits that will be introduced in the remainder of the tutorials. 
+This is it! There is nothing weird. We write stateful functions like `controller` all the time when implementing event handlers. Using an explicit state machine to write those functions and drive our user interface brings a lot of benefits that will be introduced in the remainder of the tutorials. 
 
-This is the very short story about state machines used for modelling interface's behavior. The machine works as a controller that transforms inputs/events into commands. The application is implemented by sequential composition of three parts: listening to the inputs, computing the corresponding commands, and executing those commands. To execute the render command, you can use any UI library you fancy, or just plain JavaScript.
+This is the very short story about state machines used for modeling the behavior of user interfaces. The machine works as a controller that transforms inputs/events into commands. The application is implemented by sequential composition of three parts: listening to the inputs, computing the corresponding commands, and executing those commands. To execute the render command, you can use any UI library you fancy, or just plain JavaScript.

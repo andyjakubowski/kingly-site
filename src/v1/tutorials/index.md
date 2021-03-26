@@ -4,16 +4,26 @@ type: tutorials
 order: 0
 ---
 
-Kingly is a state machine library to specify user interface **behavior**. It is designed to be used in conjunction with **any user interface library or framework** (such as React, Vue, Svelte, or Vanilla JavaScript); and for parts (components or custom elements) or the whole of your user interface. You **declaratively** specify the behavior of your user interface as a set of actions to perform in response to events processed by the user interface. The actions to perform in response to events are computed by a state machine. The state machine acts as a **model** of the interface's behavior, which can be instrumented in several ways of interest to speed up the development of your application:
+Kingly is a state machine library to specify the **behavior** of applications. Kingly complements tools that specify the **appearance** of applications (e.g., Sketch, Figma). It is designed to be used in conjunction with **any user interface library or framework** (e.g., React, Vue, Svelte, or plain JavaScript). You can use it to describe the behavior of one component of your application, or have it take over the whole application. 
 
-- the model is a **single source of truth**, and **living documentation** for the behavior of your interface
-- the model can be visualized to communicate and discuss features both within and outside your development team (designers, testers, developers)
-- test sequences can be **automatically generated** from the model and used for both unit testing and integration testing
-- you can iterate quickly and with confidence on the model, knowing what part of the behavior your modifications will impact and **what part will not be impacted**
-- the model can be shared and reuse in other projects by simply publishing it on `npm` or any package manager of your choice
+Your application behavior is what the application **should do** in response to the events it receives -- from the user, the network, and any other systems the application interfaces with. It computes the application response, it does not perform that response. Kingly [will never send emails](http://www.catb.org/jargon/html/Z/Zawinskis-Law.html).
 
-The net result is a productive development process resulting in **robust, maintainable, self-documented user interfaces or components**.
+Kingly lets you **draw** your application response to events with a [professional graph editor](https://www.yworks.com/products/yed). Here is the drawn behavior of a wizard form that manages a user subscription process:
 
-If you want to understand the benefits of state-machine-based modelization of interface behavior, I published a [detailed article](http://www.infoq.com/articles/robust-user-interfaces-with-state-machines) which provides a 10,000 feet view, easy-to-follow review of the subject.
+![User application process](../../graphs/sparks%20application%20process%20with%20comeback%20proper%20syntax%20hierarchical%20fsm.png)
 
-The next sections of the tutorial build progressively the concepts, demonstrating the library's API, and providing meaningful examples.
+It ressembles the original user flows (see how the green paths match):
+
+{% fig %}
+![User application process: user flow](https://imgur.com/xcO9xnY.jpg)
+{% endfig %}
+
+except that with Kingly's visual language, it can be made precise enough that a JavaScript implementation can be **automatically generated** from the graph. If you got the drawing right, the generated code will also be correct. You can **focus on what your application does**, separately from how you are going to do it.
+
+You can quickly iterate on the modeling of the application behavior, knowing that the generated code will be kept in sync. The drawn model, like your code, is versionable. You can go back to any versions at any time.
+
+You won't break your budget. Kingly has a [compiler](http://localhost:4000/documentation/v1/tooling/compiling.html) that gets the implementation of your application behavior between 0.5 and 3 KB. The behavior for the wizard form previously shown was compiled down to 0.7 KB.
+
+The net result is a productive development process resulting in **robust, maintainable, visually self-documented applications and components**. At near zero bundle cost.
+
+Did you get interested? Let's [get started](http://localhost:4000/documentation/v1/tutorials/installation.html).

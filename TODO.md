@@ -1,3 +1,32 @@
+- DOCS
+  - I still have to clearly explain why kingly? What do I get? visual, etc. nice, but what are the benefits??
+    - something like Figma offers three things :
+                     A better way to design, an easier way to work together and better accessibility.
+  - complete new Concepts section
+  - update counter tutorial section
+  - In tooling, add a logs section where I explain the log parameter, the log interface,
+  - In devtool, refer to that saying that if cannot use chrome browser, then use logs
+  - can use other console replacement, like winston and the likes
+  - in Learn, add something about trouble shooting.
+    - list of things than can go wrong that we can anticipate
+    - beginner's mistakes
+    - visual syntax error; graph semantic error; wrong specs impl; wrong specs; what else? 
+- have an introductory video like Vue.js
+  - https://player.vimeo.com/video/247494684?dnt=1
+- survey tech writers online sites!
+  - ex:  Command Line Interface Guidelines (clig.dev)
+- add a search functionality (maybe tinysearch)
+  - https://endler.dev/2019/tinysearch/
+- tone
+  - remove the I from the docs, always use you instead of developers
+- What is this product? Why would anyone want it? How does it fit with the broader ecosystem?
+  - see book about technical writing
+  - feedback from actual users is super important
+  - first key feedback: designers have many tools to draw UIs, but not so many to describe their behavior.
+- Get feedback
+  - remove all follow on twitter thing, and have them log an issue instead.
+  - the github link should have them write an issue on the repository!
+  - look how a edit this on github can be done!
 - add counter with Ink in react terminal in the docs!!
 Excellent doc structure:
 - https://docs.microsoft.com/en-us/azure/static-web-apps/custom-domain
@@ -24,8 +53,6 @@ Excellent doc structure:
 
 **reuse http://localhost:4000/documentation/graphs/real-world/realworld-high-level-architecture.png to explain how the order of implemntation derives from the architecture, explain that with a nice drawing??** 
 
-- HAVE A MUCH BETTER LOG (console.group!!)
-  - would also be great to log guards which are not being satisfied or those who is satisfyed!
 - add also in introduction or separate Q&A pages
   - comparison with robot, xstate, stent etc. the best would be to move that to https://github.com/achou11/state-machines
   - explain advantages of implementation techniques (functional vs. imperative, JSON vs. direct exec.)
@@ -46,19 +73,14 @@ Excellent doc structure:
 - zoom image:
   - https://francoischalifour.com/medium-image-zoom/
   - https://github.com/francoischalifour/medium-zoom#usage
-- DOC SITE: API no longer accurate!!
 - BUG: contract: cannot hvae transition INIT-> History, that would infinite loop (history when none goes to INIT) 
-- altogether now section with implementation
 - tutorial on routing (in best practices), with implementation
-- ~~article on: how state machines support micro-front end architectures~~
 - article on real world with testing
   - need to clone fsm to speed up test generation
   - update the test generator
   - add some more filters to generate paths with a given prefix
   - generate multiple sequences with different data (testing also data not only control)
 - debugger: best to grow the community <- attract low-level programmers <- maybe later?
-- compiler <- favor actual usage in actual projects
-- real world app (routing, graphql or sth like that)
 - csp-inspired framework a-la-cycle makeProcess(fsm, thread, connector...) <- like, last, seems like it is a whole project, with separate testing, design and so on to think about, don't start this like that!!
   - cf. https://github.com/elastic/search-ui/blob/master/ADVANCED.md#performance
 - DOCS: make drawing in introductory section:
@@ -70,7 +92,7 @@ Excellent doc structure:
   - hyperapp: loading.... error in console (no fetch promise etc)
   - original demo app: loading... and nothing else
 - do logging like hyperapp!
-````
+```
 export default function(prevState, action, nextState) {
   console.group("%c action", "color: gray; font-weight: lighter;", action.name)
   console.log("%c prev state", "color: #9E9E9E; font-weight: bold;", prevState)
@@ -78,7 +100,7 @@ export default function(prevState, action, nextState) {
   console.log("%c next state", "color: #4CAF50; font-weight: bold;", nextState)
   console.groupEnd()
 }
-``
+```
 
 # Demos
 - mention the fact that the machine is ocmpiled for the svelte suspense example
@@ -104,9 +126,6 @@ Summarize all the techniques in :
 - inject manually the event emitter
 - use settings for injection if not possible
 
-# mobile
-maybe an example?
-
 # Integration sections
 try to show also integration with Android/Kotlin, maybe find a library that supports a React model 
 - https://componentkit.org/ for iOS from fb
@@ -125,8 +144,8 @@ look at framer for inspiration: https://www.framer.com/prototyping/
 # Testing
 publish article first!! in hacker-noon -> before end on june! don't forget David in Prague for testing try to use forgot the name.js for property tasting - lots of generators but give examples already with me writing my own generators?? yes 
 
-# example section
-finish here. The form multi step in example section. LATER. write something about property based testing and tet generation. At least one example then wrap up. Hopefully ready for the 30th?
+# Example section
+Finish here. The form multi step in example section. LATER. write something about property based testing and tet generation. At least one example then wrap up. Hopefully ready for the 30th?
 
 # Site
 - load transducer.js instead of vue.js for the demo
@@ -139,14 +158,11 @@ finish here. The form multi step in example section. LATER. write something abou
   - remove all unused styl, like sponsors!
 
 # Vision
-- tool for developers like yed
-  - you need to quickly change a layout, not so useful to draw it oneself
-  - but still keep bpmn.io, maybe write a converter yed graphml to bpmn/io that would be best
-- tool for designers to navigat the transiions of the machine, but no program, button for each transition, and each button should update state of the navigaion which basically is which transitions are enabled and disabled by the taken transition
-  - should be reusing all existing designer tool - dont wrte a new thing! plugin!
+- tool for designers to navigate the transitions of the machine, but no program, button for each transition, and each button should update state of the navigation which basically is which transitions are enabled and disabled by the taken transition
+  - should be reusing all existing designer tool - dont write a new thing! plugin!
 - tracer/debugger
   - full vision
-  - local vision of only meighbours
+  - local vision of only neighbours
 - DSL ./ macro/ compiler
 
 # Properties
@@ -163,4 +179,4 @@ finish here. The form multi step in example section. LATER. write something abou
 /editor -> https://demo.realworld.io/#/article/implementing-conduit-with-kingly-state-machine-library-n4mhqh
 
 # Quotes
-> He recommends that we forget about state and concentrate on behaviour. It’s much easier to understand what an application is doing when using events and commands, because they describe what the application does in a functional way. [](https://www.infoq.com/news/2019/10/event-thinking-microservices/)
+  > He recommends that we forget about state and concentrate on behaviour. It’s much easier to understand what an application is doing when using events and commands, because they describe what the application does in a functional way. [](https://www.infoq.com/news/2019/10/event-thinking-microservices/)

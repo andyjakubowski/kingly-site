@@ -1,6 +1,6 @@
 ---
 title: Implementing UIs with state machines
-type: tutorials
+type: concepts
 order:  3
 ---
 

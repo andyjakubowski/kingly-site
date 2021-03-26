@@ -3,6 +3,7 @@
   <ul class="nav-dropdown">
     <li>
       <ul>
+        <li><a href="<%- url_for("/v1/concepts/") %>" class="nav-link<%- page.path.match(/\/concepts(\/|$)/) ? ' current' : '' %>">Concepts</a></li>
         <li><a href="<%- url_for("/v1/tutorials/") %>" class="nav-link<%- page.path.match(/\/tutorials(\/|$)/) ? ' current' : '' %>">Tutorials</a></li>
         <li><a href="<%- url_for("/v1/examples/") %>" class="nav-link<%- page.path.match(/\/examples(\/|$)/) ? ' current' : '' %>">Examples</a></li>
         <li><a href="<%- url_for("/v1/cookbook/") %>" class="nav-link<%- page.path.match(/\/cookbook(\/|$)/) ? ' current' : '' %>">Cookbook</a></li>
