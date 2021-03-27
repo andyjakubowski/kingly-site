@@ -75,7 +75,7 @@ If you would like a more theoretical, high-level understanding of the subject, g
 If you prefer to learn concepts step by step, start with the [tutorials](./counter-application.html). The tutorials strive to start really slowly with a trivial counter application, up to the implementation of a medium-sized application. 
 
 Like anything new or unfamiliar, Kingly has a learning curve. It is however designed to be simple. It also [strives to be easy](https://paulrcook.com/simple-made-easy) once the required mental model is acquired. Do not despair if you encounter difficulties and [keep in touch with 
-the development team](https://github.com/brucou/kingly/issues/new) if you have any questions/feedback. Relentless and stubborn practice are behind any good software.
+the development team](https://github.com/brucou/kingly/issues/new) if you have any questions/feedback. Relentless and stubborn practice (and a ton of coffee) are behind any good software.
 
 ## Feedback
 [Leave us your feedback on Github](https://github.com/brucou/kingly/issues/new) if you would like us to document topics that are currently not addressed or if you found anything incorrect. We love to hear from you.
